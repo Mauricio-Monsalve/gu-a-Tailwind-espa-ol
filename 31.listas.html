@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Utilidades de Listas - Tailwind CSS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 p-8 text-sm space-y-10">
+
+  <h1 class="text-2xl font-bold mb-4">📋 Utilidades de Listas en Tailwind CSS</h1>
+
+  <!-- list-style-type -->
+  <section>
+    <h2 class="text-xl font-semibold mb-2">🔹 list-style-type</h2>
+    <table class="table-auto w-full border border-gray-300 bg-white text-left">
+      <thead class="bg-gray-200">
+        <tr>
+          <th class="border px-4 py-2">Clase Tailwind</th>
+          <th class="border px-4 py-2">CSS equivalente</th>
+          <th class="border px-4 py-2">Ejemplo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border px-4 py-2">list-none</td>
+          <td class="border px-4 py-2">list-style-type: none;</td>
+          <td class="border px-4 py-2">
+            <ul class="list-none">
+              <li>Elemento 1</li>
+              <li>Elemento 2</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">list-disc</td>
+          <td class="border px-4 py-2">list-style-type: disc;</td>
+          <td class="border px-4 py-2">
+            <ul class="list-disc pl-6">
+              <li>Elemento 1</li>
+              <li>Elemento 2</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">list-decimal</td>
+          <td class="border px-4 py-2">list-style-type: decimal;</td>
+          <td class="border px-4 py-2">
+            <ol class="list-decimal pl-6">
+              <li>Elemento 1</li>
+              <li>Elemento 2</li>
+            </ol>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- list-position -->
+  <section>
+    <h2 class="text-xl font-semibold mb-2">🔹 list-position</h2>
+    <table class="table-auto w-full border border-gray-300 bg-white text-left">
+      <thead class="bg-gray-200">
+        <tr>
+          <th class="border px-4 py-2">Clase Tailwind</th>
+          <th class="border px-4 py-2">CSS equivalente</th>
+          <th class="border px-4 py-2">Ejemplo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border px-4 py-2">list-inside</td>
+          <td class="border px-4 py-2">list-style-position: inside;</td>
+          <td class="border px-4 py-2">
+            <ul class="list-disc list-inside">
+              <li>Este texto está dentro</li>
+              <li>del mismo renglón.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">list-outside</td>
+          <td class="border px-4 py-2">list-style-position: outside;</td>
+          <td class="border px-4 py-2">
+            <ul class="list-disc list-outside">
+              <li>Este texto se alinea</li>
+              <li>con el contenido fuera.</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+</body>
+
+</html>

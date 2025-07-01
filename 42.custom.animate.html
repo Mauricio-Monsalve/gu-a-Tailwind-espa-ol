@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Animaciones Personalizadas en Tailwind CSS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+
+    tailwind.config = {
+      theme: {
+        extend: {
+          keyframes: {
+            blink: {
+              '0%, 100%': { opacity: '1' },
+              '50%': { opacity: '0' }
+            },
+            wobble: {
+              '0%': { transform: 'translateX(0)' },
+              '15%': { transform: 'translateX(-20px)' },
+              '30%': { transform: 'translateX(20%)' },
+              '45%': { transform: 'translateX(-15%)' },
+              '60%': { transform: 'translateX(20px)' },
+              '75%': { transform: 'translateX(-5%)' },
+              '100%': { transform: 'translateX(0)' }
+            },
+            'rubber-band': {
+              '0%': { transform: 'scale(1)' },
+              '30%': { transform: 'scale(1.25)' },
+              '40%': { transform: 'scale(0.75)' },
+              '50%': { transform: 'scale(1.15)' },
+              '65%': { transform: 'scale(0.95)' },
+              '75%': { transform: 'scale(1.05)' },
+              '100%': { transform: 'scale(1)' }
+            },
+            dancing: {
+              '0%': { transform: 'skew(0deg)' },
+              '25%': { transform: 'skew(-40deg)' },
+              '50%': { transform: 'skew(40deg)' },
+              '75%': { transform: 'skew(-40deg)' },
+              '100%': { transform: 'skew(0deg)' }
+            },
+          },
+          animation: {
+            blink: 'blink 1s ease-in-out infinite',
+            wobble: 'wobble 1s ease-in-out both',
+            'rubber-band': 'rubber-band 1s ease-in-out both',
+            dancing: 'dancing 1s ease-in-out both',
+          }
+        }
+      },
+      plugins: []
+    };
+  </script>
+  <style>
+    .demo-box {
+      width: 150px;
+      height: 150px;
+      background-color: dodgerblue;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0.5rem;
+      margin: 1rem;
+    }
+
+    .spin-slow {
+      animation: spin 3s linear infinite;
+    }
+
+    @keyframes parpadeo {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0;
+      }
+    }
+
+    .blink {
+      animation: parpadeo 1s ease-in-out infinite;
+    }
+  </style>
+</head>
+
+<body class="p-8 bg-gray-100 text-sm space-y-10">
+
+  <h1 class="text-3xl font-bold mb-6">🎞️ Animaciones Personalizadas en Tailwind CSS</h1>
+
+  <!-- Tailwind v3 -->
+  <section>
+    <h2 class="text-2xl font-semibold mb-4">🔧 En Tailwind CSS v3</h2>
+    <p class="mb-4">
+      En Tailwind v3, las animaciones personalizadas se configuran directamente dentro de
+      <code>tailwind.config.js</code> usando las propiedades
+      <code>theme.extend.keyframes</code> y <code>theme.extend.animation</code>.
+    </p>
+
+    <h3 class="text-lg font-semibold mb-2">📁 Paso a paso:</h3>
+    <ol class="list-decimal list-inside mb-4">
+      <li>Abre <code>tailwind.config.js</code>.</li>
+      <li>Agrega las keyframes y las animaciones al objeto <code>extend</code>.</li>
+      <li>Usa la clase personalizada <code>animate-[nombre]</code> en tu HTML.</li>
+    </ol>
+
+    <pre class="bg-white p-4 rounded border overflow-auto text-xs">
+<code>
+module.exports = {
+  theme: {
+    extend: {
+      keyframes: {
+        blink: {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0' }
+        }
+      },
+      animation: {
+        blink: 'blink 1s ease-in-out infinite'
+      }
+    }
+  }
+}
+</code>
+    </pre>
+
+    <p class="mt-4 mb-2 font-semibold">✅ Resultado:</p>
+    <div class="flex flex-wrap">
+      <div class="demo-box animate-blink">Blink</div>
+    </div>
+  </section>
+
+  <hr class="my-10 border-gray-400" />
+
+  <!-- Tailwind v4 -->
+  <section>
+    <h2 class="text-2xl font-semibold mb-4">🆕 En Tailwind CSS v4</h2>
+    <p class="mb-4">
+      En Tailwind v4 puedes definir animaciones personalizadas directamente en tu archivo CSS usando la regla
+      <code>@theme</code>.
+      Esto te permite crear animaciones reutilizables sin necesidad de editarlas en <code>tailwind.config.js</code>.
+    </p>
+
+    <h3 class="text-lg font-semibold mb-2">📁 Paso a paso:</h3>
+    <ol class="list-decimal list-inside mb-4">
+      <li>Crea un archivo CSS (por ejemplo: <code>index.css</code>).</li>
+      <li>Usa <code>@theme</code> para definir tus variables y keyframes.</li>
+      <li>Aplica tu animación con <code>animate-nombre</code>.</li>
+    </ol>
+
+    <pre class="bg-white p-4 rounded border overflow-auto text-xs">
+<code>
+@theme {
+  --animate-blink: blink 1s ease-in-out infinite;
+
+  @keyframes blink {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+}
+</code>
+  </pre>
+
+    <p class="mt-4 mb-2 font-semibold">✅ Resultado:</p>
+    <div class="flex flex-wrap">
+      <div class="demo-box animate-blink">Blink</div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+  <section>
+    <h2 class="text-2xl font-semibold mb-4">🧩 Plugin de animaciones en Tailwind v3</h2>
+    <p class="mb-4">
+      Puedes usar el plugin <code>@midudev/tailwind-animations</code> para acceder a un conjunto de animaciones listas
+      para usar como clases <code>animate-*</code>.
+      Este plugin es útil si deseas agregar efectos sin tener que definir manualmente los <code>keyframes</code> en tu
+      configuración.
+    </p>
+
+    <h3 class="text-lg font-semibold mb-2">📁 Paso a paso:</h3>
+    <ol class="list-decimal list-inside mb-4">
+      <li>Crea el archivo <code>tailwind.config.js</code> si aún no existe.</li>
+      <li>Instala el plugin con el siguiente comando:</li>
+      <pre
+        class="bg-white p-4 rounded border overflow-auto text-xs mb-4"><code>npm install @midudev/tailwind-animations</code></pre>
+      <li>Importa el plugin en tu configuración y agrégalo a <code>plugins</code>.</li>
+      <li>Usa las clases en tu HTML como <code>animate-wobble</code>.</li>
+    </ol>
+
+
+    <pre class="bg-white p-4 rounded border overflow-auto text-xs mb-4">
+<code>import animations from '@midudev/tailwind-animations'
+
+export default {
+  // otras opciones...
+  plugins: [
+    animations
+  ]
+}</code></pre>
+
+    <table class="table-auto border border-gray-300 bg-white w-full text-sm">
+      <thead class="bg-gray-200">
+        <tr>
+          <th class="border px-4 py-2">animate-wobble</th>
+          <th class="border px-4 py-2">animate-rubber-band</th>
+          <th class="border px-4 py-2">animate-dancing</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border px-4 py-2">
+            <div class="demo-box animate-wobble">Wobble</div>
+          </td>
+          <td class="border px-4 py-2">
+            <div class="demo-box animate-rubber-band">Rubber Band</div>
+          </td>
+          <td class="border px-4 py-2">
+            <div class="demo-box animate-dancing">Dancing</div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+
+
+
+  <section>
+    <h2 class="text-2xl font-semibold mb-4">🧩 Plugin de animaciones en Tailwind v4</h2>
+    <p class="mb-4">
+      En Tailwind v4 puedes usar el plugin <code>@midudev/tailwind-animations</code> directamente en tu archivo
+      <code>index.css</code>
+      gracias al nuevo sistema basado en CSS y plugins con <code>@plugin</code>. Esto te permite importar animaciones
+      sin modificar el archivo de configuración.
+    </p>
+
+    <h3 class="text-lg font-semibold mb-2">📁 Paso a paso:</h3>
+    <ol class="list-decimal list-inside mb-4">
+      <li>Crea un archivo <code>index.css</code> si aún no lo tienes.</li>
+      <li>Instala el plugin con el siguiente comando:</li>
+      <pre class="bg-white p-4 rounded border overflow-auto text-xs mb-4"><code>npm install @midudev/tailwind-animations</code></pre>
+      <li>Importa Tailwind y el plugin en <code>index.css</code> usando <code>@plugin</code>.</li>
+      <li>Usa las clases como <code>animate-wobble</code> directamente en tu HTML.</li>
+    </ol>
+
+    
+    <pre class="bg-white p-4 rounded border overflow-auto text-xs mb-4"><code>@import "tailwindcss";
+
+@plugin '@midudev/tailwind-animations';</code></pre>
+
+    <table class="table-auto border border-gray-300 bg-white w-full text-sm">
+      <thead class="bg-gray-200">
+        <tr>
+          <th class="border px-4 py-2">animate-wobble</th>
+          <th class="border px-4 py-2">animate-rubber-band</th>
+          <th class="border px-4 py-2">animate-dancing</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border px-4 py-2">
+            <div class="demo-box animate-wobble">Wobble</div>
+          </td>
+          <td class="border px-4 py-2">
+            <div class="demo-box animate-rubber-band">Rubber Band</div>
+          </td>
+          <td class="border px-4 py-2">
+            <div class="demo-box animate-dancing">Dancing</div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+
+
+
+
+
+</body>
+
+</html>

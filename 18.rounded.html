@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rounded - Tailwind CSS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="p-8 bg-gray-100 text-sm space-y-10">
+  <h1 class="text-2xl font-bold mb-4">Clases de Bordes Redondeados (Rounded) en Tailwind CSS</h1>
+
+  <table class="table-auto w-full border border-gray-300 bg-white text-left text-sm">
+    <thead class="bg-gray-200">
+      <tr>
+        <th class="border px-4 py-2">Clase Tailwind</th>
+        <th class="border px-4 py-2">CSS equivalente</th>
+        <th class="border px-4 py-2">Ejemplo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Clases base -->
+      <tr>
+        <td class="border px-4 py-2">rounded-none</td>
+        <td class="border px-4 py-2">border-radius: 0;</td>
+        <td class="border px-4 py-2"><div class="w-16 h-16 bg-blue-500 rounded-none"></div></td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">rounded-sm</td>
+        <td class="border px-4 py-2">border-radius: 0.125rem;</td>
+        <td class="border px-4 py-2"><div class="w-16 h-16 bg-blue-500 rounded-sm"></div></td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">rounded</td>
+        <td class="border px-4 py-2">border-radius: 0.25rem;</td>
+        <td class="border px-4 py-2"><div class="w-16 h-16 bg-blue-500 rounded"></div></td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">rounded-md</td>
+        <td class="border px-4 py-2">border-radius: 0.375rem;</td>
+        <td class="border px-4 py-2"><div class="w-16 h-16 bg-blue-500 rounded-md"></div></td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">rounded-lg</td>
+        <td class="border px-4 py-2">border-radius: 0.5rem;</td>
+        <td class="border px-4 py-2"><div class="w-16 h-16 bg-blue-500 rounded-lg"></div></td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">rounded-xl</td>
+        <td class="border px-4 py-2">border-radius: 0.75rem;</td>
+        <td class="border px-4 py-2"><div class="w-16 h-16 bg-blue-500 rounded-xl"></div></td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">rounded-2xl</td>
+        <td class="border px-4 py-2">border-radius: 1rem;</td>
+        <td class="border px-4 py-2"><div class="w-16 h-16 bg-blue-500 rounded-2xl"></div></td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">rounded-3xl</td>
+        <td class="border px-4 py-2">border-radius: 1.5rem;</td>
+        <td class="border px-4 py-2"><div class="w-16 h-16 bg-blue-500 rounded-3xl"></div></td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">rounded-full</td>
+        <td class="border px-4 py-2">border-radius: 9999px;</td>
+        <td class="border px-4 py-2"><div class="w-16 h-16 bg-blue-500 rounded-full"></div></td>
+      </tr>
+
+      <!-- Direcciones (t, r, b, l, tl, tr, br, bl) -->
+      <tr>
+        <td class="border px-4 py-2">rounded-t-md</td>
+        <td class="border px-4 py-2">border-top-left-radius & border-top-right-radius: 0.375rem;</td>
+        <td class="border px-4 py-2"><div class="w-16 h-16 bg-blue-500 rounded-t-md"></div></td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">rounded-tr-lg</td>
+        <td class="border px-4 py-2">border-top-right-radius: 0.5rem;</td>
+        <td class="border px-4 py-2"><div class="w-16 h-16 bg-blue-500 rounded-tr-lg"></div></td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">rounded-bl-xl</td>
+        <td class="border px-4 py-2">border-bottom-left-radius: 0.75rem;</td>
+        <td class="border px-4 py-2"><div class="w-16 h-16 bg-blue-500 rounded-bl-xl"></div></td>
+      </tr>
+
+      <!-- Personalizado -->
+      <tr>
+        <td class="border px-4 py-2">rounded-[20px]</td>
+        <td class="border px-4 py-2">border-radius: 20px;</td>
+        <td class="border px-4 py-2"><div class="w-16 h-16 bg-blue-500 rounded-[20px]"></div></td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">rounded-tr-[1rem]</td>
+        <td class="border px-4 py-2">border-top-right-radius: 1rem;</td>
+        <td class="border px-4 py-2"><div class="w-16 h-16 bg-blue-500 rounded-tr-[1rem]"></div></td>
+      </tr>
+
+    </tbody>
+  </table>
+</body>
+
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Outline - Tailwind CSS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    section>h2~table div.w-32.h-12.bg-white {
+      outline-color: black;
+    }
+  </style>
+</head>
+
+<body class="p-8 bg-gray-100 text-sm space-y-10">
+  <h1 class="text-2xl font-bold mb-4">Clases de Outline en Tailwind CSS</h1>
+
+  <table class="table-auto w-full border border-gray-300 bg-white text-left text-sm">
+    <thead class="bg-gray-200">
+      <tr>
+        <th class="border px-4 py-2">Clase Tailwind</th>
+        <th class="border px-4 py-2">CSS equivalente</th>
+        <th class="border px-4 py-2">Ejemplo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- outline -->
+      <tr>
+        <td class="border px-4 py-2">outline</td>
+        <td class="border px-4 py-2">outline: 2px solid;</td>
+        <td class="border px-4 py-2">
+          <div class="outline w-32 h-12 bg-red-200"></div>
+        </td>
+      </tr>
+
+      <!-- outline-none -->
+      <tr>
+        <td class="border px-4 py-2">outline-none</td>
+        <td class="border px-4 py-2">outline: none;</td>
+        <td class="border px-4 py-2">
+          <div class="outline-none w-32 h-12 bg-red-200"></div>
+        </td>
+      </tr>
+
+      <!-- outline-val -->
+      <tr>
+        <td class="border px-4 py-2">outline-1</td>
+        <td class="border px-4 py-2">outline-width: 1px;</td>
+        <td class="border px-4 py-2">
+          <div class="outline outline-1 w-32 h-12 bg-red-200"></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">outline-4</td>
+        <td class="border px-4 py-2">outline-width: 4px;</td>
+        <td class="border px-4 py-2">
+          <div class="outline outline-4 w-32 h-12 bg-red-200"></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">outline-[6px]</td>
+        <td class="border px-4 py-2">outline-width: 6px;</td>
+        <td class="border px-4 py-2">
+          <div class="outline outline-[6px] w-32 h-12 bg-red-200"></div>
+        </td>
+      </tr>
+
+      <!-- outline-style -->
+      <tr>
+        <td class="border px-4 py-2">outline-dashed</td>
+        <td class="border px-4 py-2">outline-style: dashed;</td>
+        <td class="border px-4 py-2">
+          <div class="outline-2 outline-dashed w-32 h-12 bg-red-200"></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">outline-dotted</td>
+        <td class="border px-4 py-2">outline-style: dotted;</td>
+        <td class="border px-4 py-2">
+          <div class="outline-2 outline-dotted w-32 h-12 bg-red-200"></div>
+        </td>
+      </tr>
+
+      <!-- outline-color -->
+      <tr>
+        <td class="border px-4 py-2">outline-blue-500</td>
+        <td class="border px-4 py-2">outline-color: #3b82f6;</td>
+        <td class="border px-4 py-2">
+          <div class="outline outline-2 outline-blue-500 w-32 h-12 bg-red-200"></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">outline-[#ff00ff]</td>
+        <td class="border px-4 py-2">outline-color: #ff00ff;</td>
+        <td class="border px-4 py-2">
+          <div class="outline outline-2 outline-[#ff00ff] w-32 h-12 bg-red-200"></div>
+        </td>
+      </tr>
+
+      <!-- outline-offset -->
+      <tr>
+        <td class="border px-4 py-2">outline-offset-2</td>
+        <td class="border px-4 py-2">outline-offset: 2px;</td>
+        <td class="border px-4 py-2">
+          <div class="outline outline-2 outline-offset-2 w-32 h-12 bg-red-200"></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">outline-offset-[6px]</td>
+        <td class="border px-4 py-2">outline-offset: 6px;</td>
+        <td class="border px-4 py-2">
+          <div class="outline outline-2 outline-offset-[6px] w-32 h-12 bg-red-200"></div>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+</body>
+
+</html>

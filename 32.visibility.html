@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Utilidades de Visibilidad - Tailwind CSS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 p-8 text-sm space-y-10">
+
+  <h1 class="text-2xl font-bold mb-4">👁️ Utilidades de Visibilidad en Tailwind CSS</h1>
+
+  <section>
+    <h2 class="text-xl font-semibold mb-2">🔹 visibility</h2>
+    <table class="table-auto w-full border border-gray-300 bg-white text-left">
+      <thead class="bg-gray-200">
+        <tr>
+          <th class="border px-4 py-2">Clase Tailwind</th>
+          <th class="border px-4 py-2">CSS equivalente</th>
+          <th class="border px-4 py-2">Ejemplo</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr>
+          <td class="border px-4 py-2">visible</td>
+          <td class="border px-4 py-2">visibility: visible;</td>
+          <td class="border px-4 py-2">
+            <div class="bg-green-200 p-2">Este elemento es visible</div>
+            <div class="bg-green-200 p-2 visible">Este elemento es visible</div>
+            <div class="bg-green-200 p-2">Este elemento es visible</div>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="border px-4 py-2">invisible</td>
+          <td class="border px-4 py-2">visibility: hidden;</td>
+          <td class="border px-4 py-2">
+            <div class="bg-red-200 p-2">Este elemento está oculto (ocupa espacio)</div>
+            <div class="bg-red-200 p-2 invisible">Este elemento está oculto (ocupa espacio)</div>
+            <div class="bg-red-200 p-2">Este elemento está oculto (ocupa espacio)</div>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="border px-4 py-2">collapse</td>
+          <td class="border px-4 py-2">visibility: collapse;</td>
+          <td class="border px-4 py-2">
+            <table class="table-auto border border-black">
+              <tbody>
+                <tr class="bg-blue-100">
+                  <td class="border px-2 py-1">Fila colapsada (no se muestra) (hay una aqui⬇️)</td>
+                </tr>
+                <tr class="collapse bg-blue-100">
+                  <td class="border px-2 py-1">Fila colapsada (no se muestra)</td>
+                </tr>
+                <tr class="bg-blue-100">
+                  <td class="border px-2 py-1">Fila colapsada (no se muestra) (hay una aqui⬆️)</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </section>
+
+</body>
+
+</html>

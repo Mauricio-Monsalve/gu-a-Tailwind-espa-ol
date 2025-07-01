@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Utilidades de Z-Index y Order - Tailwind CSS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .caja {
+      background-color: dodgerblue;
+      color: white;
+      text-align: center;
+      padding: 0.5rem;
+      border-radius: 0.25rem;
+      width: 100px;
+      height: 50px;
+    }
+  </style>
+</head>
+
+<body class="p-8 bg-gray-100 text-sm space-y-10">
+  <h1 class="text-3xl font-bold mb-6">Posicionamiento por Capas: Z-Index y Order</h1>
+
+  <section>
+    <h2 class="text-xl font-semibold mb-2">🔹 z-index</h2>
+    <p class="text-gray-600 mb-4">🧠 La propiedad <code>z-index</code> determina qué elemento se coloca por encima o por
+      debajo de otros en el eje Z (profundidad).</p>
+    <table class="table-auto w-full border border-gray-300 mb-4">
+      <thead class="bg-gray-200">
+        <tr>
+          <th class="border px-4 py-2">Clase</th>
+          <th class="border px-4 py-2">CSS</th>
+          <th class="border px-4 py-2">Visual</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border px-4 py-2">z-0 / z-10 / z-20 / z-30 / z-50</td>
+          <td class="border px-4 py-2">z-index: 0/10/20/30/50</td>
+          <td class="border px-4 py-2">
+            <div class="relative h-40 w-60 border">
+              <div class="caja z-50 absolute left-6 top-0 bg-red-500">z-50</div>
+              <div class="caja z-0 absolute left-20 top-10 bg-green-500">z-0</div>
+              <div class="caja z-20 absolute left-32 top-20 bg-blue-500">z-20</div>
+              <div class="caja -z-10 absolute left-44 top-[7.5rem] bg-yellow-500">-z-10</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">z-[99] / z-auto / z-[-10]</td>
+          <td class="border px-4 py-2">z-index: 99 / auto / -10</td>
+          <td class="border px-4 py-2">
+            <div class="relative h-40 w-60 border">
+              <div class="caja z-[99] absolute left-6 top-0 bg-purple-500">z-[99]</div>
+              <div class="caja z-auto absolute left-20 top-10 bg-orange-500">z-auto</div>
+              <div class="caja -z-10 absolute left-32 top-20 bg-gray-600">-z-10</div>
+              <div class="caja z-0 absolute left-44 top-[7.5rem] bg-blue-500">Z 0</div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2 class="text-xl font-semibold mb-2">🔹 order</h2>
+    <p class="text-gray-600 mb-4">🧠 La propiedad <code>order</code> cambia el orden visual de los elementos dentro de
+      un contenedor flex o grid, sin alterar su posición en el HTML.</p>
+    <table class="table-auto w-full border border-gray-300 bg-white mb-4">
+      <thead class="bg-gray-200">
+        <tr>
+          <th class="border px-4 py-2">Clase</th>
+          <th class="border px-4 py-2">CSS</th>
+          <th class="border px-4 py-2">Ejemplo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border px-4 py-2">order-first, order-last, order-none</td>
+          <td class="border px-4 py-2">order: -9999 / 9999 / 0</td>
+          <td class="border px-4 py-2">
+            <div class="flex gap-2"> 
+              <div class="caja order-last bg-red-500">last</div>
+              <div class="caja order-none bg-green-500">none</div>
+              <div class="caja order-first bg-blue-500">first</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">order-1 / order-5 / order-[12] / -order-1</td>
+          <td class="border px-4 py-2">order: 1 / 5 / 12 / -1</td>
+          <td class="border px-4 py-2">
+            <div class="flex gap-2">
+              <div class="caja order-5 bg-yellow-400">order-5</div>
+              <div class="caja order-[12] bg-pink-400">order-[12]</div>
+              <div class="caja -order-1 bg-indigo-400">-order-1</div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</body>
+
+</html>

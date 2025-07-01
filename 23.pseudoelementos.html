@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pseudoelementos en Tailwind CSS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .test-box {
+      width: 300px;
+      border: 1px solid #999;
+      padding: 8px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body class="p-8 bg-gray-100 text-sm space-y-10">
+
+  <h1 class="text-3xl font-bold mb-6">🎯 Pseudoelementos en Tailwind CSS</h1>
+
+  <!-- BEFORE -->
+  <section>
+    <h2 class="text-xl font-semibold mb-4">🔹 ::before</h2>
+    <table class="table-auto border border-gray-400 bg-white mb-10">
+      <thead>
+        <tr class="bg-gray-200">
+          <th class="border px-4 py-2">Clase Tailwind</th>
+          <th class="border px-4 py-2">Equivalente CSS</th>
+          <th class="border px-4 py-2">Ejemplo visual</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border px-4 py-2">before:content-['★'] before:text-pink-500</td>
+          <td class="border px-4 py-2">::before { content: '★'; color: #ec4899; }</td>
+          <td class="border px-4 py-2">
+            <div class="test-box before:content-['★'] before:text-pink-500 before:mr-2">
+              Texto con estrella al inicio
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- AFTER -->
+  <section>
+    <h2 class="text-xl font-semibold mb-4">🔹 ::after</h2>
+    <table class="table-auto border border-gray-400 bg-white mb-10">
+      <thead>
+        <tr class="bg-gray-200">
+          <th class="border px-4 py-2">Clase Tailwind</th>
+          <th class="border px-4 py-2">Equivalente CSS</th>
+          <th class="border px-4 py-2">Ejemplo visual</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border px-4 py-2">after:content-['✓'] after:text-green-600</td>
+          <td class="border px-4 py-2">::after { content: '✓'; color: #16a34a; }</td>
+          <td class="border px-4 py-2">
+            <div class="test-box after:content-['✓'] after:text-green-600 after:ml-2">
+              Tarea completada
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- FIRST-LETTER -->
+  <section>
+    <h2 class="text-xl font-semibold mb-4">🔹 ::first-letter</h2>
+    <table class="table-auto border border-gray-400 bg-white mb-10">
+      <thead>
+        <tr class="bg-gray-200">
+          <th class="border px-4 py-2">Clase Tailwind</th>
+          <th class="border px-4 py-2">Equivalente CSS</th>
+          <th class="border px-4 py-2">Ejemplo visual</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border px-4 py-2">first-letter:text-red-500 first-letter:text-2xl first-letter:font-bold</td>
+          <td class="border px-4 py-2">::first-letter { color: red; font-size: 1.5rem; font-weight: bold; }</td>
+          <td class="border px-4 py-2">
+            <div class="test-box first-letter:text-red-500 first-letter:text-2xl first-letter:font-bold">
+              lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- FIRST-LINE -->
+  <section>
+    <h2 class="text-xl font-semibold mb-4">🔹 ::first-line</h2>
+    <table class="table-auto border border-gray-400 bg-white mb-10">
+      <thead>
+        <tr class="bg-gray-200">
+          <th class="border px-4 py-2">Clase Tailwind</th>
+          <th class="border px-4 py-2">Equivalente CSS</th>
+          <th class="border px-4 py-2">Ejemplo visual</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border px-4 py-2">first-line:uppercase first-line:tracking-wider</td>
+          <td class="border px-4 py-2">::first-line { text-transform: uppercase; letter-spacing: .1em; }</td>
+          <td class="border px-4 py-2">
+            <div class="test-box first-line:uppercase first-line:tracking-wider">
+              Esta es la primera línea. Esta es la segunda línea de ejemplo que no se verá afectada.
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+</body>
+</html>
+ 

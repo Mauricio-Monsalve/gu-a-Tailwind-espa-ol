@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Selectores Especiales: group y peer en Tailwind</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="p-10 text-sm bg-gray-100 space-y-16">
+
+  <h1 class="text-3xl font-bold">🧩 Selectores especiales en Tailwind: <code>group</code> y <code>peer</code></h1>
+
+  <!-- Introducción -->
+  <section>
+    <h2 class="text-xl font-semibold mb-4">📘 Introducción</h2>
+    <p>Tailwind utiliza clases como <code>group</code> y <code>peer</code> para aplicar estilos a elementos en función
+      del estado de otros elementos relacionados, como un contenedor padre o un elemento adyacente.</p>
+  </section>
+
+  <!-- Ejemplo padre-hijo -->
+  <section>
+    <h2 class="text-xl font-semibold mb-4">👨‍👧 Ejemplo padre-hijo</h2>
+    <div class="group w-64 p-4 border border-gray-400 hover:bg-blue-100">
+      <p class="text-gray-700 group-hover:text-blue-600">Texto que cambia al pasar el mouse por el contenedor</p>
+    </div>
+  </section>
+
+  <!-- Ejemplo elementos adyacentes -->
+  <section>
+    <h2 class="text-xl font-semibold mb-4">👯 Ejemplo elementos adyacentes</h2>
+    <div>
+      <input type="checkbox" id="check" class="peer hidden">
+      <label for="check" class="cursor-pointer text-blue-700 underline">Mostrar mensaje</label>
+      <p class="peer-checked:block hidden mt-2 text-green-600">✅ ¡Checkbox activado!</p>
+    </div>
+  </section>
+
+  <!-- Sección GROUP -->
+  <section>
+    <h2 class="text-xl font-semibold mb-4">👥 Uso de <code>group</code></h2>
+
+    <h3 class="font-bold">🔧 Cómo era en CSS</h3>
+    <pre><code>/* CSS tradicional */
+.padre:hover .hijo {
+  color: red;
+}</code></pre>
+
+    <h3 class="font-bold mt-4">💡 Cómo es en Tailwind</h3>
+    <pre><code>&lt;div class="group"&gt;
+  &lt;p class="group-hover:text-red-500"&gt;Texto hijo&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+
+    <h3 class="font-bold mt-4">📘 Explicación</h3>
+    <p>Se aplica la clase <code>group</code> al contenedor, y luego en los hijos se usa <code>group-hover:</code> para
+      modificar su estilo según el estado del padre.</p>
+
+    <h3 class="font-bold mt-6 mb-2">📊 Tabla Comparativa</h3>
+    <table class="table-auto border border-gray-300 bg-white">
+      <thead class="bg-gray-200">
+        <tr>
+          <th class="border px-4 py-2">Acción</th>
+          <th class="border px-4 py-2">CSS</th>
+          <th class="border px-4 py-2">Tailwind</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border px-4 py-2">Hover sobre padre</td>
+          <td class="border px-4 py-2">.padre:hover .hijo</td>
+          <td class="border px-4 py-2">group-hover:</td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">Focus sobre padre</td>
+          <td class="border px-4 py-2">.padre:focus .hijo</td>
+          <td class="border px-4 py-2">group-focus:</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Sección PEER -->
+  <section>
+    <h2 class="text-xl font-semibold mb-4">🧍 Uso de <code>peer</code></h2>
+
+    <h3 class="font-bold">🔧 Cómo era en CSS</h3>
+    <pre><code>/* CSS tradicional */
+input:checked + p {
+  display: block;
+}</code></pre>
+
+    <h3 class="font-bold mt-4">💡 Cómo es en Tailwind</h3>
+    <pre><code>&lt;input type="checkbox" class="peer"&gt;
+&lt;p class="peer-checked:block hidden"&gt;Texto visible solo cuando el checkbox está activo&lt;/p&gt;
+</code></pre>
+
+    <h3 class="font-bold mt-4">📘 Explicación</h3>
+    <p>Aplica <code>peer</code> al elemento que actúa como "referencia" y luego usa <code>peer-estado:</code> en el
+      elemento dependiente para reaccionar a su estado.</p>
+
+    <h3 class="font-bold mt-6 mb-2">📊 Tabla Comparativa</h3>
+    <table class="table-auto border border-gray-300 bg-white">
+      <thead class="bg-gray-200">
+        <tr>
+          <th class="border px-4 py-2">Acción</th>
+          <th class="border px-4 py-2">CSS</th>
+          <th class="border px-4 py-2">Tailwind</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border px-4 py-2">Elemento adyacente visible con checkbox</td>
+          <td class="border px-4 py-2">input:checked + p</td>
+          <td class="border px-4 py-2">peer-checked:</td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">Elemento responde al focus del anterior</td>
+          <td class="border px-4 py-2">input:focus + label</td>
+          <td class="border px-4 py-2">peer-focus:</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="my-12">
+    <h2 class="text-2xl font-bold mb-4">🧩 Reglas Personalizadas con <code>group-[selector]:</code> y
+      <code>peer-[selector]:</code>
+    </h2>
+
+    <p class="mb-6 text-gray-700">
+      Tailwind permite definir estilos condicionales basados en cualquier selector válido (clase, atributo, pseudoclase,
+      etc.) usando corchetes <code>[]</code>. Esto extiende su flexibilidad para situaciones donde no hay una variante
+      predefinida como <code>hover:</code> o <code>focus:</code>.
+    </p>
+
+    <div class="space-y-8">
+      <!-- Ejemplo group-[.activo] -->
+      <div>
+        <p class="font-semibold mb-2">Ejemplo: <code>group-[.activo]:text-green-600</code></p>
+        <div class="space-y-2">
+          <div class="group activo p-4 border rounded">
+            <p class="group-[.activo]:text-green-600">Este texto se vuelve verde si el grupo tiene la clase
+              <code>.activo</code>.
+            </p>
+          </div>
+          <div class="group p-4 border rounded">
+            <p class="group-[.activo]:text-green-600">Este texto no cambia porque no hay clase <code>.activo</code> en
+              el padre.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ejemplo peer-[checked] -->
+      <div>
+        <p class="font-semibold mb-2">Ejemplo: <code>peer-[:checked]:bg-blue-200</code></p>
+        <div>
+          <input type="checkbox" id="check1" class="peer hidden">
+          <label for="check1" class="block p-4 border rounded peer-[:checked]:bg-blue-200 cursor-pointer">
+            Haz clic aquí para cambiar el fondo
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tabla explicativa -->
+    <div class="mt-10">
+      <h3 class="text-xl font-semibold mb-2">Comparativa</h3>
+      <table class="table-auto w-full border border-gray-300 text-sm">
+        <thead>
+          <tr class="bg-gray-100">
+            <th class="border px-4 py-2 text-left">Clase Tailwind</th>
+            <th class="border px-4 py-2 text-left">Selector Detectado</th>
+            <th class="border px-4 py-2 text-left">Resultado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="border px-4 py-2"><code>group-[.activo]:text-green-600</code></td>
+            <td class="border px-4 py-2">Padre con clase <code>.activo</code></td>
+            <td class="border px-4 py-2">El hijo se muestra en verde</td>
+          </tr>
+          <tr>
+            <td class="border px-4 py-2"><code>peer-[:checked]:bg-blue-200</code></td>
+            <td class="border px-4 py-2">Elemento <code>input</code> con estado <code>checked</code></td>
+            <td class="border px-4 py-2">El siguiente elemento cambia el fondo</td>
+          </tr>
+          <tr>
+            <td class="border px-4 py-2"><code>group-[aria-expanded=true]:text-red-500</code></td>
+            <td class="border px-4 py-2">Padre con atributo <code>aria-expanded="true"</code></td>
+            <td class="border px-4 py-2">El hijo se muestra en rojo</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="mt-6 text-gray-600 text-sm italic">
+      Recuerda: estos selectores personalizados deben escribirse exactamente como aparecen en el HTML del elemento padre
+      o peer, y se evalúan directamente en el navegador.
+    </p>
+  </section>
+
+<section class="space-y-10 p-8 bg-white text-sm">
+  <h2 class="text-2xl font-bold">🧩 Grupos y Peers Nombrados en Tailwind</h2>
+  <p class="mb-6">Desde Tailwind v3.3 puedes nombrar tus <code>group</code> y <code>peer</code> para controlar múltiples contextos sin conflicto. Así, puedes tener varios grupos o peers en el mismo componente, y cada uno aplicar variantes específicas sin interferir entre sí.</p>
+
+  <!-- Ejemplo con elementos -->
+  <div class="flex gap-10">
+    <!-- Grupo A -->
+    <div class="group/a p-4 border border-gray-400 space-y-2">
+      <p class="font-semibold">Grupo A</p>
+      <button class="group-hover/a:bg-blue-100 px-2 py-1 border">Hover aquí</button>
+
+      <p class="group-hover/a:text-blue-500">
+        Este texto cambia de color si el grupo A se hace hover
+      </p>
+    </div>
+
+    <!-- Grupo B -->
+    <div class="group/b p-4 border border-gray-400 space-y-2">
+      <p class="font-semibold">Grupo B</p>
+      <button class="group-hover/b:bg-pink-100 px-2 py-1 border">Hover aquí</button>
+
+      <p class="group-hover/b:text-pink-500">
+        Este texto cambia de color si el grupo B se hace hover
+      </p>
+    </div>
+  </div>
+
+  <!-- Peer nombrado -->
+  <div class="mt-12">
+    <label class="block font-semibold mb-2">👥 Ejemplo con <code>peer/nombre</code></label>
+    <div class="space-y-2">
+      <input type="checkbox" id="check2" class="peer/toggle hidden">
+      <label for="check2" class="cursor-pointer px-3 py-2 bg-gray-200 inline-block rounded">
+        Toggle
+      </label>
+      <p class="peer-checked/toggle:text-green-600">
+        Este texto se vuelve verde si el checkbox está marcado
+      </p>
+    </div>
+  </div>
+
+  <!-- Tabla comparativa -->
+  <h3 class="text-xl font-semibold mt-12">📊 Comparativa: Sintaxis con nombre</h3>
+  <table class="table-auto border border-gray-300 bg-white w-full text-left">
+    <thead class="bg-gray-100">
+      <tr>
+        <th class="border px-4 py-2">Elemento</th>
+        <th class="border px-4 py-2">Clase Tailwind</th>
+        <th class="border px-4 py-2">Descripción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="border px-4 py-2">Padre</td>
+        <td class="border px-4 py-2"><code>group/a</code></td>
+        <td class="border px-4 py-2">Define un grupo con el nombre <strong>a</strong></td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">Hijo reactivo</td>
+        <td class="border px-4 py-2"><code>group-hover/a:bg-blue-100</code></td>
+        <td class="border px-4 py-2">Aplica estilo si el <strong>grupo "a"</strong> está en hover</td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">Peer</td>
+        <td class="border px-4 py-2"><code>peer/toggle</code></td>
+        <td class="border px-4 py-2">Define un peer con el nombre <strong>toggle</strong></td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">Hijo reactivo</td>
+        <td class="border px-4 py-2"><code>peer-checked/toggle:text-green-600</code></td>
+        <td class="border px-4 py-2">Aplica estilo si el <strong>peer "toggle"</strong> está marcado</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+</body>
+
+</html>

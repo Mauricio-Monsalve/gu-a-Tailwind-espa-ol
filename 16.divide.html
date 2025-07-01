@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Divide - Tailwind CSS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .demo-box {
+      @apply bg-white text-center py-2 text-xs;
+    }
+    .divide-black > :not([hidden]) ~ :not([hidden]) {
+      border-color: black !important;
+    }
+  </style>
+</head>
+
+<body class="p-8 bg-gray-100 text-sm space-y-10">
+  <h1 class="text-2xl font-bold mb-4">Clases Divide en Tailwind CSS</h1>
+
+  <table class="table-auto w-full border border-gray-300 bg-white text-left text-sm">
+    <thead class="bg-gray-200">
+      <tr>
+        <th class="border px-4 py-2">Clase Tailwind</th>
+        <th class="border px-4 py-2">CSS equivalente</th>
+        <th class="border px-4 py-2">Ejemplo</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <!-- divide-x / divide-y / reverse / normal / valor -->
+      <tr>
+        <td class="border px-4 py-2">divide-x</td>
+        <td class="border px-4 py-2">border-left-width: 1px en hijos</td>
+        <td class="border px-4 py-2">
+          <div class="flex divide-x divide-black">
+            <div class="demo-box w-1/2">Caja 1</div>
+            <div class="demo-box w-1/2">Caja 2</div>
+            <div class="demo-box w-1/2">Caja 3</div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">divide-x-2</td>
+        <td class="border px-4 py-2">border-left-width: 2px en hijos</td>
+        <td class="border px-4 py-2">
+          <div class="flex divide-x-2 divide-black">
+            <div class="demo-box w-1/2">Caja 1</div>
+            <div class="demo-box w-1/2">Caja 2</div>
+            <div class="demo-box w-1/2">Caja 3</div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">divide-x-4</td>
+        <td class="border px-4 py-2">border-left-width: 2px en hijos</td>
+        <td class="border px-4 py-2">
+          <div class="flex divide-x-4 divide-black">
+            <div class="demo-box w-1/2">Caja 1</div>
+            <div class="demo-box w-1/2">Caja 2</div>
+            <div class="demo-box w-1/2">Caja 3</div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">divide-y</td>
+        <td class="border px-4 py-2">border-top-width: 1px en hijos</td>
+        <td class="border px-4 py-2">
+          <div class="flex flex-col divide-y divide-black">
+            <div class="demo-box">Fila 1</div>
+            <div class="demo-box">Fila 2</div>
+            <div class="demo-box">Fila 3</div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">divide-y-2</td>
+        <td class="border px-4 py-2">border-top-width: 2px en hijos</td>
+        <td class="border px-4 py-2">
+          <div class="flex flex-col divide-y-2 divide-black">
+            <div class="demo-box">Fila 1</div>
+            <div class="demo-box">Fila 2</div>
+            <div class="demo-box">Fila 3</div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">divide-y-4</td>
+        <td class="border px-4 py-2">border-top-width: 4px en hijos</td>
+        <td class="border px-4 py-2">
+          <div class="flex flex-col divide-y-4 divide-black">
+            <div class="demo-box">Fila 1</div>
+            <div class="demo-box">Fila 2</div>
+            <div class="demo-box">Fila 3</div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2" rowspan="3">divide-x-reverse</td>
+        <td class="border px-4 py-2" rowspan="3">aplica inversión del orden visual</td>
+        <td class="border px-4 py-2">
+          <div class="flex divide-x divide-x-reverse divide-black">
+            <div class="demo-box w-1/2">A</div>
+            <div class="demo-box w-1/2">B</div>
+            <div class="demo-box w-1/2">C</div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">
+          <div class="flex divide-x-2 divide-x-reverse divide-black">
+            <div class="demo-box w-1/2">A</div>
+            <div class="demo-box w-1/2">B</div>
+            <div class="demo-box w-1/2">C</div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">
+          <div class="flex divide-x-4 divide-x-reverse divide-black">
+            <div class="demo-box w-1/2">A</div>
+            <div class="demo-box w-1/2">B</div>
+            <div class="demo-box w-1/2">C</div>
+          </div>
+        </td>
+      </tr>
+      
+      
+      <tr>
+        <td class="border px-4 py-2" rowspan="3">divide-y-reverse</td>
+        <td class="border px-4 py-2" rowspan="3">aplica inversión del orden visual</td>
+        <td class="border px-4 py-2">
+          <div class="flex flex-col divide-y divide-y-reverse divide-black">
+            <div class="demo-box">Fila 1</div>
+            <div class="demo-box">Fila 2</div>
+            <div class="demo-box">Fila 3</div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">
+          <div class="flex flex-col divide-y-2 divide-y-reverse divide-black">
+            <div class="demo-box">Fila 1</div>
+            <div class="demo-box">Fila 2</div>
+            <div class="demo-box">Fila 3</div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">
+          <div class="flex flex-col divide-y-4 divide-y-reverse divide-black">
+            <div class="demo-box">Fila 1</div>
+            <div class="demo-box">Fila 2</div>
+            <div class="demo-box">Fila 3</div>
+          </div>
+        </td>
+      </tr>
+
+      <!-- divide-style -->
+      <tr>
+        <td class="border px-4 py-2">divide-dashed</td>
+        <td class="border px-4 py-2">border-style: dashed;</td>
+        <td class="border px-4 py-2">
+          <div class="flex divide-x-2 divide-dashed divide-black">
+            <div class="demo-box w-1/2">Caja A</div>
+            <div class="demo-box w-1/2">Caja B</div>
+            <div class="demo-box w-1/2">Caja C</div>
+          </div>
+        </td>
+      </tr>
+
+      <!-- divide-color -->
+      <tr>
+        <td class="border px-4 py-2">divide-green-500</td>
+        <td class="border px-4 py-2">border-color: #22c55e;</td>
+        <td class="border px-4 py-2">
+          <div class="flex divide-x-4 divide-green-500">
+            <div class="demo-box w-1/2">Caja A</div>
+            <div class="demo-box w-1/2">Caja B</div>
+            <div class="demo-box w-1/2">Caja C</div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">divide-[#ff00ff]</td>
+        <td class="border px-4 py-2">border-color: #ff00ff;</td>
+        <td class="border px-4 py-2">
+          <div class="flex divide-x-4 divide-[#ff00ff]">
+            <div class="demo-box w-1/2">Caja A</div>
+            <div class="demo-box w-1/2">Caja B</div>
+            <div class="demo-box w-1/2">Caja C</div>
+          </div>
+        </td>
+      </tr>
+
+      <!-- divide-opacity -->
+      <tr>
+        <td class="border px-4 py-2">divide-opacity-50</td>
+        <td class="border px-4 py-2">border-opacity: 0.5;</td>
+        <td class="border px-4 py-2">
+          <div class="flex divide-x-4 divide-green-500 divide-opacity-50">
+            <div class="demo-box w-1/2">Caja A</div>
+            <div class="demo-box w-1/2">Caja B</div>
+            <div class="demo-box w-1/2">Caja C</div>
+          </div>
+        </td>
+      </tr>
+
+      <!-- divide-color/opacity -->
+      <tr>
+        <td class="border px-4 py-2">divide-pink-500/30</td>
+        <td class="border px-4 py-2">border-color: rgba(236, 72, 153, 0.3);</td>
+        <td class="border px-4 py-2">
+          <div class="flex divide-x-8 divide-pink-500/30">
+            <div class="demo-box w-1/2">Caja A</div>
+            <div class="demo-box w-1/2">Caja B</div>
+            <div class="demo-box w-1/2">Caja C</div>
+          </div>
+        </td>
+      </tr>
+
+      <!-- divide personalizado -->
+      <tr>
+        <td class="border px-4 py-2">divide-x-[6px]</td>
+        <td class="border px-4 py-2">border-left-width: 6px en hijos</td>
+        <td class="border px-4 py-2">
+          <div class="flex divide-x-[6px] divide-purple-500">
+            <div class="demo-box w-1/2">Caja A</div>
+            <div class="demo-box w-1/2">Caja B</div>
+            <div class="demo-box w-1/2">Caja C</div>
+          </div>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+</body>
+
+</html>

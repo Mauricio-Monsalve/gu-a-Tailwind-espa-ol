@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clases Snap - Tailwind CSS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="p-8 bg-gray-100 text-sm space-y-10">
+  <h1 class="text-3xl font-bold mb-6">🧭 Utilidades Snap en Tailwind CSS</h1>
+  <table class="table-auto w-full border border-gray-300 bg-white">
+    <thead class="bg-gray-200">
+      <tr>
+        <th class="border px-4 py-2">Clase Tailwind</th>
+        <th class="border px-4 py-2">Equivalente CSS</th>
+        <th class="border px-4 py-2">Descripción</th>
+        <th class="border px-4 py-2">Ejemplo</th>
+      </tr>
+    </thead>
+    <tbody>
+
+
+
+
+
+
+      <tr>
+        <td class="border px-4 py-2">
+          <pre>snap-none</pre>
+        </td>
+        <td class="border px-4 py-2">scroll-snap-type: none;</td>
+        <td class="border px-4 py-2">Desactiva el scroll snap.</td>
+        <td class="border px-4 py-2">
+          <div class="w-48 h-48 overflow-auto">
+            <div class="w-[50rem] h-[50rem] grid grid-cols-5">
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] bg-red-300">11</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] bg-orange-300">12</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] bg-yellow-300">13</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] bg-green-300">14</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] bg-blue-300">15</div>
+
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] bg-red-400">21</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] bg-orange-400">22</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] bg-yellow-400">23</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] bg-green-400">24</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] bg-blue-400">25</div>
+
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] bg-red-500">31</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] bg-orange-500">32</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] bg-yellow-500">33</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] bg-green-500">34</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] bg-blue-500">35</div>
+
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] bg-red-600">41</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] bg-orange-600">42</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] bg-yellow-600">43</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] bg-green-600">44</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] bg-blue-600">45</div>
+
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] bg-red-700">51</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] bg-orange-700">52</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] bg-yellow-700">53</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] bg-green-700">54</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] bg-blue-700">55</div>
+            </div>
+          </div>
+        </td>
+      </tr>
+
+
+
+
+
+
+
+      <tr>
+        <td class="border px-4 py-2">
+          <pre>snap-x<br>snap-mandatory</pre>
+        </td>
+        <td class="border px-4 py-2">scroll-snap-type: x mandatory;</td>
+        <td class="border px-4 py-2">Activa el scroll snap horizontal estricto.</td>
+        <td class="border px-4 py-2">
+          <div class="w-48 h-48 overflow-auto snap-x snap-mandatory">
+            <div class="w-[50rem] h-[50rem] grid grid-cols-5">
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-red-300">11</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-orange-300">12</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-yellow-300">13</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-green-300">14</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-blue-300">15</div>
+
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-red-400">21</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-orange-400">22</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-yellow-400">23</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-green-400">24</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-blue-400">25</div>
+
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-red-500">31</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-orange-500">32</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-yellow-500">33</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-green-500">34</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-blue-500">35</div>
+
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-red-600">41</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-orange-600">42</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-yellow-600">43</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-green-600">44</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-blue-600">45</div>
+
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-red-700">51</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-orange-700">52</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-yellow-700">53</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-green-700">54</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-blue-700">55</div>
+            </div>
+          </div>
+        </td>
+      </tr>
+
+
+
+
+
+
+
+
+
+
+
+      <tr>
+        <td class="border px-4 py-2">
+          <pre>snap-y<br>snap-mandatory</pre>
+        </td>
+        <td class="border px-4 py-2">scroll-snap-type: y mandatory;</td>
+        <td class="border px-4 py-2">Activa el scroll snap vertical estricto.</td>
+        <td class="border px-4 py-2">
+          <div class="w-48 h-48 overflow-auto snap-y snap-mandatory">
+            <div class="w-[50rem] h-[50rem] grid grid-cols-5">
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-red-300">11</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-orange-300">12</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-yellow-300">13</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-green-300">14</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-blue-300">15</div>
+
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-red-400">21</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-orange-400">22</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-yellow-400">23</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-green-400">24</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-blue-400">25</div>
+
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-red-500">31</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-orange-500">32</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-yellow-500">33</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-green-500">34</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-blue-500">35</div>
+
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-red-600">41</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-orange-600">42</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-yellow-600">43</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-green-600">44</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-blue-600">45</div>
+
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-red-700">51</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-orange-700">52</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-yellow-700">53</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-green-700">54</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-blue-700">55</div>
+            </div>
+          </div>
+        </td>
+      </tr>
+
+
+
+
+
+
+
+      <tr>
+        <td class="border px-4 py-2">
+          <pre>snap-x<br>snap-proximity</pre>
+        </td>
+        <td class="border px-4 py-2">scroll-snap-type: x proximity;</td>
+        <td class="border px-4 py-2">Activa el scroll snap horizontal flexible.</td>
+        <td class="border px-4 py-2">
+          <div class="w-48 h-48 overflow-auto snap-x snap-proximity">
+            <div class="w-[50rem] h-[50rem] grid grid-cols-5">
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-red-300">11</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-orange-300">12</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-yellow-300">13</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-green-300">14</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-blue-300">15</div>
+
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-red-400">21</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-orange-400">22</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-yellow-400">23</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-green-400">24</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-blue-400">25</div>
+
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-red-500">31</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-orange-500">32</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-yellow-500">33</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-green-500">34</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-blue-500">35</div>
+
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-red-600">41</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-orange-600">42</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-yellow-600">43</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-green-600">44</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-blue-600">45</div>
+
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-red-700">51</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-orange-700">52</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-yellow-700">53</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-green-700">54</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-blue-700">55</div>
+            </div>
+          </div>
+        </td>
+      </tr>
+
+
+
+
+
+
+
+
+
+
+
+      <tr>
+        <td class="border px-4 py-2">
+          <pre>snap-y<br>snap-proximity</pre>
+        </td>
+        <td class="border px-4 py-2">scroll-snap-type: y proximity;</td>
+        <td class="border px-4 py-2">Activa el scroll snap vertical flexible.</td>
+        <td class="border px-4 py-2">
+          <div class="w-48 h-48 overflow-auto snap-y snap-proximity">
+            <div class="w-[50rem] h-[50rem] grid grid-cols-5">
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-red-300">11</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-orange-300">12</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-yellow-300">13</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-green-300">14</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-blue-300">15</div>
+
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-red-400">21</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-orange-400">22</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-yellow-400">23</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-green-400">24</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-blue-400">25</div>
+
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-red-500">31</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-orange-500">32</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-yellow-500">33</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-green-500">34</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-blue-500">35</div>
+
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-red-600">41</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-orange-600">42</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-yellow-600">43</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-green-600">44</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-blue-600">45</div>
+
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-red-700">51</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-orange-700">52</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-yellow-700">53</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-green-700">54</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-blue-700">55</div>
+            </div>
+          </div>
+        </td>
+      </tr>
+
+
+
+
+
+
+
+      <tr>
+        <td class="border px-4 py-2">
+          <pre>snap-both<br>snap-mandatory</pre>
+        </td>
+        <td class="border px-4 py-2">scroll-snap-type: both mandatory;</td>
+        <td class="border px-4 py-2">Activa el scroll snap multiple estricto.</td>
+        <td class="border px-4 py-2">
+          <div class="w-48 h-48 overflow-auto snap-both snap-mandatory">
+            <div class="w-[50rem] h-[50rem] grid grid-cols-5">
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-red-300">11</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-orange-300">12</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-yellow-300">13</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-green-300">14</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-blue-300">15</div>
+
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-red-400">21</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-orange-400">22</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-yellow-400">23</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-green-400">24</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-blue-400">25</div>
+
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-red-500">31</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-orange-500">32</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-yellow-500">33</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-green-500">34</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-blue-500">35</div>
+
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-red-600">41</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-orange-600">42</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-yellow-600">43</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-green-600">44</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-blue-600">45</div>
+
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-red-700">51</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-orange-700">52</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-yellow-700">53</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-green-700">54</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-blue-700">55</div>
+            </div>
+          </div>
+        </td>
+      </tr>
+
+
+
+
+
+
+
+
+
+      <tr>
+        <td class="border px-4 py-2">
+          <pre>snap-both<br>snap-proximity</pre>
+        </td>
+        <td class="border px-4 py-2">scroll-snap-type: both proximity;</td>
+        <td class="border px-4 py-2">Activa el scroll snap multiple flexible.</td>
+        <td class="border px-4 py-2">
+          <div class="w-48 h-48 overflow-auto snap-both snap-proximity">
+            <div class="w-[50rem] h-[50rem] grid grid-cols-5">
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-red-300">11</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-orange-300">12</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-yellow-300">13</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-green-300">14</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-blue-300">15</div>
+
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-red-400">21</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-orange-400">22</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-yellow-400">23</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-green-400">24</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-blue-400">25</div>
+
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-red-500">31</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-orange-500">32</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-yellow-500">33</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-green-500">34</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-blue-500">35</div>
+
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-red-600">41</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-orange-600">42</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-yellow-600">43</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-green-600">44</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-blue-600">45</div>
+
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-red-700">51</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-orange-700">52</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-yellow-700">53</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-green-700">54</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-blue-700">55</div>
+            </div>
+          </div>
+        </td>
+      </tr>
+
+
+
+
+      <tr>
+        <td class="border px-4 py-2">
+          <pre>snap-align-none</pre>
+        </td>
+        <td class="border px-4 py-2">scroll-snap-align: none;</td>
+        <td class="border px-4 py-2">Individualmente cada elemento no alineara (esta utilidad se le coloca a cada
+          elemento)</td>
+        <td class="border px-4 py-2">
+          <div class="w-48 h-48 overflow-auto snap-both snap-proximity">
+            <div class="w-[50rem] h-[50rem] grid grid-cols-5">
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-align-none bg-red-300">11</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-align-none bg-orange-300">12</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-align-none bg-yellow-300">13</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-align-none bg-green-300">14</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-align-none bg-blue-300">15</div>
+
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-align-none bg-red-400">21</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-align-none bg-orange-400">22</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-align-none bg-yellow-400">23</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-align-none bg-green-400">24</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-align-none bg-blue-400">25</div>
+
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-align-none bg-red-500">31</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-align-none bg-orange-500">32</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-align-none bg-yellow-500">33</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-align-none bg-green-500">34</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-align-none bg-blue-500">35</div>
+
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-align-none bg-red-600">41</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-align-none bg-orange-600">42</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-align-none bg-yellow-600">43</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-align-none bg-green-600">44</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-align-none bg-blue-600">45</div>
+
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-align-none bg-red-700">51</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-align-none bg-orange-700">52</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-align-none bg-yellow-700">53</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-align-none bg-green-700">54</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-align-none bg-blue-700">55</div>
+            </div>
+          </div>
+        </td>
+      </tr>
+
+
+
+
+
+
+
+
+      <tr>
+        <td class="border px-4 py-2">
+          <pre>snap-start</pre>
+        </td>
+        <td class="border px-4 py-2">scroll-snap-align: start;</td>
+        <td class="border px-4 py-2">Individualmente cada elemento se alineara desde el inicio (esta utilidad se le
+          coloca a cada elemento)</td>
+        <td class="border px-4 py-2">
+          <div class="w-48 h-48 overflow-auto snap-both snap-proximity">
+            <div class="w-[50rem] h-[50rem] grid grid-cols-5">
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-start bg-red-300">11</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-start bg-orange-300">12</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-start bg-yellow-300">13</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-start bg-green-300">14</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-start bg-blue-300">15</div>
+
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-start bg-red-400">21</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-start bg-orange-400">22</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-start bg-yellow-400">23</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-start bg-green-400">24</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-start bg-blue-400">25</div>
+
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-start bg-red-500">31</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-start bg-orange-500">32</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-start bg-yellow-500">33</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-start bg-green-500">34</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-start bg-blue-500">35</div>
+
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-start bg-red-600">41</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-start bg-orange-600">42</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-start bg-yellow-600">43</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-start bg-green-600">44</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-start bg-blue-600">45</div>
+
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-start bg-red-700">51</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-start bg-orange-700">52</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-start bg-yellow-700">53</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-start bg-green-700">54</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-start bg-blue-700">55</div>
+            </div>
+          </div>
+        </td>
+      </tr>
+
+
+
+
+
+
+
+      <tr>
+        <td class="border px-4 py-2">
+          <pre>snap-center</pre>
+        </td>
+        <td class="border px-4 py-2">scroll-snap-align: center;</td>
+        <td class="border px-4 py-2">Individualmente cada elemento se alineara desde el centro (esta utilidad se le
+          coloca a cada elemento)</td>
+        <td class="border px-4 py-2">
+          <div class="w-48 h-48 overflow-auto snap-both snap-proximity">
+            <div class="w-[50rem] h-[50rem] grid grid-cols-5">
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-red-300">11</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-orange-300">12</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-yellow-300">13</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-green-300">14</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-blue-300">15</div>
+
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-red-400">21</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-orange-400">22</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-yellow-400">23</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-green-400">24</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-blue-400">25</div>
+
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-red-500">31</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-orange-500">32</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-yellow-500">33</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-green-500">34</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-blue-500">35</div>
+
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-red-600">41</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-orange-600">42</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-yellow-600">43</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-green-600">44</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-blue-600">45</div>
+
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-red-700">51</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-orange-700">52</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-yellow-700">53</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-green-700">54</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center bg-blue-700">55</div>
+            </div>
+          </div>
+        </td>
+      </tr>
+
+
+
+
+
+
+
+
+
+
+
+
+      <tr>
+        <td class="border px-4 py-2">
+          <pre>snap-end</pre>
+        </td>
+        <td class="border px-4 py-2">scroll-snap-align: end;</td>
+        <td class="border px-4 py-2">Individualmente cada elemento se alineara desde el final (esta utilidad se le
+          coloca a cada elemento)</td>
+        <td class="border px-4 py-2">
+          <div class="w-48 h-48 overflow-auto snap-both snap-proximity">
+            <div class="w-[50rem] h-[50rem] grid grid-cols-5">
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-end bg-red-300">11</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-end bg-orange-300">12</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-end bg-yellow-300">13</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-end bg-green-300">14</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-end bg-blue-300">15</div>
+
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-end bg-red-400">21</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-end bg-orange-400">22</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-end bg-yellow-400">23</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-end bg-green-400">24</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-end bg-blue-400">25</div>
+
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-end bg-red-500">31</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-end bg-orange-500">32</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-end bg-yellow-500">33</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-end bg-green-500">34</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-end bg-blue-500">35</div>
+
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-end bg-red-600">41</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-end bg-orange-600">42</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-end bg-yellow-600">43</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-end bg-green-600">44</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-end bg-blue-600">45</div>
+
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-end bg-red-700">51</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-end bg-orange-700">52</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-end bg-yellow-700">53</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-end bg-green-700">54</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-end bg-blue-700">55</div>
+            </div>
+          </div>
+        </td>
+      </tr>
+
+
+
+
+
+
+
+
+
+      <tr>
+        <td class="border px-4 py-2">
+          <pre>snap-normal</pre>
+        </td>
+        <td class="border px-4 py-2">scroll-snap-stop: normal;</td>
+        <td class="border px-4 py-2">Este valor permite un desplazamiento más fluido a través de las posiciones de ajuste. El desplazamiento puede "saltar" o pasar por encima de una posición de ajuste si el usuario realiza un gesto rápido, sin detenerse necesariamente en cada punto de ajuste.  (esta utilidad se le
+          coloca a cada elemento)</td>
+        <td class="border px-4 py-2">
+          <div class="w-48 h-48 overflow-auto snap-both snap-proximity">
+            <div class="w-[50rem] h-[50rem] grid grid-cols-5">
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center snap-normal bg-red-300">11</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center snap-normal bg-orange-300">12</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center snap-normal bg-yellow-300">13</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center snap-normal bg-green-300">14</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center snap-normal bg-blue-300">15</div>
+
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center snap-normal bg-red-400">21</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center snap-normal bg-orange-400">22</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center snap-normal bg-yellow-400">23</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center snap-normal bg-green-400">24</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center snap-normal bg-blue-400">25</div>
+
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center snap-normal bg-red-500">31</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center snap-normal bg-orange-500">32</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center snap-normal bg-yellow-500">33</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center snap-normal bg-green-500">34</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center snap-normal bg-blue-500">35</div>
+
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center snap-normal bg-red-600">41</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center snap-normal bg-orange-600">42</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center snap-normal bg-yellow-600">43</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center snap-normal bg-green-600">44</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center snap-normal bg-blue-600">45</div>
+
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center snap-normal bg-red-700">51</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center snap-normal bg-orange-700">52</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center snap-normal bg-yellow-700">53</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center snap-normal bg-green-700">54</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center snap-normal bg-blue-700">55</div>
+            </div>
+          </div>
+        </td>
+      </tr>
+
+
+
+
+
+
+
+
+            <tr>
+        <td class="border px-4 py-2">
+          <pre>snap-always</pre>
+        </td>
+        <td class="border px-4 py-2">scroll-snap-stop: always;</td>
+        <td class="border px-4 py-2">IEste valor fuerza al navegador a detenerse en cada posición de ajuste, incluso si el usuario intenta desplazarse rápidamente. Esto garantiza que el usuario no se pierda ninguna posición de ajuste y que la experiencia de desplazamiento sea más precisa.  (esta utilidad se le
+          coloca a cada elemento)</td>
+        <td class="border px-4 py-2">
+          <div class="w-48 h-48 overflow-auto snap-both snap-proximity">
+            <div class="w-[50rem] h-[50rem] grid grid-cols-5">
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center snap-always bg-red-300">11</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center snap-always bg-orange-300">12</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center snap-always bg-yellow-300">13</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center snap-always bg-green-300">14</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center snap-always bg-blue-300">15</div>
+
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center snap-always bg-red-400">21</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center snap-always bg-orange-400">22</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center snap-always bg-yellow-400">23</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center snap-always bg-green-400">24</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center snap-always bg-blue-400">25</div>
+
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center snap-always bg-red-500">31</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center snap-always bg-orange-500">32</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center snap-always bg-yellow-500">33</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center snap-always bg-green-500">34</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center snap-always bg-blue-500">35</div>
+
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center snap-always bg-red-600">41</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center snap-always bg-orange-600">42</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center snap-always bg-yellow-600">43</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center snap-always bg-green-600">44</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center snap-always bg-blue-600">45</div>
+
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center snap-always bg-red-700">51</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center snap-always bg-orange-700">52</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center snap-always bg-yellow-700">53</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center snap-always bg-green-700">54</div>
+              <div class="w-32 h-32 m-4 outline outline-2 outline-offset-[1rem] snap-center snap-always bg-blue-700">55</div>
+            </div>
+          </div>
+        </td>
+      </tr>
+
+
+
+
+
+
+
+
+    </tbody>
+  </table>
+</body>
+
+</html>

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Utilidades Interactivas en Tailwind CSS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .demo-box {
+      padding: 0.5rem 1rem;
+      border: 1px solid #ccc;
+      display: inline-block;
+      background-color: #f3f3f3;
+      user-select: auto;
+    }
+  </style>
+</head>
+
+<body class="bg-neutral-100 text-neutral-800 p-8 space-y-12 font-sans">
+
+  <h1 class="text-2xl font-bold mb-6">🖱️ Utilidades Interactivas en Tailwind CSS</h1>
+
+  <!-- Cursor -->
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold">👆 Cursor</h2>
+    <p>Estas clases cambian el tipo de cursor cuando el usuario pasa el mouse por encima del elemento.</p>
+    <table class="table-auto border border-gray-300 w-full text-sm text-left">
+      <thead class="bg-gray-200">
+        <tr>
+          <th class="border px-4 py-2">Clase Tailwind</th>
+          <th class="border px-4 py-2">Equivalente CSS</th>
+          <th class="border px-4 py-2">Ejemplo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border px-4 py-2">cursor-auto</td>
+          <td class="border px-4 py-2">cursor: auto;</td>
+          <td class="border px-4 py-2"><span class="demo-box cursor-auto">Cursor automático</span></td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">cursor-default</td>
+          <td class="border px-4 py-2">cursor: default;</td>
+          <td class="border px-4 py-2"><span class="demo-box cursor-default">Cursor por defecto</span></td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">cursor-pointer</td>
+          <td class="border px-4 py-2">cursor: pointer;</td>
+          <td class="border px-4 py-2"><span class="demo-box cursor-pointer">Haz clic</span></td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">cursor-text</td>
+          <td class="border px-4 py-2">cursor: text;</td>
+          <td class="border px-4 py-2"><span class="demo-box cursor-text">Cursor de texto</span></td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">cursor-not-allowed</td>
+          <td class="border px-4 py-2">cursor: not-allowed;</td>
+          <td class="border px-4 py-2"><span class="demo-box cursor-not-allowed">No permitido</span></td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">cursor-wait</td>
+          <td class="border px-4 py-2">cursor: wait;</td>
+          <td class="border px-4 py-2"><span class="demo-box cursor-wait">Esperando...</span></td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">cursor-move</td>
+          <td class="border px-4 py-2">cursor: move;</td>
+          <td class="border px-4 py-2"><span class="demo-box cursor-move">Cursor de mover</span></td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">cursor-help</td>
+          <td class="border px-4 py-2">cursor: help;</td>
+          <td class="border px-4 py-2"><span class="demo-box cursor-help">Cursor de ayuda</span></td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">cursor-progress</td>
+          <td class="border px-4 py-2">cursor: progress;</td>
+          <td class="border px-4 py-2"><span class="demo-box cursor-progress">Cursor de progreso</span></td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">cursor-crosshair</td>
+          <td class="border px-4 py-2">cursor: crosshair;</td>
+          <td class="border px-4 py-2"><span class="demo-box cursor-crosshair">Cursor de mira</span></td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">cursor-none</td>
+          <td class="border px-4 py-2">cursor: none;</td>
+          <td class="border px-4 py-2"><span class="demo-box cursor-none">Sin cursor (pasa el mouse)</span></td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">cursor-cell</td>
+          <td class="border px-4 py-2">cursor: cell;</td>
+          <td class="border px-4 py-2"><span class="demo-box cursor-cell">Cursor de celda</span></td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">cursor-grab</td>
+          <td class="border px-4 py-2">cursor: grab;</td>
+          <td class="border px-4 py-2"><span class="demo-box cursor-grab">Cursor de agarre</span></td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">cursor-grabbing</td>
+          <td class="border px-4 py-2">cursor: grabbing;</td>
+          <td class="border px-4 py-2"><span class="demo-box cursor-grabbing">Cursor agarrando</span></td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">cursor-zoom-in</td>
+          <td class="border px-4 py-2">cursor: zoom-in;</td>
+          <td class="border px-4 py-2"><span class="demo-box cursor-zoom-in">Cursor de zoom in</span></td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">cursor-zoom-out</td>
+          <td class="border px-4 py-2">cursor: zoom-out;</td>
+          <td class="border px-4 py-2"><span class="demo-box cursor-zoom-out">Cursor de zoom out</span></td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">cursor-alias</td>
+          <td class="border px-4 py-2">cursor: alias;</td>
+          <td class="border px-4 py-2"><span class="demo-box cursor-alias">Cursor alias</span></td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">cursor-all-scroll</td>
+          <td class="border px-4 py-2">cursor: all-scroll;</td>
+          <td class="border px-4 py-2"><span class="demo-box cursor-all-scroll">Cursor all-scroll</span></td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">cursor-col-resize</td>
+          <td class="border px-4 py-2">cursor: col-resize;</td>
+          <td class="border px-4 py-2"><span class="demo-box cursor-col-resize">Cursor col-resize</span></td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">cursor-copy</td>
+          <td class="border px-4 py-2">cursor: copy;</td>
+          <td class="border px-4 py-2"><span class="demo-box cursor-copy">Cursor de copia</span></td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">cursor-e-resize</td>
+          <td class="border px-4 py-2">cursor: e-resize;</td>
+          <td class="border px-4 py-2"><span class="demo-box cursor-e-resize">Cursor este (→)</span></td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">cursor-n-resize</td>
+          <td class="border px-4 py-2">cursor: n-resize;</td>
+          <td class="border px-4 py-2"><span class="demo-box cursor-n-resize">Cursor norte (↑)</span></td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">cursor-ne-resize</td>
+          <td class="border px-4 py-2">cursor: ne-resize;</td>
+          <td class="border px-4 py-2"><span class="demo-box cursor-ne-resize">Cursor noreste (↗)</span></td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">cursor-ns-resize</td>
+          <td class="border px-4 py-2">cursor: ns-resize;</td>
+          <td class="border px-4 py-2"><span class="demo-box cursor-ns-resize">Cursor norte-sur (↕)</span></td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">cursor-nw-resize</td>
+          <td class="border px-4 py-2">cursor: nw-resize;</td>
+          <td class="border px-4 py-2"><span class="demo-box cursor-nw-resize">Cursor noroeste (↖)</span></td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">cursor-se-resize</td>
+          <td class="border px-4 py-2">cursor: se-resize;</td>
+          <td class="border px-4 py-2"><span class="demo-box cursor-se-resize">Cursor sureste (↘)</span></td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">cursor-sw-resize</td>
+          <td class="border px-4 py-2">cursor: sw-resize;</td>
+          <td class="border px-4 py-2"><span class="demo-box cursor-sw-resize">Cursor suroeste (↙)</span></td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">cursor-w-resize</td>
+          <td class="border px-4 py-2">cursor: w-resize;</td>
+          <td class="border px-4 py-2"><span class="demo-box cursor-w-resize">Cursor oeste (←)</span></td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">cursor-ew-resize</td>
+          <td class="border px-4 py-2">cursor: ew-resize;</td>
+          <td class="border px-4 py-2"><span class="demo-box cursor-ew-resize">Cursor este-oeste (↔)</span></td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">cursor-row-resize</td>
+          <td class="border px-4 py-2">cursor: row-resize;</td>
+          <td class="border px-4 py-2"><span class="demo-box cursor-row-resize">Cursor para filas</span></td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">cursor-vertical-text</td>
+          <td class="border px-4 py-2">cursor: vertical-text;</td>
+          <td class="border px-4 py-2"><span class="demo-box cursor-vertical-text">Texto vertical</span></td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">cursor-context-menu</td>
+          <td class="border px-4 py-2">cursor: context-menu;</td>
+          <td class="border px-4 py-2"><span class="demo-box cursor-context-menu">Menú contextual</span></td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">cursor-no-drop</td>
+          <td class="border px-4 py-2">cursor: no-drop;</td>
+          <td class="border px-4 py-2"><span class="demo-box cursor-no-drop">No se puede soltar</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Pointer Events -->
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold">🚫 Pointer Events</h2>
+    <p>Controlan si el elemento puede recibir eventos del mouse o no.</p>
+    <table class="table-auto border border-gray-300 w-full text-sm text-left">
+      <thead class="bg-gray-200">
+        <tr>
+          <th class="border px-4 py-2">Clase Tailwind</th>
+          <th class="border px-4 py-2">Equivalente CSS</th>
+          <th class="border px-4 py-2">Ejemplo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border px-4 py-2">pointer-events-none</td>
+          <td class="border px-4 py-2">pointer-events: none;</td>
+          <td class="border px-4 py-2">
+            <button class="demo-box pointer-events-none bg-red-200" onclick="alert('Probando');">No clicable</button>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">pointer-events-auto</td>
+          <td class="border px-4 py-2">pointer-events: auto;</td>
+          <td class="border px-4 py-2">
+            <button class="demo-box pointer-events-auto bg-green-200" onclick="alert('Probando');">Clicable</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- User Select -->
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold">🖋️ Selección de Texto</h2>
+    <p>Controlan si el usuario puede seleccionar el texto con el cursor.</p>
+    <table class="table-auto border border-gray-300 w-full text-sm text-left">
+      <thead class="bg-gray-200">
+        <tr>
+          <th class="border px-4 py-2">Clase Tailwind</th>
+          <th class="border px-4 py-2">Equivalente CSS</th>
+          <th class="border px-4 py-2">Ejemplo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border px-4 py-2">select-none</td>
+          <td class="border px-4 py-2">user-select: none;</td>
+          <td class="border px-4 py-2"><span class="demo-box select-none">No seleccionable</span></td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">select-text</td>
+          <td class="border px-4 py-2">user-select: text;</td>
+          <td class="border px-4 py-2"><span class="demo-box select-text">Selecciona este texto</span></td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">select-all</td>
+          <td class="border px-4 py-2">user-select: all;</td>
+          <td class="border px-4 py-2"><span class="demo-box select-all">Seleccionar todo</span></td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">select-auto</td>
+          <td class="border px-4 py-2">user-select: auto;</td>
+          <td class="border px-4 py-2"><span class="demo-box select-auto">Comportamiento predeterminado</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Resize -->
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold">📐 Resize</h2>
+    <p>Permite que los elementos (como <code>&lt;textarea&gt;</code>) se puedan redimensionar.</p>
+    <table class="table-auto border border-gray-300 w-full text-sm text-left">
+      <thead class="bg-gray-200">
+        <tr>
+          <th class="border px-4 py-2">Clase Tailwind</th>
+          <th class="border px-4 py-2">Equivalente CSS</th>
+          <th class="border px-4 py-2">Ejemplo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border px-4 py-2">resize</td>
+          <td class="border px-4 py-2">resize: both;</td>
+          <td class="border px-4 py-2"><textarea class="resize border p-1 w-40 h-16">Redimensiona</textarea></td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">resize-none</td>
+          <td class="border px-4 py-2">resize: none;</td>
+          <td class="border px-4 py-2"><textarea class="resize-none border p-1 w-40 h-16">Fijo</textarea></td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">resize-x</td>
+          <td class="border px-4 py-2">resize: horizontal;</td>
+          <td class="border px-4 py-2"><textarea class="resize-x border p-1 w-40 h-16">Horizontal</textarea></td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">resize-y</td>
+          <td class="border px-4 py-2">resize: vertical;</td>
+          <td class="border px-4 py-2"><textarea class="resize-y border p-1 w-40 h-16">Vertical</textarea></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+</body>
+
+</html>

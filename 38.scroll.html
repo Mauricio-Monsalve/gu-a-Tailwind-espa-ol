@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Utilidades scroll-* en Tailwind CSS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .caja {
+      background-color: dodgerblue;
+      color: white;
+      text-align: center;
+      padding: 0.5rem;
+      border-radius: 0.25rem;
+    }
+
+    .scroll-box {
+      width: 250px;
+      height: 150px;
+      border: 2px solid #ccc;
+      margin-bottom: 2rem;
+    }
+
+    .contenido-alto {
+      height: 400px;
+      background: linear-gradient(white, lightgray);
+    }
+
+    .contenido-ancho {
+      width: 800px;
+      background: linear-gradient(to right, white, lightgray);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 2rem;
+    }
+
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 0.5rem;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f3f4f6;
+    }
+  </style>
+</head>
+
+<body class="p-8 bg-gray-100 text-sm space-y-10">
+
+  <h1 class="text-3xl font-bold mb-6">🧭 Utilidades scroll-* en Tailwind CSS</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Clase Tailwind</th>
+        <th>Equivalente CSS</th>
+        <th>Descripción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>scroll-auto</code></td>
+        <td><code>scroll-behavior: auto;</code></td>
+        <td>Comportamiento por defecto del scroll.</td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <section>
+            <h2 class="text-xl font-semibold mb-2">🔹 scroll-auto</h2>
+            <a href="#destino1" class="text-blue-500 underline">Ir a destino1</a>
+            <div class="scroll-box overflow-y-scroll scroll-auto mt-2">
+              <div class="contenido-alto caja text-black">Desplázate abajo</div>
+              <div id="destino1" class="mt-32 bg-green-500 p-2 rounded text-white">Destino alcanzado</div>
+            </div>
+          </section>
+        </td>
+      </tr>
+      <tr>
+        <td><code>scroll-smooth</code></td>
+        <td><code>scroll-behavior: smooth;</code></td>
+        <td>Hace que el desplazamiento hacia un ancla o elemento sea suave.</td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <section>
+            <h2 class="text-xl font-semibold mb-2">🔹 scroll-smooth</h2>
+            <a href="#destino2" class="text-blue-500 underline">Ir a destino2</a>
+            <div class="scroll-box overflow-y-scroll scroll-smooth mt-2">
+              <div class="contenido-alto caja">Desplázate abajo</div>
+              <div id="destino2" class="mt-32 bg-green-500 p-2 rounded text-white">Destino alcanzado</div>
+            </div>
+          </section>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+
+</html>

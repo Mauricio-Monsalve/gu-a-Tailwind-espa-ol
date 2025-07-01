@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Propiedades Flexbox - Tailwind</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .box1 {
+      width: 40px;
+      height: 40px;
+      background-color: #ef4444;
+    }
+
+    /* rojo */
+    .box2 {
+      width: 40px;
+      height: 40px;
+      background-color: #3b82f6;
+    }
+
+    /* azul */
+    .box3 {
+      width: 40px;
+      height: 40px;
+      background-color: #10b981;
+    }
+
+    /* verde */
+  </style>
+</head>
+
+<body class="p-8 bg-gray-100 text-sm">
+  <h1 class="text-2xl font-bold mb-4">Tabla de Clases Flexbox - Tailwind</h1>
+
+  <table class="table-auto w-full border border-gray-300 bg-white text-sm">
+    <thead>
+      <tr class="bg-gray-200">
+        <th class="border px-4 py-2">Clase</th>
+        <th class="border px-4 py-2">CSS</th>
+        <th class="border px-4 py-2">Ejemplo</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr>
+        <td class="border px-4 py-2 align-top">flex</td>
+        <td class="border px-4 py-2 align-top">display: flex;</td>
+        <td class="border px-4 py-2">
+          <div class="flex gap-1 p-2 bg-white border border-black h-32 w-full flex">
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="border px-4 py-2 align-top">inline-flex</td>
+        <td class="border px-4 py-2 align-top">display: inline-flex;</td>
+        <td class="border px-4 py-2">
+          <div class="flex gap-1 p-2 bg-white border border-black h-32 w-full inline-flex">
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="border px-4 py-2 align-top">flex-row</td>
+        <td class="border px-4 py-2 align-top">flex-direction: row;</td>
+        <td class="border px-4 py-2">
+          <div class="flex gap-1 p-2 bg-white border border-black h-32 w-full flex-row">
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="border px-4 py-2 align-top">flex-row-reverse</td>
+        <td class="border px-4 py-2 align-top">flex-direction: row-reverse;</td>
+        <td class="border px-4 py-2">
+          <div
+            class="flex gap-1 p-2 bg-white border border-black h-32 w-full flex-row-reverse">
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="border px-4 py-2 align-top">flex-col</td>
+        <td class="border px-4 py-2 align-top">flex-direction: column;</td>
+        <td class="border px-4 py-2">
+          <div class="flex gap-1 p-2 bg-white border border-black h-32 w-full flex-col">
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="border px-4 py-2 align-top">flex-col-reverse</td>
+        <td class="border px-4 py-2 align-top">flex-direction: column-reverse;</td>
+        <td class="border px-4 py-2">
+          <div
+            class="flex gap-1 p-2 bg-white border border-black h-32 w-full flex-col-reverse">
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="border px-4 py-2 align-top">flex-wrap</td>
+        <td class="border px-4 py-2 align-top">flex-wrap: wrap;</td>
+        <td class="border px-4 py-2">
+          <div class="flex gap-1 p-2 bg-white border border-black h-32 w-[120px] flex-wrap">
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="border px-4 py-2 align-top">flex-wrap-reverse</td>
+        <td class="border px-4 py-2 align-top">flex-wrap: wrap-reverse;</td>
+        <td class="border px-4 py-2">
+          <div
+            class="flex gap-1 p-2 bg-white border border-black h-32 w-[120px] flex-wrap-reverse">
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="border px-4 py-2 align-top">flex-nowrap</td>
+        <td class="border px-4 py-2 align-top">flex-wrap: nowrap;</td>
+        <td class="border px-4 py-2">
+          <div class="flex gap-1 p-2 bg-white border border-black h-32 w-[120px] flex-nowrap">
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="border px-4 py-2 align-top">items-start</td>
+        <td class="border px-4 py-2 align-top">align-items: flex-start;</td>
+        <td class="border px-4 py-2">
+          <div class="flex gap-1 p-2 bg-white border border-black h-32 w-full items-start">
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="border px-4 py-2 align-top">items-center</td>
+        <td class="border px-4 py-2 align-top">align-items: center;</td>
+        <td class="border px-4 py-2">
+          <div class="flex gap-1 p-2 bg-white border border-black h-32 w-full items-center">
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="border px-4 py-2 align-top">items-end</td>
+        <td class="border px-4 py-2 align-top">align-items: flex-end;</td>
+        <td class="border px-4 py-2">
+          <div class="flex gap-1 p-2 bg-white border border-black h-32 w-full items-end">
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="border px-4 py-2 align-top">items-baseline</td>
+        <td class="border px-4 py-2 align-top">align-items: baseline;</td>
+        <td class="border px-4 py-2">
+          <div
+            class="flex gap-1 p-2 bg-white border border-black h-32 w-full items-baseline">
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="border px-4 py-2 align-top">items-stretch</td>
+        <td class="border px-4 py-2 align-top">align-items: stretch;</td>
+        <td class="border px-4 py-2">
+          <div
+            class="flex gap-1 p-2 bg-white border border-black h-32 w-full items-stretch">
+            <div class="box1"></div>
+            <div class="box2" style="height: unset;"></div>
+            <div class="box3"></div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="border px-4 py-2 align-top">justify-start</td>
+        <td class="border px-4 py-2 align-top">justify-content: flex-start;</td>
+        <td class="border px-4 py-2">
+          <div
+            class="flex gap-1 p-2 bg-white border border-black h-32 w-full justify-start">
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="border px-4 py-2 align-top">justify-center</td>
+        <td class="border px-4 py-2 align-top">justify-content: center;</td>
+        <td class="border px-4 py-2">
+          <div
+            class="flex gap-1 p-2 bg-white border border-black h-32 w-full justify-center">
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="border px-4 py-2 align-top">justify-end</td>
+        <td class="border px-4 py-2 align-top">justify-content: flex-end;</td>
+        <td class="border px-4 py-2">
+          <div class="flex gap-1 p-2 bg-white border border-black h-32 w-full justify-end">
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="border px-4 py-2 align-top">justify-between</td>
+        <td class="border px-4 py-2 align-top">justify-content: space-between;</td>
+        <td class="border px-4 py-2">
+          <div
+            class="flex gap-1 p-2 bg-white border border-black h-32 w-full justify-between">
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="border px-4 py-2 align-top">justify-around</td>
+        <td class="border px-4 py-2 align-top">justify-content: space-around;</td>
+        <td class="border px-4 py-2">
+          <div
+            class="flex gap-1 p-2 bg-white border border-black h-32 w-full justify-around">
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="border px-4 py-2 align-top">justify-evenly</td>
+        <td class="border px-4 py-2 align-top">justify-content: space-evenly;</td>
+        <td class="border px-4 py-2">
+          <div
+            class="flex gap-1 p-2 bg-white border border-black h-32 w-full justify-evenly">
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="border px-4 py-2 align-top">content-center</td>
+        <td class="border px-4 py-2 align-top">align-content: center;</td>
+        <td class="border px-4 py-2">
+          <div
+            class="flex gap-1 p-2 bg-white border border-black h-32 w-[120px] flex-wrap content-center">
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="border px-4 py-2 align-top">content-start</td>
+        <td class="border px-4 py-2 align-top">align-content: flex-start;</td>
+        <td class="border px-4 py-2">
+          <div
+            class="flex gap-1 p-2 bg-white border border-black h-32 w-[120px] flex-wrap content-start">
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="border px-4 py-2 align-top">content-end</td>
+        <td class="border px-4 py-2 align-top">align-content: flex-end;</td>
+        <td class="border px-4 py-2">
+          <div class="flex gap-1 p-2 bg-white border border-black h-32 w-[120px] flex-wrap content-end">
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="border px-4 py-2 align-top">content-between</td>
+        <td class="border px-4 py-2 align-top">align-content: space-between;</td>
+        <td class="border px-4 py-2">
+          <div
+            class="flex gap-1 p-2 bg-white border border-black h-32 w-[120px] flex-wrap content-between">
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="border px-4 py-2 align-top">content-around</td>
+        <td class="border px-4 py-2 align-top">align-content: space-around;</td>
+        <td class="border px-4 py-2">
+          <div
+            class="flex gap-1 p-2 bg-white border border-black h-32 w-[120px] flex-wrap content-around">
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="border px-4 py-2 align-top">content-evenly</td>
+        <td class="border px-4 py-2 align-top">align-content: space-evenly;</td>
+        <td class="border px-4 py-2">
+          <div
+            class="flex gap-1 p-2 bg-white border border-black h-32 w-[120px] flex-wrap content-evenly">
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="border px-4 py-2 align-top">self-auto</td>
+        <td class="border px-4 py-2 align-top">align-self: auto;</td>
+        <td class="border px-4 py-2">
+          <div class="flex gap-1 p-2 bg-white border border-black h-32 items-center">
+            <div class="box1"></div>
+            <div class="box2 self-auto"></div>
+            <div class="box3"></div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="border px-4 py-2 align-top">self-start</td>
+        <td class="border px-4 py-2 align-top">align-self: flex-start;</td>
+        <td class="border px-4 py-2">
+          <div class="flex gap-1 p-2 bg-white border border-black h-32 w-full items-center">
+            <div class="box1"></div>
+            <div class="box2 self-start"></div>
+            <div class="box3"></div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="border px-4 py-2 align-top">self-center</td>
+        <td class="border px-4 py-2 align-top">align-self: center;</td>
+        <td class="border px-4 py-2">
+          <div class="flex gap-1 p-2 bg-white border border-black h-32 w-full items-start">
+            <div class="box1"></div>
+            <div class="box2 self-center"></div>
+            <div class="box3"></div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="border px-4 py-2 align-top">self-end</td>
+        <td class="border px-4 py-2 align-top">align-self: flex-end;</td>
+        <td class="border px-4 py-2">
+          <div class="flex gap-1 p-2 bg-white border border-black h-32 w-full items-center">
+            <div class="box1"></div>
+            <div class="box2 self-end"></div>
+            <div class="box3"></div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="border px-4 py-2 align-top">self-stretch</td>
+        <td class="border px-4 py-2 align-top">align-self: stretch;</td>
+        <td class="border px-4 py-2">
+          <div class="flex gap-1 p-2 bg-white border border-black h-32 w-full items-center">
+            <div class="box1"></div>
+            <div class="box2 self-stretch" style="height: unset;"></div>
+            <div class="box3"></div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="border px-4 py-2 align-top">place-items-start</td>
+        <td class="border px-4 py-2 align-top">place-items: start;</td>
+        <td class="border px-4 py-2">
+          <div
+            class="flex gap-1 p-2 bg-white border border-black h-32 w-full place-items-start">
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="border px-4 py-2 align-top">place-items-center</td>
+        <td class="border px-4 py-2 align-top">place-items: center;</td>
+        <td class="border px-4 py-2">
+          <div
+            class="flex gap-1 p-2 bg-white border border-black h-32 w-full place-items-center">
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="border px-4 py-2 align-top">place-items-end</td>
+        <td class="border px-4 py-2 align-top">place-items: end;</td>
+        <td class="border px-4 py-2">
+          <div
+            class="flex gap-1 p-2 bg-white border border-black h-32 w-full place-items-end">
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="border px-4 py-2 align-top">place-items-stretch</td>
+        <td class="border px-4 py-2 align-top">place-items: stretch;</td>
+        <td class="border px-4 py-2">
+          <div
+            class="flex gap-1 p-2 bg-white border border-black h-32 w-full place-items-stretch">
+            <div class="box1"></div>
+            <div class="box2" style="height: unset;"></div>
+            <div class="box3"></div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="border px-4 py-2 align-top">place-content-center</td>
+        <td class="border px-4 py-2 align-top">place-content: center;</td>
+        <td class="border px-4 py-2">
+          <div
+            class="flex gap-1 p-2 bg-white border border-black h-32 w-full place-content-center">
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="border px-4 py-2 align-top">place-content-start</td>
+        <td class="border px-4 py-2 align-top">place-content: start;</td>
+        <td class="border px-4 py-2">
+          <div
+            class="flex gap-1 p-2 bg-white border border-black h-32 w-full place-content-start">
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="border px-4 py-2 align-top">place-content-end</td>
+        <td class="border px-4 py-2 align-top">place-content: end;</td>
+        <td class="border px-4 py-2">
+          <div
+            class="flex gap-1 p-2 bg-white border border-black h-32 w-full place-content-end">
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="border px-4 py-2 align-top">place-content-between</td>
+        <td class="border px-4 py-2 align-top">place-content: space-between;</td>
+        <td class="border px-4 py-2">
+          <div
+            class="flex gap-1 p-2 bg-white border border-black h-32 w-full place-content-between">
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="border px-4 py-2 align-top">place-content-around</td>
+        <td class="border px-4 py-2 align-top">place-content: space-around;</td>
+        <td class="border px-4 py-2">
+          <div
+            class="flex gap-1 p-2 bg-white border border-black h-32 w-full place-content-around">
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="border px-4 py-2 align-top">place-content-evenly</td>
+        <td class="border px-4 py-2 align-top">place-content: space-evenly;</td>
+        <td class="border px-4 py-2">
+          <div
+            class="flex gap-1 p-2 bg-white border border-black h-32 w-full place-content-evenly">
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="border px-4 py-2 align-top">place-self-auto</td>
+        <td class="border px-4 py-2 align-top">place-self: auto;</td>
+        <td class="border px-4 py-2">
+          <div
+            class="flex gap-1 p-2 bg-white border border-black h-32 w-full justify-center items-center">
+            <div class="box1"></div>
+            <div class="box2 place-self-auto"></div>
+            <div class="box3"></div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="border px-4 py-2 align-top">place-self-start</td>
+        <td class="border px-4 py-2 align-top">place-self: start;</td>
+        <td class="border px-4 py-2">
+          <div
+            class="flex gap-1 p-2 bg-white border border-black h-32 w-full justify-center items-center">
+            <div class="box1"></div>
+            <div class="box2 place-self-start"></div>
+            <div class="box3"></div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="border px-4 py-2 align-top">place-self-center</td>
+        <td class="border px-4 py-2 align-top">place-self: center;</td>
+        <td class="border px-4 py-2">
+          <div
+            class="flex gap-1 p-2 bg-white border border-black h-32 w-full justify-start items-start">
+            <div class="box1"></div>
+            <div class="box2 place-self-center"></div>
+            <div class="box3"></div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="border px-4 py-2 align-top">place-self-end</td>
+        <td class="border px-4 py-2 align-top">place-self: end;</td>
+        <td class="border px-4 py-2">
+          <div
+            class="flex gap-1 p-2 bg-white border border-black h-32 w-full justify-center items-center">
+            <div class="box1"></div>
+            <div class="box2 place-self-end"></div>
+            <div class="box3"></div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="border px-4 py-2 align-top">place-self-stretch</td>
+        <td class="border px-4 py-2 align-top">place-self: stretch;</td>
+        <td class="border px-4 py-2">
+          <div
+            class="flex gap-1 p-2 bg-white border border-black h-32 w-full justify-center items-center">
+            <div class="box1"></div>
+            <div class="box2 place-self-stretch" style="height: unset;"></div>
+            <div class="box3"></div>
+          </div>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+</body>
+
+</html>

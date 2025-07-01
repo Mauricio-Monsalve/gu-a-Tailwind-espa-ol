@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dark Mode - Tailwind v3 (Media)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'media', // Esta es la configuración por defecto
+    }
+  </script>
+  <style>
+    .box {
+      @apply p-4 rounded-md text-center font-semibold;
+    }
+  </style>
+</head>
+
+<body class="bg-neutral-100 text-neutral-900 dark:text-neutral-100 dark:bg-neutral-900 p-10 space-y-12">
+
+  <!-- 1. Título -->
+  <h1 class="text-3xl font-bold">🌗 Tailwind Dark Mode v3 - Modo "media"</h1>
+
+  <!-- 2. Explicación -->
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold">¿Cómo funciona el modo oscuro por media query?</h2>
+    <p>Tailwind puede detectar automáticamente la preferencia de tema del usuario mediante <code>prefers-color-scheme</code> y aplicar las clases con <code>dark:</code> si está activo el modo oscuro en el sistema.</p>
+  </section>
+
+  <!-- 3. Configuración explícita -->
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold">Configuración en <code>tailwind.config.js</code></h2>
+    <pre class="bg-neutral-800 text-white p-4 rounded"><code>module.exports = {
+  darkMode: 'media', // Detecta automáticamente la preferencia del usuario
+}</code></pre>
+  </section>
+
+  <!-- 4. Cajas de ejemplo -->
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold">🧪 Ejemplos Visuales</h2>
+    <div class="flex flex-col md:flex-row gap-6">
+      <div class="box bg-white text-black">Estilo claro (sin modo oscuro)</div>
+      <div class="box bg-black text-white">Estilo oscuro (explícito, sin dark mode)</div>
+      <div class="box bg-white text-black dark:bg-black dark:text-white">
+        Estilo claro con modo oscuro automático (usando <code>dark:</code>)
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Antes en CSS -->
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold">🎨 ¿Cómo se hacía antes con CSS?</h2>
+    <pre class="bg-neutral-800 text-white p-4 rounded overflow-auto"><code>@media (prefers-color-scheme: dark) {
+  body {
+    background-color: black;
+    color: white;
+  }
+}</code></pre>
+  </section>
+
+  <!-- 6. Con Tailwind -->
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold">⚡ ¿Cómo se hace ahora con Tailwind?</h2>
+    <p>Solo usa <code>dark:</code> como prefijo en tus utilidades:</p>
+    <pre class="bg-neutral-800 text-white p-4 rounded overflow-auto"><code>&lt;div class="bg-white text-black dark:bg-black dark:text-white"&gt;
+  Contenido dinámico con dark mode
+&lt;/div&gt;</code></pre>
+  </section>
+
+  <!-- 7. Cómo probar en el navegador -->
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold">🧪 Cómo activar o desactivar el modo oscuro</h2>
+    <ul class="list-disc list-inside">
+      <li>Abre la configuración del sistema (Windows/macOS/Linux).</li>
+      <li>Busca la sección de "Apariencia" o "Tema".</li>
+      <li>Activa el modo oscuro y recarga la página para ver el cambio.</li>
+      <li>También puedes simularlo desde las DevTools en Chrome/Firefox:</li>
+    </ul>
+    <pre class="bg-neutral-800 text-white p-4 rounded overflow-auto"><code>DevTools &gt; Command Palette (Ctrl+Shift+P) &gt; "Toggle dark mode"</code></pre>
+  </section>
+
+</body>
+
+</html>

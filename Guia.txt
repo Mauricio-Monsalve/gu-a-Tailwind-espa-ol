@@ -1,0 +1,101 @@
+Fundamentales
+
+
+00 - background-color (bg-col-val)
+01 - color (text-col-val)
+02 - margin (m-val)
+03 - padding (p-val)
+04 - width/height (w-val, h-val)
+05 - (min/max-width)/(min/max-height)
+06 - font-size (text-val)
+
+
+Estructurales
+
+
+07 - display (flex,block,inline-block,inline,grid,hidden)
+08 - flexbox (flex-direction, flex-wrap, align-items, justify-content, align-content, align-self, place-items, place-content, place-self)
+09 - flexbox gap (space-x-val, space-y-val)
+10 - box-sizing (box-content, box-border)
+
+
+Diseño
+
+
+11 - opacity (general,bg,text,bg/opacity,text/opacity)
+12 - Border (width, color, opacity, style, direction)
+13 - Outline (width, color, style, offset)
+14 - Ring (width, color, opacity, offset)
+15 - Shadow (metrics, color, opacity)
+16 - Divide (x, y, normal, reverse, color, opacity)
+17 - Accent (accent-col-val)
+18 - Rounded (metrics, direction)
+19.1 - Propiedades de texto (
+  text-overflow,
+  white-space,
+  overflow-wrap, word-break,
+  word-spacing,
+  text-decoration,
+  text-transform,
+  text-align,
+  line-height,
+  letter-spacing)
+19.2 - Utildades de texto (
+  truncate, text-ellipsis, text-clip, overflow-hidden,
+  line-clamp-*,
+  whitespace-*,
+  break-*,
+  no-underline, underline, line-through, overline, decoration-*,
+  normal-case, capitalize, uppercase, lowercase,
+  text-*,
+  leading-*,
+  tracking-*,
+  hyphens-*)
+20 - Gradients (gradient-to-{t,b,l,r,tl,tr,bl,br}, from-color-value, via-color-value, to-color-value)
+
+
+Pseudoclases y pseudoelementos
+
+
+21 - Pseudo-clases comunes (hover, focus, active, visited, disabled, checked, focus-visible)
+22 - Pseudo-clases estructurales (first, last, even, odd, only)
+23 - Pseudo-elementos (before, after, first-letter, first-line)
+24 - Otros pseudo-elementos (placeholder, file, marker, selection)
+25 - Group y Peer
+
+
+Mediaqueries
+
+
+26 - dark (v3 media, v3 class, v4 media, v4 class)
+27 - breakpoints (sm, md, lg, xl, 2xl, max-sm, max-md, max-lg, max-xl, max-2xl, custom)
+
+
+Utilidades decorativas
+
+
+28 - Fuentes (weight, italic, family, custom)
+29 - Interactivos (cursor-*, pointer-events-*, select-*, resize-*)
+30 - Filtros (filter-*, backdrop-filter-*, mix-blend-*, bg-blend-*)
+31 - Listas (list-pos, list-type)
+
+
+Estructurales 2
+
+
+32 - visibility (visible, invisible, collapse)
+33 - layout (aspect-*, overflow-*, object-*)
+34 - transform (scale-*, rotate-*, translate-*, skew-*, origin-*)
+35 - Grid (
+  grid-rows-*, grid-cols-*,
+  col-span-*, row-span-*,
+  gap-*, gap-x-*, gap-y-*,
+  col-start-*, col-end-*, row-start-*, row-end-*,
+  grid-flow-*)
+36 - Capas (z-*, order-*)
+37 - position (static, relativ, absolute, fixed, sticky, top-*, left-*, bottom-*, right-*, inset-*)
+38 - scroll (auto, smooth)
+39 - snap (none, mandatory, proximity, x, y, both, align-none, align-start, align-center, align-end, normal, always)
+40 - transition (type, duration, delay, curve)
+41 - animate (none, spin, ping, pulse, bounce)
+42 - Animaciones personalizadas

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accent - Tailwind CSS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="p-8 bg-gray-100 text-sm space-y-10">
+  <h1 class="text-2xl font-bold mb-4">Clases de Accent en Tailwind CSS</h1>
+  <p class="mb-4">Las clases <code>accent-*</code> permiten personalizar el color del acento para elementos como <code>input[type=checkbox]</code>, <code>input[type=radio]</code> y <code>progress</code>.</p>
+
+  <table class="table-auto w-full border border-gray-300 bg-white text-left text-sm">
+    <thead class="bg-gray-200">
+      <tr>
+        <th class="border px-4 py-2">Clase Tailwind</th>
+        <th class="border px-4 py-2">CSS equivalente</th>
+        <th class="border px-4 py-2">Ejemplo</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <!-- accent-color-val -->
+      <tr>
+        <td class="border px-4 py-2">accent-blue-500</td>
+        <td class="border px-4 py-2">accent-color: #3b82f6;</td>
+        <td class="border px-4 py-2">
+          <input type="checkbox" class="accent-blue-500">
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">accent-pink-500</td>
+        <td class="border px-4 py-2">accent-color: #ec4899;</td>
+        <td class="border px-4 py-2">
+          <input type="checkbox" class="accent-pink-500">
+        </td>
+      </tr>
+
+      <!-- accent-color-custom -->
+      <tr>
+        <td class="border px-4 py-2">accent-[#ff9900]</td>
+        <td class="border px-4 py-2">accent-color: #ff9900;</td>
+        <td class="border px-4 py-2">
+          <input type="checkbox" class="accent-[#ff9900]">
+        </td>
+      </tr>
+
+      <!-- accent aplicada a radio -->
+      <tr>
+        <td class="border px-4 py-2">accent-green-500</td>
+        <td class="border px-4 py-2">accent-color: #22c55e;</td>
+        <td class="border px-4 py-2 space-x-4">
+          <label><input type="radio" name="group" class="accent-green-500"> Opción A</label>
+          <label><input type="radio" name="group" class="accent-green-500"> Opción B</label>
+        </td>
+      </tr>
+
+      <!-- accent aplicada a progress -->
+      <tr>
+        <td class="border px-4 py-2">accent-red-500</td>
+        <td class="border px-4 py-2">accent-color: #ef4444;</td>
+        <td class="border px-4 py-2">
+          <progress class="accent-red-500 w-1/2" value="60" max="100"></progress>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+</body>
+
+</html>

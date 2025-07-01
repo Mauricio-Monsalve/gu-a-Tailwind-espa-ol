@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pseudoelementos Especiales en Tailwind</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .test-box {
+      width: 100%;
+      max-width: 400px;
+      border: 1px solid #ccc;
+      padding: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-sm p-8 space-y-10">
+
+  <h1 class="text-3xl font-bold mb-6">🧪 Pseudoelementos Especiales en Tailwind CSS</h1>
+
+  <!-- Placeholder -->
+  <section>
+    <h2 class="text-xl font-semibold mb-4">🔹 ::placeholder</h2>
+    <table class="table-auto border border-gray-400 bg-white mb-8">
+      <thead class="bg-gray-200">
+        <tr>
+          <th class="border px-4 py-2">Clase Tailwind</th>
+          <th class="border px-4 py-2">Equivalente CSS</th>
+          <th class="border px-4 py-2">Ejemplo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border px-4 py-2">placeholder-red-400</td>
+          <td class="border px-4 py-2">::placeholder { color: #f87171 ; }</td>
+          <td class="border px-4 py-2">
+            <input type="text" placeholder="Escribe tu nombre" class="test-box placeholder-red-400" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- File -->
+  <section>
+    <h2 class="text-xl font-semibold mb-4">🔹 ::file-selector-button</h2>
+    <table class="table-auto border border-gray-400 bg-white mb-8">
+      <thead class="bg-gray-200">
+        <tr>
+          <th class="border px-4 py-2">Clase Tailwind</th>
+          <th class="border px-4 py-2">Equivalente CSS</th>
+          <th class="border px-4 py-2">Ejemplo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border px-4 py-2">file:bg-blue-500 file:text-white file:rounded</td>
+          <td class="border px-4 py-2">::file-selector-button { background: #3b82f6; color: #fff; border-radius: .25rem; }</td>
+          <td class="border px-4 py-2">
+            Estilo normal
+            <input type="file" class="bg-blue-500 text-white rounded test-box" />
+            Estilo aplicado al boton
+            <input type="file" class="file:bg-blue-500 file:text-white file:rounded test-box" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Marker -->
+  <section>
+    <h2 class="text-xl font-semibold mb-4">🔹 ::marker</h2>
+    <table class="table-auto border border-gray-400 bg-white mb-8">
+      <thead class="bg-gray-200">
+        <tr>
+          <th class="border px-4 py-2">Clase Tailwind</th>
+          <th class="border px-4 py-2">Equivalente CSS</th>
+          <th class="border px-4 py-2">Ejemplo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border px-4 py-2">marker:text-pink-500 marker:text-2xl</td>
+          <td class="border px-4 py-2">::marker { color: #ec4899; font-size: 1.5rem; }</td>
+          <td class="border px-4 py-2">
+            <ul class="list-disc marker:text-pink-500 marker:text-2xl test-box pl-8">
+              <li>Elemento uno</li>
+              <li>Elemento dos</li>
+              <li>Elemento tres</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Selection -->
+  <section>
+    <h2 class="text-xl font-semibold mb-4">🔹 ::selection</h2>
+    <table class="table-auto border border-gray-400 bg-white mb-8">
+      <thead class="bg-gray-200">
+        <tr>
+          <th class="border px-4 py-2">Clase Tailwind</th>
+          <th class="border px-4 py-2">Equivalente CSS</th>
+          <th class="border px-4 py-2">Ejemplo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border px-4 py-2">selection:bg-yellow-300 selection:text-white</td>
+          <td class="border px-4 py-2">::selection { background: #fde68a; color: #fff; }</td>
+          <td class="border px-4 py-2">
+            <p class="test-box selection:bg-yellow-300 selection:text-white">
+              Selecciona este texto para ver el efecto de <code>::selection</code>.
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Utilidades Responsive en Tailwind CSS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+
+    .demo-box {
+      background: #ddd;
+      padding: 1rem;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+
+<body class="bg-neutral-100 text-neutral-800 p-8 space-y-8">
+  <h1 class="text-2xl font-bold mb-4">📱 Utilidades Responsive en Tailwind CSS</h1>
+  <p>Tailwind utiliza prefijos como <code>sm:</code>, <code>md:</code>, <code>lg:</code>, <code>xl:</code> y
+    <code>2xl:</code> para aplicar estilos en distintos puntos de corte (breakpoints).
+  </p>
+
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold">📏 Breakpoints por defecto</h2>
+    <ul class="list-disc list-inside">
+      <li><code>sm</code>: ≥ 640px</li>
+      <li><code>md</code>: ≥ 768px</li>
+      <li><code>lg</code>: ≥ 1024px</li>
+      <li><code>xl</code>: ≥ 1280px</li>
+      <li><code>2xl</code>: ≥ 1536px</li>
+    </ul>
+  </section>
+
+  <p>Comprime horizontalmente la pantalla para ver los cambios en los ejemplos. Las clases responsive modifican estilos
+    según el ancho del viewport.</p>
+
+
+  <table class="table-auto border-collapse border border-gray-300 w-full text-sm text-left">
+    <thead>
+      <tr class="bg-gray-200">
+        <th class="border px-4 py-2">Clase Tailwind</th>
+        <th class="border px-4 py-2">Equivalente CSS</th>
+        <th class="border px-4 py-2">Función</th>
+        <th class="border px-4 py-2">Ejemplo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="border px-4 py-2">sm:bg-red-200</td>
+        <td class="border px-4 py-2">@media (min-width: 640px)</td>
+        <td class="border px-4 py-2">Aplica fondo rojo claro en pantallas ≥ 640px</td>
+        <td class="border px-4 py-2">
+          <div class="demo-box sm:bg-red-200">Caja con <code>sm:bg-red-200</code></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">md:bg-green-200</td>
+        <td class="border px-4 py-2">@media (min-width: 768px)</td>
+        <td class="border px-4 py-2">Aplica fondo verde claro en pantallas ≥ 768px</td>
+        <td class="border px-4 py-2">
+          <div class="demo-box md:bg-green-200">Caja con <code>md:bg-green-200</code></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">lg:bg-blue-200</td>
+        <td class="border px-4 py-2">@media (min-width: 1024px)</td>
+        <td class="border px-4 py-2">Aplica fondo azul claro en pantallas ≥ 1024px</td>
+        <td class="border px-4 py-2">
+          <div class="demo-box lg:bg-blue-200">Caja con <code>lg:bg-blue-200</code></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">xl:bg-yellow-200</td>
+        <td class="border px-4 py-2">@media (min-width: 1280px)</td>
+        <td class="border px-4 py-2">Aplica fondo amarillo claro en pantallas ≥ 1280px</td>
+        <td class="border px-4 py-2">
+          <div class="demo-box xl:bg-yellow-200">Caja con <code>xl:bg-yellow-200</code></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">2xl:bg-purple-200</td>
+        <td class="border px-4 py-2">@media (min-width: 1536px)</td>
+        <td class="border px-4 py-2">Aplica fondo morado claro en pantallas ≥ 1536px</td>
+        <td class="border px-4 py-2">
+          <div class="demo-box 2xl:bg-purple-200">Caja con <code>2xl:bg-purple-200</code></div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <section class="space-y-4 mt-12">
+    <h2 class="text-xl font-semibold">🔁 Utilidades con prefijo <code>max-*</code></h2>
+    <p>Estas clases aplican estilos <strong>cuando el ancho máximo</strong> del viewport es menor o igual al breakpoint
+      especificado. Se comportan como media queries con <code>max-width</code>.</p>
+
+    <table class="table-auto border-collapse border border-gray-300 w-full text-sm text-left">
+      <thead>
+        <tr class="bg-gray-200">
+          <th class="border px-4 py-2">Clase Tailwind</th>
+          <th class="border px-4 py-2">Equivalente CSS</th>
+          <th class="border px-4 py-2">Función</th>
+          <th class="border px-4 py-2">Ejemplo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border px-4 py-2">max-sm:bg-pink-200</td>
+          <td class="border px-4 py-2">@media (max-width: 639px)</td>
+          <td class="border px-4 py-2">Fondo rosado en pantallas ≤ 639px</td>
+          <td class="border px-4 py-2">
+            <div class="demo-box max-sm:bg-pink-200">Caja con <code>max-sm:bg-pink-200</code></div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">max-md:bg-orange-200</td>
+          <td class="border px-4 py-2">@media (max-width: 767px)</td>
+          <td class="border px-4 py-2">Fondo naranja claro en pantallas ≤ 767px</td>
+          <td class="border px-4 py-2">
+            <div class="demo-box max-md:bg-orange-200">Caja con <code>max-md:bg-orange-200</code></div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">max-lg:bg-lime-200</td>
+          <td class="border px-4 py-2">@media (max-width: 1023px)</td>
+          <td class="border px-4 py-2">Fondo lima claro en pantallas ≤ 1023px</td>
+          <td class="border px-4 py-2">
+            <div class="demo-box max-lg:bg-lime-200">Caja con <code>max-lg:bg-lime-200</code></div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">max-xl:bg-teal-200</td>
+          <td class="border px-4 py-2">@media (max-width: 1279px)</td>
+          <td class="border px-4 py-2">Fondo verde azulado en pantallas ≤ 1279px</td>
+          <td class="border px-4 py-2">
+            <div class="demo-box max-xl:bg-teal-200">Caja con <code>max-xl:bg-teal-200</code></div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">max-2xl:bg-sky-200</td>
+          <td class="border px-4 py-2">@media (max-width: 1535px)</td>
+          <td class="border px-4 py-2">Fondo azul cielo en pantallas ≤ 1535px</td>
+          <td class="border px-4 py-2">
+            <div class="demo-box max-2xl:bg-sky-200">Caja con <code>max-2xl:bg-sky-200</code></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="space-y-6 mt-16">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            screens: {
+              'xs': "480px",
+              '3xl': "1600px"
+            }
+          }
+        }
+      };
+    </script>
+    <h2 class="text-xl font-semibold">🛠️ Cómo extender los breakpoints en Tailwind CSS v3</h2>
+
+    <p>
+      En Tailwind v3 puedes agregar tus propios breakpoints personalizados dentro del archivo
+      <code>tailwind.config.js</code>, en la sección <code>theme.extend.screens</code>.
+      Esto te permite definir tamaños específicos para tus diseños responsive.
+    </p>
+
+    <h3 class="text-lg font-semibold">📁 Ejemplo de configuración</h3>
+    <pre class="bg-neutral-800 text-white p-4 rounded overflow-auto text-sm"><code>// tailwind.config.js
+module.exports = {
+  theme: {
+    extend: {
+      screens: {
+        'xs': '480px',      // Nuevo breakpoint personalizado
+        '3xl': '1600px'     // Otro breakpoint más grande
+      }
+    }
+  },
+  plugins: [],
+}</code></pre>
+
+    <h3 class="text-lg font-semibold">👁️‍🗨️ Uso de los nuevos breakpoints</h3>
+    <p>Puedes utilizar tus nuevos breakpoints como cualquier otro:</p>
+    <pre class="bg-neutral-800 text-white p-4 rounded overflow-auto text-sm"><code>&lt;div class="max-xs:bg-rose-200 3xl:bg-indigo-200"&gt;
+  Esta caja cambia de color en <code>xs</code> y <code>3xl</code>
+&lt;/div&gt;</code></pre>
+
+    <div class="demo-box max-xs:bg-rose-200 3xl:bg-indigo-200">
+      Esta caja responde a <code>xs</code> y <code>3xl</code>
+    </div>
+
+    <p class="text-sm text-neutral-600">
+      🔍 Comprime o expande la ventana para ver los cambios si tienes estos tamaños disponibles en pantalla.
+    </p>
+  </section>
+
+  <section class="space-y-6 mt-16">
+    <h2 class="text-xl font-semibold">🛠️ Cómo extender los breakpoints en Tailwind CSS v4</h2>
+
+    <p>
+      En Tailwind v4 los breakpoints se pueden personalizar directamente con variables CSS dentro de la regla
+      <code>@theme</code>. Esto se define en tu archivo <code>index.css</code> y te permite adaptar fácilmente los
+      puntos de corte según tus necesidades.
+    </p>
+
+    <h3 class="text-lg font-semibold">📁 Definir breakpoints personalizados</h3>
+    <p>Agrega estas líneas en tu archivo <code>index.css</code>:</p>
+
+    <pre class="bg-neutral-800 text-white p-4 rounded overflow-auto text-sm"><code>@theme {
+  
+  /* Sintaxis */
+
+  --breakpoint-nombre: medida;
+
+  /* Ejemplo */
+
+  --breakpoint-xs: 480px;
+  --breakpoint-3xl: 1600px;
+
+}</code></pre>
+
+    <p class="text-sm text-neutral-600">
+      💡 Estos breakpoints reemplazan o extienden los valores por defecto sin necesidad de editar archivos de
+      configuración como en v3.
+    </p>
+
+    <h3 class="text-lg font-semibold">👁️‍🗨️ Uso de los nuevos breakpoints</h3>
+    <p>Puedes utilizar los prefijos como <code>xs:</code>, <code>sm:</code>, etc. directamente en tus clases:</p>
+
+    <pre class="bg-neutral-800 text-white p-4 rounded overflow-auto text-sm"><code>&lt;div class="bg-neutral-200 max-xs:bg-rose-200 3xl:bg-indigo-200"&gt;
+  Caja que responde a <code>xs</code> y <code>2xl</code>
+&lt;/div&gt;</code></pre>
+
+    <div class="demo-box bg-neutral-200 max-xs:bg-rose-200 3xl:bg-indigo-200">
+      Esta caja cambia de color en <code>xs</code> y <code>3xl</code>
+    </div>
+
+    <p class="text-sm text-neutral-600">
+      🔍 Comprime o expande la ventana para observar los cambios según el tamaño del viewport.
+    </p>
+  </section>
+
+
+
+</body>
+
+</html>

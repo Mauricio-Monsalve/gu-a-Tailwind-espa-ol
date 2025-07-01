@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demostración de Propiedades CSS</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+      background-color: #f3f3f3;
+      font-size: 14px;
+    }
+
+    h1 {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-top: 40px;
+      margin-bottom: 10px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      background: white;
+      margin-bottom: 30px;
+    }
+
+    th,
+    td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      vertical-align: top;
+    }
+
+    th {
+      background: #eee;
+    }
+
+    .test-box {
+      width: 240px;
+      border: 1px solid #999;
+      padding: 4px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Demostración de Propiedades CSS</h1>
+  <h2>Sección: text-overflow</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Valor</th>
+        <th>Texto normal</th>
+        <th>Texto con la propiedad</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>clip</td>
+        <td>
+          <div class="test-box">Este es un texto muy largo que debería ser recortado visiblemente.</div>
+        </td>
+        <td>
+          <div class="test-box" style="white-space: nowrap; overflow: hidden; text-overflow: clip;">Este es un texto muy
+            largo que debería ser recortado visiblemente.</div>
+        </td>
+      </tr>
+      <tr>
+        <td>ellipsis</td>
+        <td>
+          <div class="test-box">Este es un texto muy largo que debería ser recortado visiblemente.</div>
+        </td>
+        <td>
+          <div class="test-box" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Este es un texto
+            muy largo que debería ser recortado visiblemente.</div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Sección: white-space</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Valor</th>
+        <th>Texto normal</th>
+        <th>Texto con la propiedad</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>normal (por defecto)</td>
+        <td>
+          <div class="test-box">Este texto tiene
+
+                      saltos de línea y espacios extra.</div>
+        </td>
+        <td>
+          <div class="test-box" style="white-space: normal;">Este texto tiene
+
+                      saltos de línea y espacios extra.</div>
+        </td>
+      </tr>
+      <tr>
+        <td>nowrap</td>
+        <td>
+          <div class="test-box">Este texto tiene
+
+                      saltos de línea y espacios extra.</div>
+        </td>
+        <td>
+          <div class="test-box" style="white-space: nowrap;">Este texto tiene
+
+                      saltos de línea y espacios extra.</div>
+        </td>
+      </tr>
+      <tr>
+        <td>pre</td>
+        <td>
+          <div class="test-box">Este texto tiene
+
+                      saltos de línea y espacios extra.</div>
+        </td>
+        <td>
+          <div class="test-box" style="white-space: pre;">Este texto tiene
+
+                      saltos de línea y espacios extra.</div>
+        </td>
+      </tr>
+      <tr>
+        <td>pre-wrap</td>
+        <td>
+          <div class="test-box">Este texto tiene
+
+                      saltos de línea y espacios extra.</div>
+        </td>
+        <td>
+          <div class="test-box" style="white-space: pre-wrap;">Este texto tiene
+
+                      saltos de línea y espacios extra.</div>
+        </td>
+      </tr>
+      <tr>
+        <td>pre-line</td>
+        <td>
+          <div class="test-box">Este texto tiene
+            saltos de línea y espacios extra.</div>
+        </td>
+        <td>
+          <div class="test-box" style="white-space: pre-line;">Este texto tiene
+            saltos de línea y espacios extra.</div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Sección: overflow-wrap</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Valor</th>
+        <th>Texto normal</th>
+        <th>Texto con la propiedad</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>normal (por defecto)</td>
+        <td>
+          <div class="test-box">TextoSuperLargoSinEspaciosQuePuedeRomperElDiseño</div>
+        </td>
+        <td>
+          <div class="test-box" style="width: 200px; overflow-wrap: normal;">
+            TextoSuperLargoSinEspaciosQuePuedeRomperElDiseño</div>
+        </td>
+      </tr>
+      <tr>
+        <td>anywhere</td>
+        <td>
+          <div class="test-box">TextoSuperLargoSinEspaciosQuePuedeRomperElDiseño</div>
+        </td>
+        <td>
+          <div class="test-box" style="width: 200px; overflow-wrap: anywhere;">
+            TextoSuperLargoSinEspaciosQuePuedeRomperElDiseño</div>
+        </td>
+      </tr>
+      <tr>
+        <td>break-word</td>
+        <td>
+          <div class="test-box">TextoSuperLargoSinEspaciosQuePuedeRomperElDiseño</div>
+        </td>
+        <td>
+          <div class="test-box" style="width: 200px; overflow-wrap: break-word;">
+            TextoSuperLargoSinEspaciosQuePuedeRomperElDiseño</div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Sección: word-break</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Valor</th>
+        <th>Texto normal</th>
+        <th>Texto con la propiedad</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>normal (por defecto)</td>
+        <td>
+          <div class="test-box">TextoSuperLargoSinEspaciosQuePuedeRomperElDiseño</div>
+        </td>
+        <td>
+          <div class="test-box" style="width: 200px; word-break: normal;">TextoSuperLargoSinEspaciosQuePuedeRomperElDiseño</div>
+        </td>
+      </tr>
+      <tr>
+        <td>break-all</td>
+        <td>
+          <div class="test-box">TextoSuperLargoSinEspaciosQuePuedeRomperElDiseño</div>
+        </td>
+        <td>
+          <div class="test-box" style="width: 200px; word-break: break-all;">
+            TextoSuperLargoSinEspaciosQuePuedeRomperElDiseño</div>
+        </td>
+      </tr>
+      <tr>
+        <td>keep-all</td>
+        <td>
+          <div class="test-box">TextoSuperLargoSinEspaciosQuePuedeRomperElDiseño</div>
+        </td>
+        <td>
+          <div class="test-box" style="width: 200px; word-break: keep-all;">TextoSuperLargoSinEspaciosQuePuedeRomperElDiseño</div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Relación entre overflow-wrap y word-break</h2>
+  <p><code><b>overflow-wrap</b></code> y <code><b>word-break</b></code> trabajan en equipo para controlar cómo el navegador maneja las palabras largas o difíciles de dividir cuando el texto se ajusta dentro de un contenedor.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Propiedad</th>
+        <th>Rol principal</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>
+            <b>overflow-wrap</b>
+          </code>
+        </td>
+        <td>Previene el desbordamiento permitiendo romper palabras solo cuando es necesario.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>
+            <b>word-break</b>
+          </code>
+        </td>
+        <td>Define las reglas de cómo se puede romper una palabra, incluso si no hay necesidad de ajuste.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Usar un cuadro de Punnett para cruzar overflow-wrap y word-break es una forma genial de analizar combinaciones. A continuación te muestro una tabla con los 9 cruces posibles y te explico para qué sirve cada uno, si es útil o no, y en qué casos se suele usar.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="background: linear-gradient(20deg, #eee 0%,#eee 49%,gray 49%, gray 51%, #eee 51%, #eee 100%);">
+          <code>
+            <b style="display:flex; transform: rotate(-20deg);width: 100%; height: 100%; gap:10px;">
+              <span style="display:flex; transform: rotate(20deg); font-size: 10px;">overflow-wrap</span>
+              <span style="display:flex; transform: rotate(20deg);font-size: 10px;">word-break</span>
+            </b>
+          </code>
+        </th>
+        <th>
+          <code>
+            <b>normal</b>
+          </code>
+        </th>
+        <th>
+          <code>
+            <b>break-all</b>
+          </code>
+        </th>
+        <th>
+          <code>
+            <b>keep-all</b>
+          </code>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>
+            <b>normal</b>
+          </code>
+        </td>
+        <td>✅ Por defecto. No rompe palabras largas. Solo útil si sabes que no habrá desbordes. Poco usado en UI modernas.</td>
+        <td>⚠ Puede romper palabras sin necesidad. Rompe cada carácter si es necesario. Útil en idiomas sin espacios o tablas.</td>
+        <td>🔒 Evita cualquier ruptura. Útil solo si quieres mantener palabras intactas en idiomas tipo coreano.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>
+            <b>anywhere</b>
+          </code>
+        </td>
+        <td>✅ Rompe en cualquier parte solo si hay desbordamiento. Muy útil para URLs o cadenas sin espacios.</td>
+        <td>⚠ Demasiado agresivo. Rompe cualquier parte aunque no sea necesario. Úsalo con cuidado.</td>
+        <td>❌ Contradictorio. anywhere quiere romper, keep-all quiere evitarlo. No tiene sentido práctico.</td>
+      </tr>
+      <tr>
+        <td>
+          <code>
+            <b>break-word</b>
+          </code>
+        </td>
+        <td>✅ Recomendado. Rompe solo si es necesario, respetando límites lógicos. Ideal para la mayoría de interfaces.</td>
+        <td>⚠ Similar a break-all, pero más permisivo que anywhere + break-all. Úsalo si quieres forzar ruptura.</td>
+        <td>❌ Ineficiente. Uno quiere romper, otro evitar. No se recomienda.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Resumen visual</h2>
+
+
+  <table>
+    <thead>
+      <tr>
+        <th style="background: linear-gradient(12deg, #eee 0%,#eee 49%,gray 49%, gray 51%, #eee 51%, #eee 100%);">
+          <code>
+            <b style="display:flex; transform: rotate(-12deg);width: 100%; height: 100%; gap:10px;">
+              <span style="display:flex; transform: rotate(12deg); font-size: 10px;">overflow-wrap</span>
+              <span style="display:flex; transform: rotate(12deg);font-size: 10px;">word-break</span>
+            </b>
+          </code>
+        </th>
+        <th>
+          <code>
+            <b>normal</b>
+          </code>
+        </th>
+        <th>
+          <code>
+            <b>break-all</b>
+          </code>
+        </th>
+        <th>
+          <code>
+            <b>keep-all</b>
+          </code>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>
+            <b>normal</b>
+          </code>
+        </td>
+        <td>❌ Desborda</td>
+        <td>⚠ Útil en asiáticos</td>
+        <td>✅ Mantener texto intacto</td>
+      </tr>
+      <tr>
+        <td>
+          <code>
+            <b>anywhere</b>
+          </code>
+        </td>
+        <td>✅ Ideal URLs</td>
+        <td>⚠ Muy agresivo</td>
+        <td>❌ Incoherente</td>
+      </tr>
+      <tr>
+        <td>
+          <code>
+            <b>break-word</b>
+          </code>
+        </td>
+        <td>✅ Más usado</td>
+        <td>⚠ Forzoso</td>
+        <td>❌ Incoherente</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Sección: word-spacing</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Valor</th>
+        <th>Texto normal</th>
+        <th>Texto con la propiedad</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>normal (por defecto)</td>
+        <td>
+          <div class="test-box">Texto con espaciado normal</div>
+        </td>
+        <td>
+          <div class="test-box" style="word-spacing: normal;">Texto con espaciado normal</div>
+        </td>
+      </tr>
+      <tr>
+        <td>5px</td>
+        <td>
+          <div class="test-box">Texto con espaciado de 5px</div>
+        </td>
+        <td>
+          <div class="test-box" style="word-spacing: 5px;">Texto con espaciado de 5px</div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Sección: text-decoration</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Valor</th>
+        <th>Texto normal</th>
+        <th>Texto con la propiedad</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>none (por defecto)</td>
+        <td>
+          <div class="test-box">Texto sin decoración</div>
+        </td>
+        <td>
+          <div class="test-box" style="text-decoration: none;">Texto sin decoración</div>
+        </td>
+      </tr>
+      <tr>
+        <td>underline</td>
+        <td>
+          <div class="test-box">Texto subrayado</div>
+        </td>
+        <td>
+          <div class="test-box" style="text-decoration: underline;">Texto subrayado</div>
+        </td>
+      </tr>
+      <tr>
+        <td>line-through</td>
+        <td>
+          <div class="test-box">Texto tachado</div>
+        </td>
+        <td>
+          <div class="test-box" style="text-decoration: line-through;">Texto tachado</div>
+        </td>
+      </tr>
+      <tr>
+        <td>overline</td>
+        <td>
+          <div class="test-box">Texto con línea arriba</div>
+        </td>
+        <td>
+          <div class="test-box" style="text-decoration: overline;">Texto con línea arriba</div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Sección: text-transform</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Valor</th>
+        <th>Texto normal</th>
+        <th>Texto con la propiedad</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>none (por defecto)</td>
+        <td>
+          <div class="test-box">Texto Sin Cambios</div>
+        </td>
+        <td>
+          <div class="test-box" style="text-transform: none;">Texto Sin Cambios</div>
+        </td>
+      </tr>
+      <tr>
+        <td>capitalize</td>
+        <td>
+          <div class="test-box">texto transformado</div>
+        </td>
+        <td>
+          <div class="test-box" style="text-transform: capitalize;">texto transformado</div>
+        </td>
+      </tr>
+      <tr>
+        <td>uppercase</td>
+        <td>
+          <div class="test-box">texto transformado</div>
+        </td>
+        <td>
+          <div class="test-box" style="text-transform: uppercase;">texto transformado</div>
+        </td>
+      </tr>
+      <tr>
+        <td>lowercase</td>
+        <td>
+          <div class="test-box">TEXTO TRANSFORMADO</div>
+        </td>
+        <td>
+          <div class="test-box" style="text-transform: lowercase;">TEXTO TRANSFORMADO</div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Sección: text-align</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Valor</th>
+        <th>Texto normal</th>
+        <th>Texto con la propiedad</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>left (por defecto)</td>
+        <td>
+          <div class="test-box">Texto alineado a la izquierda</div>
+        </td>
+        <td>
+          <div class="test-box" style="text-align: left;">Texto alineado a la izquierda</div>
+        </td>
+      </tr>
+      <tr>
+        <td>center</td>
+        <td>
+          <div class="test-box">Texto centrado</div>
+        </td>
+        <td>
+          <div class="test-box" style="text-align: center;">Texto centrado</div>
+        </td>
+      </tr>
+      <tr>
+        <td>right</td>
+        <td>
+          <div class="test-box">Texto alineado a la derecha</div>
+        </td>
+        <td>
+          <div class="test-box" style="text-align: right;">Texto alineado a la derecha</div>
+        </td>
+      </tr>
+      <tr>
+        <td>justify</td>
+        <td>
+          <div class="test-box">Texto justificado en ambos extremos, Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur eaque necessitatibus minima. Adipisci vitae numquam corrupti harum suscipit exercitationem velit earum laudantium dolor officia, provident voluptatem. Et distinctio nam ex!</div>
+        </td>
+        <td>
+          <div class="test-box" style="text-align: justify;">Texto justificado en ambos extremos, Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur eaque necessitatibus minima. Adipisci vitae numquam corrupti harum suscipit exercitationem velit earum laudantium dolor officia, provident voluptatem. Et distinctio nam ex!</div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Sección: line-height</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Valor</th>
+        <th>Texto normal</th>
+        <th>Texto con la propiedad</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>normal (por defecto)</td>
+        <td>
+          <div class="test-box">Primera línea.
+            Segunda línea.</div>
+        </td>
+        <td>
+          <div class="test-box" style="white-space: pre-line; line-height: normal;">Primera línea.
+            Segunda línea.</div>
+        </td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>
+          <div class="test-box">Primera línea.
+            Segunda línea.</div>
+        </td>
+        <td>
+          <div class="test-box" style="white-space: pre-line; line-height: 2;">Primera línea.
+            Segunda línea.</div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Sección: letter-spacing</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Valor</th>
+        <th>Texto normal</th>
+        <th>Texto con la propiedad</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>normal (por defecto)</td>
+        <td>
+          <div class="test-box">Espaciado normal</div>
+        </td>
+        <td>
+          <div class="test-box" style="letter-spacing: normal;">Espaciado normal</div>
+        </td>
+      </tr>
+      <tr>
+        <td>5px</td>
+        <td>
+          <div class="test-box">Espaciado de 5px</div>
+        </td>
+        <td>
+          <div class="test-box" style="letter-spacing: 5px;">Espaciado de 5px</div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+
+</html>

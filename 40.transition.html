@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Transiciones en Tailwind CSS - Tipo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .caja {
+      background-color: dodgerblue;
+      color: white;
+      padding: 1rem;
+      border-radius: 0.25rem;
+      text-align: center;
+      transition: all 0.5s ease;
+    }
+
+    .hover-box:hover {
+      background-color: crimson;
+      transform: scale(1.1);
+      opacity: 0.6;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 2rem;
+    }
+
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 0.5rem;
+      vertical-align: top;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f3f4f6;
+    }
+  </style>
+</head>
+
+<body class="p-8 bg-gray-100 text-sm space-y-10">
+
+  <h1 class="text-3xl font-bold mb-6">⚙️ Transiciones en Tailwind CSS</h1>
+
+  <section>
+    <h2 class="text-2xl font-semibold mb-4">🌀 Tipo de Transición</h2>
+    <p class="mb-4">Las clases <code>transition-*</code> controlan qué propiedades del elemento deben animarse cuando
+      hay un cambio. Es necesario combinar estas clases con clases <code>hover:</code> o <code>focus:</code> para ver
+      sus efectos.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Clase Tailwind</th>
+          <th>Equivalente CSS</th>
+          <th>Descripción</th>
+          <th>Ejemplo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>transition-none</code></td>
+          <td><code>transition: none;</code></td>
+          <td>Desactiva todas las transiciones.</td>
+          <td>
+            <div class="caja hover-box transition-none">Sin transición</div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>transition-all</code></td>
+          <td><code>transition-property: all;</code></td>
+          <td>Transición de todas las propiedades disponibles.</td>
+          <td>
+            <div class="caja hover-box transition-all">Todas las propiedades</div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>transition</code></td>
+          <td>
+            <code>transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;</code>
+          </td>
+          <td>Transición solo de propiedades comunes.</td>
+          <td>
+            <div class="caja hover-box transition">Colores y básicos</div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>transition-colors</code></td>
+          <td>
+            <code>transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;</code>
+          </td>
+          <td>Transición solo de colores.</td>
+          <td>
+            <div class="caja hover:bg-red-500 transition-colors">Solo color</div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>transition-opacity</code></td>
+          <td><code>transition-property: opacity;</code></td>
+          <td>Transición solo de la opacidad.</td>
+          <td>
+            <div class="caja hover:opacity-50 transition-opacity">Solo opacidad</div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>transition-shadow</code></td>
+          <td><code>transition-property: box-shadow;</code></td>
+          <td>Transición solo de la sombra del elemento.</td>
+          <td>
+            <div class="caja hover:shadow-xl transition-shadow">Solo sombra</div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>transition-transform</code></td>
+          <td><code>transition-property: transform;</code></td>
+          <td>Transición solo de transformaciones (rotate, scale, etc.).</td>
+          <td>
+            <div class="caja hover:scale-110 transition-transform">Solo transform</div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>transition-[border-radius]</code></td>
+          <td><code>transition-property: border-radius;</code></td>
+          <td>Transición solo de border-radius</td>
+          <td>
+            <div class="caja rounded-none hover:rounded-3xl transition-[border-radius]">Solo border-radius</div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+
+
+
+
+
+  <section>
+    <h2 class="text-2xl font-bold mb-4">🎯 Duración (duration-*)</h2>
+    <p class="mb-4">
+      Estas clases definen cuánto tiempo tarda una transición en completarse. Afecta directamente la velocidad del
+      efecto.
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th class="border px-4 py-2">Clase Tailwind</th>
+          <th class="border px-4 py-2">Equivalente CSS</th>
+          <th class="border px-4 py-2">Descripción</th>
+          <th class="border px-4 py-2">Ejemplo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border px-4 py-2"><code>duration-75</code></td>
+          <td class="border px-4 py-2"><code>transition-duration: 75ms;</code></td>
+          <td class="border px-4 py-2">Transición muy rápida</td>
+          <td class="border px-4 py-2">
+            <div
+              class="w-24 h-10 bg-blue-400 hover:bg-blue-600 transition-colors duration-75 text-white text-center leading-10 rounded">
+              Hover
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2"><code>duration-150</code></td>
+          <td class="border px-4 py-2"><code>transition-duration: 150ms;</code></td>
+          <td class="border px-4 py-2">Transición rápida</td>
+          <td class="border px-4 py-2">
+            <div
+              class="w-24 h-10 bg-blue-400 hover:bg-blue-600 transition-colors duration-150 text-white text-center leading-10 rounded">
+              Hover
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2"><code>duration-300</code></td>
+          <td class="border px-4 py-2"><code>transition-duration: 300ms;</code></td>
+          <td class="border px-4 py-2">Duración estándar</td>
+          <td class="border px-4 py-2">
+            <div
+              class="w-24 h-10 bg-blue-400 hover:bg-blue-600 transition-colors duration-300 text-white text-center leading-10 rounded">
+              Hover
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2"><code>duration-700</code></td>
+          <td class="border px-4 py-2"><code>transition-duration: 700ms;</code></td>
+          <td class="border px-4 py-2">Transición lenta</td>
+          <td class="border px-4 py-2">
+            <div
+              class="w-24 h-10 bg-blue-400 hover:bg-blue-600 transition-colors duration-700 text-white text-center leading-10 rounded">
+              Hover
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2"><code>duration-1000</code></td>
+          <td class="border px-4 py-2"><code>transition-duration: 1000ms;</code></td>
+          <td class="border px-4 py-2">Transición muy lenta</td>
+          <td class="border px-4 py-2">
+            <div
+              class="w-24 h-10 bg-blue-400 hover:bg-blue-600 transition-colors duration-1000 text-white text-center leading-10 rounded">
+              Hover
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2"><code>duration-[450ms]</code></td>
+          <td class="border px-4 py-2"><code>transition-duration: 450ms;</code></td>
+          <td class="border px-4 py-2">Valor personalizado</td>
+          <td class="border px-4 py-2">
+            <div
+              class="w-24 h-10 bg-blue-400 hover:bg-blue-600 transition-colors duration-[450ms] text-white text-center leading-10 rounded">
+              Hover
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+
+
+
+
+
+  <section>
+    <h2 class="text-2xl font-bold mb-4">⏱️ Retardo (delay-*)</h2>
+    <p class="mb-4">
+      Las clases <code>delay-*</code> especifican cuánto tiempo espera una transición antes de comenzar. Se usa para
+      crear efectos más dinámicos y secuenciales.
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th class="border px-4 py-2">Clase Tailwind</th>
+          <th class="border px-4 py-2">Equivalente CSS</th>
+          <th class="border px-4 py-2">Descripción</th>
+          <th class="border px-4 py-2">Ejemplo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border px-4 py-2"><code>delay-75</code></td>
+          <td class="border px-4 py-2"><code>transition-delay: 75ms;</code></td>
+          <td class="border px-4 py-2">Pequeño retardo</td>
+          <td class="border px-4 py-2">
+            <div
+              class="w-24 h-10 bg-green-500 hover:bg-green-700 transition-colors delay-75 text-white text-center leading-10 rounded">
+              Hover
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2"><code>delay-150</code></td>
+          <td class="border px-4 py-2"><code>transition-delay: 150ms;</code></td>
+          <td class="border px-4 py-2">Retardo medio</td>
+          <td class="border px-4 py-2">
+            <div
+              class="w-24 h-10 bg-green-500 hover:bg-green-700 transition-colors delay-150 text-white text-center leading-10 rounded">
+              Hover
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2"><code>delay-300</code></td>
+          <td class="border px-4 py-2"><code>transition-delay: 300ms;</code></td>
+          <td class="border px-4 py-2">Retardo largo</td>
+          <td class="border px-4 py-2">
+            <div
+              class="w-24 h-10 bg-green-500 hover:bg-green-700 transition-colors delay-300 text-white text-center leading-10 rounded">
+              Hover
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2"><code>delay-700</code></td>
+          <td class="border px-4 py-2"><code>transition-delay: 700ms;</code></td>
+          <td class="border px-4 py-2">Retardo muy largo</td>
+          <td class="border px-4 py-2">
+            <div
+              class="w-24 h-10 bg-green-500 hover:bg-green-700 transition-colors delay-700 text-white text-center leading-10 rounded">
+              Hover
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2"><code>delay-[250ms]</code></td>
+          <td class="border px-4 py-2"><code>transition-delay: 250ms;</code></td>
+          <td class="border px-4 py-2">Valor personalizado</td>
+          <td class="border px-4 py-2">
+            <div
+              class="w-24 h-10 bg-green-500 hover:bg-green-700 transition-colors delay-[250ms] text-white text-center leading-10 rounded">
+              Hover
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+
+
+
+
+  <section>
+    <h2 class="text-2xl font-bold mb-4">🎢 Curvas de transición (ease-*)</h2>
+    <p class="mb-4">
+      Las clases <code>ease-*</code> definen la curva de aceleración de las transiciones, controlando cómo se acelera o
+      desacelera un cambio de estado.
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th class="border px-4 py-2">Clase Tailwind</th>
+          <th class="border px-4 py-2">Equivalente CSS</th>
+          <th class="border px-4 py-2">Descripción</th>
+          <th class="border px-4 py-2">Ejemplo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border px-4 py-2"><code>ease-linear</code></td>
+          <td class="border px-4 py-2"><code>transition-timing-function: linear;</code></td>
+          <td class="border px-4 py-2">Transición constante, sin aceleración ni desaceleración</td>
+          <td class="border px-4 py-2">
+            <div
+              class="w-24 h-10 bg-indigo-500 hover:-translate-x-20 transition-all duration-700 ease-linear text-white text-center leading-10 rounded">
+              Hover
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="border px-4 py-2"><code>ease-in</code></td>
+          <td class="border px-4 py-2"><code>transition-timing-function: ease-in;</code></td>
+          <td class="border px-4 py-2">Empieza lentamente y acelera al final</td>
+          <td class="border px-4 py-2">
+            <div
+              class="w-24 h-10 bg-indigo-500 hover:-translate-x-20 transition-all duration-700 ease-in text-white text-center leading-10 rounded">
+              Hover
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="border px-4 py-2"><code>ease-out</code></td>
+          <td class="border px-4 py-2"><code>transition-timing-function: ease-out;</code></td>
+          <td class="border px-4 py-2">Empieza rápido y desacelera al final</td>
+          <td class="border px-4 py-2">
+            <div
+              class="w-24 h-10 bg-indigo-500 hover:-translate-x-20 transition-all duration-700 ease-out text-white text-center leading-10 rounded">
+              Hover
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="border px-4 py-2"><code>ease-in-out</code></td>
+          <td class="border px-4 py-2"><code>transition-timing-function: ease-in-out;</code></td>
+          <td class="border px-4 py-2">Transición suave al inicio y al final</td>
+          <td class="border px-4 py-2">
+            <div
+              class="w-24 h-10 bg-indigo-500 hover:-translate-x-20 transition-all duration-700 ease-in-out text-white text-center leading-10 rounded">
+              Hover
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="border px-4 py-2"><code>ease-[cubic-bezier(0.68,-0.55,0.27,1.55)]</code></td>
+          <td class="border px-4 py-2"><code>transition-timing-function: cubic-bezier(0.68,-0.55,0.27,1.55);</code></td>
+          <td class="border px-4 py-2">Curva personalizada tipo "rebote"</td>
+          <td class="border px-4 py-2">
+            <div
+              class="w-24 h-10 bg-indigo-500 hover:-translate-x-20 transition-all duration-700 ease-[cubic-bezier(0.68,-0.55,0.27,1.55)] text-white text-center leading-10 rounded">
+              Hover
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+
+
+
+
+
+
+</body>
+
+</html>

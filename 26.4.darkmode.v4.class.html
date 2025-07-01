@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dark Mode - Tailwind v4 (Class)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-neutral-100 text-neutral-800 dark:text-neutral-100 dark:bg-neutral-900 p-8 space-y-10">
+
+  <!-- 1. Título -->
+  <header>
+    <h1 class="text-3xl font-bold">🌗 Tailwind Dark Mode v4 - Modo "class"</h1>
+  </header>
+
+  <!-- 2. Explicación -->
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold">🧠 ¿Cómo funciona el modo <code>class</code>?</h2>
+    <p>Este modo requiere que manualmente añadas o quites la clase <code>dark</code> en el elemento raíz (usualmente <code>&lt;html&gt;</code> o <code>&lt;body&gt;</code>).</p>
+    <p>En Tailwind CSS v4, no se usa <code>tailwind.config.js</code> para esto. Debes configurarlo directamente en <code>index.css</code> así:</p>
+    <pre class="bg-neutral-800 text-white p-4 rounded overflow-auto"><code>@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));</code></pre>
+    <p>Esto permite que todas las clases con el prefijo <code>dark:</code> funcionen dentro de elementos que tengan la clase <code>dark</code>.</p>
+  </section>
+
+  <!-- 3. Comparación Visual -->
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold">🎨 Comparación Visual</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="p-4 rounded bg-white text-black shadow">🌞 Estilo Claro</div>
+      <div class="p-4 rounded bg-black text-white shadow">🌚 Estilo Oscuro Manual</div>
+      <div class="p-4 rounded bg-white text-black dark:bg-black dark:text-white shadow">🌓 Modo Dinámico (Tailwind)</div>
+    </div>
+  </section>
+
+  <!-- 4. Antes con CSS tradicional -->
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold">🧾 ¿Cómo se hacía antes con CSS tradicional?</h2>
+    <p>Se usaba una clase <code>dark</code> en el elemento raíz y estilos CSS tradicionales:</p>
+    <pre class="bg-neutral-800 text-white p-4 rounded overflow-auto"><code>&lt;style&gt;
+  .dark .box-dark {
+    background-color: black;
+    color: white;
+  }
+&lt;/style&gt;
+
+&lt;div class="box-dark"&gt;
+  Texto que cambia según la clase .dark
+&lt;/div&gt;</code></pre>
+  </section>
+
+  <!-- 5. Con Tailwind -->
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold">⚡ ¿Cómo se hace ahora con Tailwind?</h2>
+    <p>Solo usa <code>dark:</code> como prefijo en tus utilidades:</p>
+    <pre class="bg-neutral-800 text-white p-4 rounded overflow-auto"><code>&lt;div class="bg-white text-black dark:bg-black dark:text-white"&gt;
+  Contenido dinámico con dark mode
+&lt;/div&gt;</code></pre>
+  </section>
+
+  <!-- 6. Activar con JavaScript -->
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold">🕹️ Activar/Desactivar con JavaScript</h2>
+    <button onclick="document.documentElement.classList.toggle('dark')"
+      class="px-4 py-2 bg-neutral-300 hover:bg-neutral-400 rounded">
+      🌗 Alternar modo oscuro
+    </button>
+    <p class="mt-4 text-sm text-neutral-600">
+      Este botón alterna la clase <code>dark</code> en el elemento raíz (<code>&lt;html&gt;</code>).
+    </p>
+    <pre class="bg-neutral-800 text-white p-4 rounded overflow-auto"><code>document.documentElement.classList.toggle('dark')</code></pre>
+  </section>
+
+</body>
+
+</html>

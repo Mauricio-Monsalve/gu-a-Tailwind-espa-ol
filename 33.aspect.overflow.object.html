@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Layout - Tailwind CSS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 p-8 text-sm space-y-10">
+
+  <h1 class="text-2xl font-bold mb-4">🏗️ Utilidades de Layout en Tailwind CSS</h1>
+
+  <!-- ASPECT RATIO -->
+  <section>
+    <h2 class="text-xl font-semibold mb-2">🔹 aspect-ratio</h2>
+    <table class="table-auto w-full border border-gray-300 bg-white text-left">
+      <thead class="bg-gray-200">
+        <tr>
+          <th class="border px-4 py-2">Clase Tailwind</th>
+          <th class="border px-4 py-2">CSS equivalente</th>
+          <th class="border px-4 py-2">Ejemplo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border px-4 py-2">aspect-auto</td>
+          <td class="border px-4 py-2">aspect-ratio: auto;</td>
+          <td class="border px-4 py-2">
+            <div class="aspect-auto bg-blue-200 w-32 h-20"></div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">aspect-square</td>
+          <td class="border px-4 py-2">aspect-ratio: 1 / 1;</td>
+          <td class="border px-4 py-2">
+            <div class="aspect-square bg-blue-400 w-32"></div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">aspect-video</td>
+          <td class="border px-4 py-2">aspect-ratio: 16 / 9;</td>
+          <td class="border px-4 py-2">
+            <div class="aspect-video bg-blue-600 w-32"></div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">aspect-[4/3]</td>
+          <td class="border px-4 py-2">aspect-ratio: 4 / 3;</td>
+          <td class="border px-4 py-2">
+            <div class="aspect-[4/3] bg-blue-800 w-32"></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- OVERFLOW -->
+  <section>
+    <h2 class="text-xl font-semibold mb-2">🔹 overflow</h2>
+    <table class="table-auto w-full border border-gray-300 bg-white text-left">
+      <thead class="bg-gray-200">
+        <tr>
+          <th class="border px-4 py-2">Clase Tailwind</th>
+          <th class="border px-4 py-2">CSS equivalente</th>
+          <th class="border px-4 py-2">Ejemplo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border px-4 py-2">overflow-auto</td>
+          <td class="border px-4 py-2">overflow: auto;</td>
+          <td class="border px-4 py-2">
+            <div class="overflow-auto h-20 w-40 bg-gray-200 p-2">Texto muy largo<br>Texto muy largo<br>Texto muy largo<br>Texto muy largo
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">overflow-hidden</td>
+          <td class="border px-4 py-2">overflow: hidden;</td>
+          <td class="border px-4 py-2">
+            <div class="overflow-hidden h-20 w-40 bg-gray-200 p-2">Texto muy largo<br>Texto muy largo<br>Texto muy largo<br>Texto muy largo
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">overflow-clip</td>
+          <td class="border px-4 py-2">overflow: clip;</td>
+          <td class="border px-4 py-2">
+            <div class="overflow-clip h-20 w-40 bg-gray-200 p-2">Texto muy largo<br>Texto muy largo<br>Texto muy largo<br>Texto muy largo
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">overflow-visible</td>
+          <td class="border px-4 py-2">overflow: visible;</td>
+          <td class="border px-4 py-2">
+            <div class="overflow-visible h-20 w-40 bg-gray-200 p-2">Texto muy largo<br>Texto muy largo<br>Texto muy largo<br>Texto muy largo
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">overflow-scroll</td>
+          <td class="border px-4 py-2">overflow: scroll;</td>
+          <td class="border px-4 py-2">
+            <div class="overflow-scroll h-20 w-40 bg-gray-200 p-2">Texto muy largo<br>Texto muy largo<br>Texto muy largo<br>Texto muy largo
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">overflow-x-auto</td>
+          <td class="border px-4 py-2">overflow-x: auto;</td>
+          <td class="border px-4 py-2">
+            <div class="overflow-x-auto w-40 bg-gray-200">
+              <div class="w-[200px] bg-blue-200">Contenido horizontal</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3" class="border px-4 py-2 whitespace-pre-line">overflow-x-auto
+            overflow-x-hidden
+            overflow-x-clip
+            overflow-x-visible
+            overflow-x-scroll
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">overflow-y-auto</td>
+          <td class="border px-4 py-2">overflow-y: auto;</td>
+          <td class="border px-4 py-2">
+            <div class="overflow-y-auto h-20 bg-gray-200">
+              <div class="h-[100px] bg-blue-200">Contenido vertical largo</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3" class="border px-4 py-2 whitespace-pre-line">overflow-y-auto
+            overflow-y-hidden
+            overflow-y-clip
+            overflow-y-visible
+            overflow-y-scroll
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- OBJECT -->
+  <section>
+    <h2 class="text-xl font-semibold mb-2">🔹 object</h2>
+    <table class="table-auto w-full border border-gray-300 bg-white text-left">
+      <thead class="bg-gray-200">
+        <tr>
+          <th class="border px-4 py-2">Clase Tailwind</th>
+          <th class="border px-4 py-2">CSS equivalente</th>
+          <th class="border px-4 py-2">Ejemplo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border px-4 py-2">object-contain</td>
+          <td class="border px-4 py-2">object-fit: contain;</td>
+          <td class="border px-4 py-2"><img src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg"
+              class="object-contain h-24 w-32 bg-red-500" /></td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">object-cover</td>
+          <td class="border px-4 py-2">object-fit: cover;</td>
+          <td class="border px-4 py-2"><img src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg"
+              class="object-cover h-24 w-32 bg-red-500" /></td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">object-fill</td>
+          <td class="border px-4 py-2">object-fit: fill;</td>
+          <td class="border px-4 py-2"><img src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg"
+              class="object-fill h-24 w-32 bg-red-500" /></td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">object-none</td>
+          <td class="border px-4 py-2">object-fit: none;</td>
+          <td class="border px-4 py-2"><img src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg"
+              class="object-none h-24 w-32 bg-red-500" /></td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">object-scale-down</td>
+          <td class="border px-4 py-2">object-fit: scale-down;</td>
+          <td class="border px-4 py-2"><img src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg"
+              class="object-scale-down h-24 w-32 bg-red-500" /></td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">object-top / object-center / object-bottom / etc.</td>
+          <td class="border px-4 py-2">object-position: ...;</td>
+          <td class="border px-4 py-2">
+            <img src="https://cdn.pixabay.com/photo/2023/10/23/17/53/bird-8336583_1280.jpg" class="object-cover object-top h-24 w-32 bg-red-500 mb-1" />
+            <img src="https://cdn.pixabay.com/photo/2023/10/23/17/53/bird-8336583_1280.jpg"
+              class="object-cover object-center h-24 w-32 bg-red-500 mb-1" />
+            <img src="https://cdn.pixabay.com/photo/2023/10/23/17/53/bird-8336583_1280.jpg" class="object-cover object-bottom h-24 w-32 bg-red-500" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+</body>
+
+</html>

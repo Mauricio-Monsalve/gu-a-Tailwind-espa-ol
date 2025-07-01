@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Border - Tailwind CSS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    section>h2~table div.w-24.h-10.bg-white {
+      border-color: black;
+    }
+  </style>
+</head>
+
+<body class="p-8 bg-gray-100 text-sm space-y-10">
+  <h1 class="text-2xl font-bold mb-4">Clases de Border en Tailwind CSS</h1>
+  <table class="table-auto w-full border border-gray-300 bg-white text-left text-sm">
+    <thead class="bg-gray-200">
+      <tr>
+        <th class="border px-4 py-2">Clase Tailwind</th>
+        <th class="border px-4 py-2">CSS equivalente</th>
+        <th class="border px-4 py-2">Ejemplo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- border -->
+      <tr>
+        <td class="border px-4 py-2">border</td>
+        <td class="border px-4 py-2">border-width: 1px;</td>
+        <td class="border px-4 py-2">
+          <div class="border w-24 h-10 bg-white"></div>
+        </td>
+      </tr>
+      <!-- border-val -->
+      <tr>
+        <td class="border px-4 py-2">border-0</td>
+        <td class="border px-4 py-2">border-width: 0px;</td>
+        <td class="border px-4 py-2">
+          <div class="border-0 w-24 h-10 bg-white"></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">border-2</td>
+        <td class="border px-4 py-2">border-width: 2px;</td>
+        <td class="border px-4 py-2">
+          <div class="border-2 w-24 h-10 bg-white"></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">border-[6px]</td>
+        <td class="border px-4 py-2">border-width: 6px;</td>
+        <td class="border px-4 py-2">
+          <div class="border-[6px] w-24 h-10 bg-white"></div>
+        </td>
+      </tr>
+      <!-- border-type -->
+      <tr>
+        <td class="border px-4 py-2">border-dotted</td>
+        <td class="border px-4 py-2">border-style: dotted;</td>
+        <td class="border px-4 py-2">
+          <div class="border-2 border-dotted w-24 h-10 bg-white"></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">border-dashed</td>
+        <td class="border px-4 py-2">border-style: dashed;</td>
+        <td class="border px-4 py-2">
+          <div class="border-2 border-dashed w-24 h-10 bg-white"></div>
+        </td>
+      </tr>
+      <!-- border-xytblrse -->
+      <tr>
+        <td class="border px-4 py-2">border-t</td>
+        <td class="border px-4 py-2">border-top-width: 1px;</td>
+        <td class="border px-4 py-2">
+          <div class="border-t w-24 h-10 bg-white"></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">border-x</td>
+        <td class="border px-4 py-2">border-left/right-width: 1px;</td>
+        <td class="border px-4 py-2">
+          <div class="border-x w-24 h-10 bg-white"></div>
+        </td>
+      </tr>
+      <!-- border-xytblrse-val -->
+      <tr>
+        <td class="border px-4 py-2">border-b-4</td>
+        <td class="border px-4 py-2">border-bottom-width: 4px;</td>
+        <td class="border px-4 py-2">
+          <div class="border-b-4 w-24 h-10 bg-white"></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">border-l-[10px]</td>
+        <td class="border px-4 py-2">border-left-width: 10px;</td>
+        <td class="border px-4 py-2">
+          <div class="border-l-[10px] w-24 h-10 bg-white"></div>
+        </td>
+      </tr>
+      <!-- border-col-val -->
+      <tr>
+        <td class="border px-4 py-2">border-blue-500</td>
+        <td class="border px-4 py-2">border-color: #3b82f6;</td>
+        <td class="border px-4 py-2">
+          <div class="border-4 border-blue-500 w-24 h-10 bg-white"></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">border-[#ff9900]</td>
+        <td class="border px-4 py-2">border-color: #ff9900;</td>
+        <td class="border px-4 py-2">
+          <div class="border-4 border-[#ff9900] w-24 h-10 bg-white"></div>
+        </td>
+      </tr>
+      <!-- border-xytblrse-col-val -->
+      <tr>
+        <td class="border px-4 py-2">border-t-red-500</td>
+        <td class="border px-4 py-2">border-top-color: #ef4444;</td>
+        <td class="border px-4 py-2">
+          <div class="border-t-4 border-t-red-500 w-24 h-10 bg-white"></div>
+        </td>
+      </tr>
+      <!-- border-opacity-val -->
+      <tr>
+        <td class="border px-4 py-2">border-opacity-50</td>
+        <td class="border px-4 py-2">border-opacity: 0.5;</td>
+        <td class="border px-4 py-2">
+          <div class="border-4 border-green-500 border-opacity-50 w-24 h-10 bg-white"></div>
+        </td>
+      </tr>
+      <!-- border-col-val/opacity -->
+      <tr>
+        <td class="border px-4 py-2">border-blue-500/30</td>
+        <td class="border px-4 py-2">border-color: rgba(59, 130, 246, 0.3);</td>
+        <td class="border px-4 py-2">
+          <div class="border-4 border-blue-500/30 w-24 h-10 bg-white"></div>
+        </td>
+      </tr>
+      <!-- border-xytblrse-col-val/opacity -->
+      <tr>
+        <td class="border px-4 py-2">border-b-red-500/60</td>
+        <td class="border px-4 py-2">border-bottom-color: rgba(239, 68, 68, 0.6);</td>
+        <td class="border px-4 py-2">
+          <div class="border-b-4 border-b-red-500/60 w-24 h-10 bg-white"></div>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+
+  <section>
+    <h2 class="text-xl font-semibold mb-2">Tipos de border por dirección</h2>
+    <p class="mb-2">Estas clases aplican borde en direcciones específicas.</p>
+
+    <table class="table-auto w-full border border-gray-300 bg-white text-left text-sm">
+      <thead class="bg-gray-200">
+        <tr>
+          <th class="border px-4 py-2">Clase Tailwind</th>
+          <th class="border px-4 py-2">CSS equivalente</th>
+          <th class="border px-4 py-2">Ejemplo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border px-4 py-2">border</td>
+          <td class="border px-4 py-2">border: 1px solid;</td>
+          <td class="border px-4 py-2">
+            <div class="border w-24 h-10 bg-white"></div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">border-x</td>
+          <td class="border px-4 py-2">border-left: 1px solid;<br />border-right: 1px solid;</td>
+          <td class="border px-4 py-2">
+            <div class="border-x w-24 h-10 bg-white"></div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">border-y</td>
+          <td class="border px-4 py-2">border-top: 1px solid;<br />border-bottom: 1px solid;</td>
+          <td class="border px-4 py-2">
+            <div class="border-y w-24 h-10 bg-white"></div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">border-t</td>
+          <td class="border px-4 py-2">border-top: 1px solid;</td>
+          <td class="border px-4 py-2">
+            <div class="border-t w-24 h-10 bg-white"></div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">border-r</td>
+          <td class="border px-4 py-2">border-right: 1px solid;</td>
+          <td class="border px-4 py-2">
+            <div class="border-r w-24 h-10 bg-white"></div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">border-b</td>
+          <td class="border px-4 py-2">border-bottom: 1px solid;</td>
+          <td class="border px-4 py-2">
+            <div class="border-b w-24 h-10 bg-white"></div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">border-l</td>
+          <td class="border px-4 py-2">border-left: 1px solid;</td>
+          <td class="border px-4 py-2">
+            <div class="border-l w-24 h-10 bg-white"></div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">border-s</td>
+          <td class="border px-4 py-2">border-inline-start: 1px solid;</td>
+          <td class="border px-4 py-2">
+            <div class="border-s w-24 h-10 bg-white"></div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">border-e</td>
+          <td class="border px-4 py-2">border-inline-end: 1px solid;</td>
+          <td class="border px-4 py-2">
+            <div class="border-e w-24 h-10 bg-white"></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+</body>
+
+</html>

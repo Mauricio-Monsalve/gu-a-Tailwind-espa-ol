@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Transformaciones - Tailwind CSS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .cuadro {
+      @apply w-20 h-20 bg-blue-500 text-white flex items-center justify-center rounded shadow;
+    }
+
+    .demo {
+      @apply p-2 bg-white inline-block border border-gray-300 m-2;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100 p-8 text-sm space-y-12">
+
+  <h1 class="text-2xl font-bold mb-4">🌀 Transformaciones en Tailwind CSS</h1>
+  <p>Para aplicar transformaciones de varios tipos debes usar la clase <code>transform</code> junto con las utilidades específicas.</p>
+  <pre>Ejemplo:
+
+    scale-50 (no necesita transform, solo es una)
+    rotate-45 (no necesita transform, solo es una)
+    transform scale-50 rotate-45 (necesita transform, son varias)
+  </pre>
+  <!-- SCALE -->
+  <section>
+    <h2 class="text-xl font-semibold mb-2">🔹 Escala (<code>scale-*</code>)</h2>
+    <table class="table-auto border w-full bg-white">
+      <thead class="bg-gray-200">
+        <tr>
+          <th class="border px-4 py-2">Clase</th>
+          <th class="border px-4 py-2">CSS</th>
+          <th class="border px-4 py-2">Ejemplo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border px-4 py-2">scale-50</td>
+          <td class="border px-4 py-2">transform: scale(0.5);</td>
+          <td class="border px-4 py-2"><div class="demo transform scale-50 bg-red-300"><div class="cuadro">50%</div></div></td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">scale-100</td>
+          <td class="border px-4 py-2">transform: scale(1);</td>
+          <td class="border px-4 py-2"><div class="demo transform scale-100 bg-red-300"><div class="cuadro">100%</div></div></td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">scale-[1.25]</td>
+          <td class="border px-4 py-2">transform: scale(1.25);</td>
+          <td class="border px-4 py-2"><div class="demo transform scale-[1.25] bg-red-300"><div class="cuadro">125%</div></div></td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">scale-x-150</td>
+          <td class="border px-4 py-2">transform: scaleX(1.5);</td>
+          <td class="border px-4 py-2"><div class="demo transform scale-x-150 bg-red-300"><div class="cuadro">X150%</div></div></td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">scale-y-[0.6]</td>
+          <td class="border px-4 py-2">transform: scaleY(0.6);</td>
+          <td class="border px-4 py-2"><div class="demo transform scale-y-[0.6] bg-red-300"><div class="cuadro">Y60%</div></div></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ROTATE -->
+  <section>
+    <h2 class="text-xl font-semibold mb-2">🔹 Rotación (<code>rotate-*</code>)</h2>
+    <table class="table-auto border w-full bg-white">
+      <thead class="bg-gray-200">
+        <tr>
+          <th class="border px-4 py-2">Clase</th>
+          <th class="border px-4 py-2">CSS</th>
+          <th class="border px-4 py-2">Ejemplo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border px-4 py-2">rotate-45</td>
+          <td class="border px-4 py-2">transform: rotate(45deg);</td>
+          <td class="border px-4 py-2 flex justify-center"><div class="demo transform rotate-45"><div class="cuadro bg-red-300 w-10">45°</div></div></td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">-rotate-90</td>
+          <td class="border px-4 py-2">transform: rotate(-90deg);</td>
+          <td class="border px-4 py-2 flex justify-center"><div class="demo transform -rotate-90"><div class="cuadro bg-red-300 w-10">-90°</div></div></td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">rotate-[120deg]</td>
+          <td class="border px-4 py-2">transform: rotate(120deg);</td>
+          <td class="border px-4 py-2 flex justify-center"><div class="demo transform rotate-[120deg]"><div class="cuadro bg-red-300 w-10">120°</div></div></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- TRANSLATE -->
+  <section>
+    <h2 class="text-xl font-semibold mb-2">🔹 Traslación (<code>translate-*</code>)</h2>
+    <table class="table-auto border w-full bg-white">
+      <thead class="bg-gray-200">
+        <tr>
+          <th class="border px-4 py-2">Clase</th>
+          <th class="border px-4 py-2">CSS</th>
+          <th class="border px-4 py-2">Ejemplo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border px-4 py-2">translate-x-4</td>
+          <td class="border px-4 py-2">transform: translateX(1rem);</td>
+          <td class="border px-4 py-2"><div class="demo transform translate-x-4"><div class="cuadro bg-blue-300 w-10">→ x4</div></div></td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">-translate-y-2</td>
+          <td class="border px-4 py-2">transform: translateY(-0.5rem);</td>
+          <td class="border px-4 py-2"><div class="demo transform -translate-y-2"><div class="cuadro bg-blue-300 w-10">↑ y2</div></div></td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">translate-x-[50px]</td>
+          <td class="border px-4 py-2">transform: translateX(50px);</td>
+          <td class="border px-4 py-2"><div class="demo transform translate-x-[50px]"><div class="cuadro bg-blue-300 w-10">→ 50px</div></div></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- SKEW -->
+  <section>
+    <h2 class="text-xl font-semibold mb-2">🔹 Sesgar (<code>skew-*</code>)</h2>
+    <table class="table-auto border w-full bg-white">
+      <thead class="bg-gray-200">
+        <tr>
+          <th class="border px-4 py-2">Clase</th>
+          <th class="border px-4 py-2">CSS</th>
+          <th class="border px-4 py-2">Ejemplo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border px-4 py-2">skew-x-12</td>
+          <td class="border px-4 py-2">transform: skewX(12deg);</td>
+          <td class="border px-4 py-2"><div class="demo transform skew-x-12 bg-purple-300 h-20"><div class="cuadro">X</div></div></td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">skew-y-[10deg]</td>
+          <td class="border px-4 py-2">transform: skewY(10deg);</td>
+          <td class="border px-4 py-2"><div class="demo transform skew-y-[10deg] bg-purple-300 h-20"><div class="cuadro">Y</div></div></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ORIGIN -->
+  <section>
+    <h2 class="text-xl font-semibold mb-2">🔹 Punto de origen (<code>origin-*</code>)</h2>
+    <p class="mb-2">Afecta el punto desde donde se aplican transformaciones como <code>scale</code> o <code>rotate</code>.</p>
+    <table class="table-auto border w-full bg-white">
+      <thead class="bg-gray-200">
+        <tr>
+          <th class="border px-4 py-2">Clase</th>
+          <th class="border px-4 py-2">CSS</th>
+          <th class="border px-4 py-2">Sin origen</th>
+          <th class="border px-4 py-2">Con origen</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border px-4 py-2">origin-top-left + rotate-45</td>
+          <td class="border px-4 py-2">transform-origin: top left;</td>
+          <td class="border px-4 py-2"><div class="demo border-red-500 border-2 flex justify-center w-4"><div class="cuadro rotate-45 bg-yellow-500/25 w-4">↻</div></div></td>
+          <td class="border px-4 py-2"><div class="demo border-red-500 border-2 flex justify-center w-4"><div class="cuadro origin-top-left rotate-45 bg-yellow-500/25 w-4">↻</div></div></td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">origin-bottom-right + scale-150</td>
+          <td class="border px-4 py-2">transform-origin: bottom right;</td>
+          <td class="border px-4 py-2"><div class="demo border-red-500 border-2 flex justify-center w-4"><div class="cuadro scale-150 bg-yellow-500/25 w-4">⤴</div></div></td>
+          <td class="border px-4 py-2"><div class="demo border-red-500 border-2 flex justify-center w-4"><div class="cuadro origin-bottom-right scale-150 bg-yellow-500/25 w-4">⤴</div></div></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+</body>
+
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Animaciones en Tailwind CSS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .caja {
+      background-color: dodgerblue;
+      color: white;
+      text-align: center;
+      padding: 0.5rem;
+      border-radius: 0.25rem;
+      width: 150px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 2rem;
+    }
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 0.5rem;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f3f4f6;
+    }
+  </style>
+</head>
+
+<body class="p-8 bg-gray-100 text-sm space-y-10">
+  <h1 class="text-3xl font-bold mb-6">🎞️ Animaciones en Tailwind CSS</h1>
+
+  <p class="mb-4">
+    Tailwind incluye utilidades para animaciones predefinidas mediante la clase <code>animate-*</code>.
+    Puedes controlar la duración, repetición, y estilo con otras clases como <code>duration-*</code>,
+    <code>delay-*</code> y <code>ease-*</code>. También puedes crear tus propias animaciones personalizadas
+    en el archivo <code>tailwind.config.js</code> utilizando la clave <code>theme.extend.animation</code>.
+  </p>
+
+  <h2 class="text-xl font-semibold mb-2">🔹 Clases animate-*</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Clase Tailwind</th>
+        <th>Equivalente CSS</th>
+        <th>Descripción</th>
+        <th>Ejemplo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>animate-none</code></td>
+        <td><code>animation: none;</code></td>
+        <td>Desactiva cualquier animación aplicada al elemento.</td>
+        <td class="ejemplo">
+          <div class="caja animate-none">Sin animación</div>
+        </td>
+      </tr>
+      <tr>
+        <td><code>animate-spin</code></td>
+        <td><code><pre>
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+animation: spin 1s linear infinite;</pre></code></td>
+        <td>Gira el elemento indefinidamente.</td>
+        <td class="ejemplo">
+          <div class="caja animate-spin">🔄</div>
+        </td>
+      </tr>
+      <tr>
+        <td><code>animate-ping</code></td>
+        <td><code><pre>
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;</pre></code></td>
+        <td>Crea un efecto de expansión con opacidad como un radar.</td>
+        <td class="ejemplo">
+          <div class="caja animate-ping">📡</div>
+        </td>
+      </tr>
+      <tr>
+        <td><code>animate-pulse</code></td>
+        <td><code><pre>
+@keyframes pulse {
+  50% {
+    opacity: .5;
+  }
+}
+animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;</pre></code></td>
+        <td>Reduce y aumenta la opacidad como un pulso.</td>
+        <td class="ejemplo">
+          <div class="caja animate-pulse">❤️</div>
+        </td>
+      </tr>
+      <tr>
+        <td><code>animate-bounce</code></td>
+        <td><code><pre>
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8,0,1,1);
+  }
+  50% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0,0,0.2,1);
+  }
+}
+animation: bounce 1s infinite;</pre></code></td>
+        <td>Hace que el elemento rebote suavemente.</td>
+        <td class="ejemplo">
+          <div class="caja animate-bounce">🏀</div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+
+
+
+
+
+
+  <p class="mt-6 text-gray-700">
+    Si deseas crear animaciones personalizadas como <code>animate-fade-in</code> o <code>animate-slide-up</code>,
+    puedes definirlas en <code>tailwind.config.js</code> usando <code>theme.extend.animation</code>
+    y combinarlas con @keyframes personalizadas.
+  </p>
+</body>
+
+</html>

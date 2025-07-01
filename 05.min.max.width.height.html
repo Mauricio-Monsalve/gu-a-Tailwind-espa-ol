@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Min y Max Width/Height - Tailwind</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="p-8 bg-gray-100 text-sm">
+  <h1 class="text-2xl font-bold mb-4">Clases Min/Max Width y Height en Tailwind</h1>
+
+  <table class="table-auto w-[90vw] border border-gray-300 bg-white mb-6">
+    <thead>
+      <tr class="bg-gray-200">
+        <th class="border px-4 py-2">Clase</th>
+        <th class="border px-4 py-2">CSS</th>
+        <th class="border px-4 py-2">Ejemplo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="border px-4 py-2">min-w-16</td>
+        <td class="border px-4 py-2">min-width: 4rem;</td>
+        <td class="border px-4 py-2">
+          <div class="bg-white border border-black min-w-16 h-10">Min Width</div>
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">max-w-20</td>
+        <td class="border px-4 py-2">max-width: 5rem;</td>
+        <td class="border px-4 py-2">
+          <div class="bg-white border border-black max-w-20 h-10">Max Width</div>
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">min-h-20</td>
+        <td class="border px-4 py-2">min-height: 5rem;</td>
+        <td class="border px-4 py-2">
+          <div class="bg-white border border-black min-h-20 w-20">Min Height</div>
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">max-h-20</td>
+        <td class="border px-4 py-2">max-height: 5rem;</td>
+        <td class="border px-4 py-2 h-60">
+          <div class="bg-white border border-black h-full max-h-20 w-20">
+            Max Height
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="mb-4 text-gray-700">
+    Tailwind CSS utiliza la misma estructura de nombres de clases para definir restricciones mínimas y máximas de ancho y alto. 
+    Puedes usar <code>min-w-*</code>, <code>max-w-*</code>, <code>min-h-*</code> y <code>max-h-*</code> para establecer los valores mínimos y máximos del tamaño de un elemento. 
+    Estas clases aceptan los mismos valores que <code>w-*</code> y <code>h-*</code>, e incluso puedes usar valores personalizados como 
+    <code>min-w-[150px]</code> o <code>max-h-[80vh]</code>.
+  </p>
+
+  <a href="./04.width.height.html" class="text-blue-600 underline hover:text-blue-800">
+    Ver archivo de ejemplo: 04.width.height.html
+  </a>
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guía de Gradientes - Tailwind CSS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .test-box {
+      width: 240px;
+      height: 80px;
+      border: 1px solid #999;
+      padding: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+
+    .text-box {
+      width: 240px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+  </style>
+</head>
+
+<body class="p-8 bg-gray-100 text-sm">
+
+  <h1 class="text-2xl font-bold mb-6">🎨 Gradientes en Tailwind CSS</h1>
+
+  <section>
+    <h2 class="text-xl font-semibold mb-4">Dirección del Gradiente</h2>
+    <table class="table-auto w-full border border-gray-300 bg-white text-left text-sm mb-10">
+      <thead class="bg-gray-200">
+        <tr>
+          <th class="border px-4 py-2">Clase Tailwind</th>
+          <th class="border px-4 py-2">Dirección</th>
+          <th class="border px-4 py-2">Ejemplo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border px-4 py-2">bg-gradient-to-r</td>
+          <td class="border px-4 py-2">De izquierda a derecha</td>
+          <td class="border px-4 py-2">
+            <div class="test-box bg-gradient-to-r from-pink-500 to-yellow-500">→</div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">bg-gradient-to-l</td>
+          <td class="border px-4 py-2">De derecha a izquierda</td>
+          <td class="border px-4 py-2">
+            <div class="test-box bg-gradient-to-l from-pink-500 to-yellow-500">←</div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">bg-gradient-to-t</td>
+          <td class="border px-4 py-2">De abajo hacia arriba</td>
+          <td class="border px-4 py-2">
+            <div class="test-box bg-gradient-to-t from-pink-500 to-yellow-500">↑</div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">bg-gradient-to-b</td>
+          <td class="border px-4 py-2">De arriba hacia abajo</td>
+          <td class="border px-4 py-2">
+            <div class="test-box bg-gradient-to-b from-pink-500 to-yellow-500">↓</div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">bg-gradient-to-tr</td>
+          <td class="border px-4 py-2">Diagonal inferior izquierda → superior derecha</td>
+          <td class="border px-4 py-2">
+            <div class="test-box bg-gradient-to-tr from-pink-500 to-yellow-500">↗</div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">bg-gradient-to-bl</td>
+          <td class="border px-4 py-2">Diagonal superior derecha → inferior izquierda</td>
+          <td class="border px-4 py-2">
+            <div class="test-box bg-gradient-to-bl from-pink-500 to-yellow-500">↙</div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">bg-gradient-to-tl</td>
+          <td class="border px-4 py-2">Diagonal inferior derecha → superior izquierda</td>
+          <td class="border px-4 py-2">
+            <div class="test-box bg-gradient-to-tl from-pink-500 to-yellow-500">↖</div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">bg-gradient-to-br</td>
+          <td class="border px-4 py-2">Diagonal superior izquierda → inferior derecha</td>
+          <td class="border px-4 py-2">
+            <div class="test-box bg-gradient-to-br from-pink-500 to-yellow-500">↘</div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">bg-[linear-gradient(45deg,...)]</td>
+          <td class="border px-4 py-2">Dirección personalizada 45°</td>
+          <td class="border px-4 py-2">
+            <div class="test-box bg-[linear-gradient(45deg,_#ec4899,_#facc15)]">45°</div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">bg-[linear-gradient(135deg,...)]</td>
+          <td class="border px-4 py-2">Dirección personalizada 135°</td>
+          <td class="border px-4 py-2">
+            <div class="test-box bg-[linear-gradient(135deg,_#ec4899,_#facc15)]">135°</div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">bg-[linear-gradient(200deg,...)]</td>
+          <td class="border px-4 py-2">Dirección personalizada 200°</td>
+          <td class="border px-4 py-2">
+            <div class="test-box bg-[linear-gradient(200deg,_#ec4899,_#facc15)]">200°</div>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2 class="text-xl font-semibold mb-4">🎨 Colores del Gradiente</h2>
+    <p class="mb-4">Tailwind utiliza: <code>from-</code>, <code>via-</code>, <code>to-</code> para definir los puntos
+      del gradiente.</p>
+    <table class="table-auto w-full border border-gray-300 bg-white text-sm text-left mb-10">
+      <thead class="bg-gray-200">
+        <tr>
+          <th class="border px-4 py-2">Clase Tailwind</th>
+          <th class="border px-4 py-2">CSS equivalente</th>
+          <th class="border px-4 py-2">Vista previa</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border px-4 py-2">bg-gradient-to-r from-blue-500 to-green-500</td>
+          <td class="border px-4 py-2">background-image: linear-gradient(to right, #3b82f6, #22c55e);</td>
+          <td class="border px-4 py-2">
+            <div class="test-box bg-gradient-to-r from-blue-500 to-green-500">Azul → Verde</div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">bg-gradient-to-r from-purple-500 via-pink-500 to-red-500</td>
+          <td class="border px-4 py-2">background-image: linear-gradient(to right, #8b5cf6, #ec4899, #ef4444);</td>
+          <td class="border px-4 py-2">
+            <div class="test-box bg-gradient-to-r from-purple-500 via-pink-500 to-red-500">Púrpura → Rosa → Rojo</div>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3" class="text-center whitespace-nowrap"><i>NOTA: Solo se puede usar <b>via-color-value</b> una sola vez</i></td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">bg-gradient-to-r from-[#06b6d4] to-[#3b82f6]</td>
+          <td class="border px-4 py-2">background-image: linear-gradient(to right, #06b6d4, #3b82f6);</td>
+          <td class="border px-4 py-2">
+            <div class="test-box bg-gradient-to-r from-[#06b6d4] to-[#3b82f6]">Custom HEX</div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">
+            bg-[linear-gradient(to_right,red,orange,yellow,green)]
+          </td>
+          <td class="border px-4 py-2">
+            background-image: linear-gradient(to right, red, orange, yellow, green);
+          </td>
+          <td class="border px-4 py-2">
+            <div class="test-box bg-[linear-gradient(to_right,red,orange,yellow,green)]">4 Colores</div>
+          </td>
+        </tr>
+
+
+        <tr>
+          <td class="border px-4 py-2">
+            bg-[linear-gradient(red_0%,red_50%,yellow_50%,yellow_100%)]
+          </td>
+          <td class="border px-4 py-2">
+            background-image: linear-gradient(red 0%, red 50%, yellow 50%, yellow 100%);
+          </td>
+          <td class="border px-4 py-2">
+            <div class="test-box bg-[linear-gradient(to_right,red_0%,red_50%,blue_50%,blue_100%)]">División Exacta</div>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </section>
+
+
+<section>
+  <h2 class="text-xl font-semibold mb-4 mt-10">🎨 Gradientes en Texto</h2>
+  <p class="mb-4">Usa <code>bg-clip-text</code> junto con <code>text-transparent</code> para aplicar un fondo con gradiente que se vea a través del texto.</p>
+
+  <table class="table-auto w-full border border-gray-300 bg-white text-left text-sm">
+    <thead class="bg-gray-200">
+      <tr>
+        <th class="border px-4 py-2">Clase Tailwind</th>
+        <th class="border px-4 py-2">CSS equivalente</th>
+        <th class="border px-4 py-2">Resultado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="border px-4 py-2"><b>bg-clip-text text-transparent</b> bg-gradient-to-r from-pink-500 to-yellow-500</td>
+        <td class="border px-4 py-2">
+          background-image: linear-gradient(to right, #ec4899, #facc15);<br/>
+          background-clip: text;<br/>
+          color: transparent;
+        </td>
+        <td class="border px-4 py-2">
+          <div class="text-box bg-gradient-to-r from-pink-500 to-yellow-500 bg-clip-text text-transparent">
+            Texto con gradiente ↔
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="border px-4 py-2"><b>bg-clip-text text-transparent</b> bg-gradient-to-l from-blue-500 to-green-500</td>
+        <td class="border px-4 py-2">
+          background-image: linear-gradient(to left, #3b82f6, #22c55e);<br/>
+          background-clip: text;<br/>
+          color: transparent;
+        </td>
+        <td class="border px-4 py-2">
+          <div class="text-box bg-gradient-to-l from-blue-500 to-green-500 bg-clip-text text-transparent">
+            Texto con gradiente ↔
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="border px-4 py-2"><b>bg-clip-text text-transparent</b> bg-gradient-to-tl from-purple-600 to-pink-400</td>
+        <td class="border px-4 py-2">
+          background-image: linear-gradient(to top left, #9333ea, #f472b6);<br/>
+          background-clip: text;<br/>
+          color: transparent;
+        </td>
+        <td class="border px-4 py-2">
+          <div class="text-box bg-gradient-to-tl from-purple-600 to-pink-400 bg-clip-text text-transparent">
+            Gradiente diagonal ↖
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="border px-4 py-2"><b>bg-clip-text text-transparent</b> bg-[linear-gradient(45deg,#06b6d4,#3b82f6)]</td>
+        <td class="border px-4 py-2">
+          background-image: linear-gradient(45deg, #06b6d4, #3b82f6);<br/>
+          background-clip: text;<br/>
+          color: transparent;
+        </td>
+        <td class="border px-4 py-2">
+          <div class="text-box bg-[linear-gradient(45deg,#06b6d4,#3b82f6)] bg-clip-text text-transparent">
+            Gradiente Custom 🎨
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+
+</body>
+
+</html>

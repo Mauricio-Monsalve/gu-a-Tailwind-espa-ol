@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clases de Texto en Tailwind CSS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .demo-box {
+            max-width: 300px;
+            border: 1px solid #ccc;
+            padding: 0.5rem;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+
+<body class="p-8 bg-gray-100 text-sm space-y-10">
+    <h1 class="text-3xl font-bold mb-6">Clases de Texto en Tailwind CSS</h1>
+
+    <!-- Sección 1 -->
+    <section>
+        <h2 class="text-xl font-semibold mb-4">🧵 Overflow y truncamiento de texto</h2>
+        <table class="table-auto w-full border border-gray-300 bg-white text-left text-sm">
+            <thead class="bg-gray-200">
+                <tr>
+                    <th class="border px-4 py-2">Clase Tailwind</th>
+                    <th class="border px-4 py-2">CSS equivalente</th>
+                    <th class="border px-4 py-2">Texto ingresado</th>
+                    <th class="border px-4 py-2">Texto final</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="border px-4 py-2">truncate</td>
+                    <td class="border px-4 py-2">overflow: hidden;<br>text-overflow: ellipsis;<br>white-space: nowrap;
+                    </td>
+                    <td class="border px-4 py-2">
+                        <div class="w-64">Este es un texto muy largo que debería ser truncado con puntos suspensivos.
+                        </div>
+                    </td>
+                    <td class="border px-4 py-2">
+                        <div class="w-64 truncate">Este es un texto muy largo que debería ser truncado con puntos
+                            suspensivos.</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">text-ellipsis</td>
+                    <td class="border px-4 py-2">text-overflow: ellipsis;<br>overflow: hidden;<br>white-space: nowrap;
+                    </td>
+                    <td class="border px-4 py-2">
+                        <div class="w-64">Este texto aplica solo ellipsis si se agregan overflow y nowrap.</div>
+                    </td>
+                    <td class="border px-4 py-2">
+                        <div class="w-64 text-ellipsis overflow-hidden whitespace-nowrap">Este texto aplica solo
+                            ellipsis si se agregan overflow y nowrap.</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">text-clip</td>
+                    <td class="border px-4 py-2">text-overflow: clip;<br>overflow: hidden;<br>white-space: nowrap;</td>
+                    <td class="border px-4 py-2">
+                        <div class="w-64">Texto cortado abruptamente sin puntos suspensivos. Este texto aplica solo si
+                            se agregan overflow y nowrap.</div>
+                    </td>
+                    <td class="border px-4 py-2">
+                        <div class="w-64 text-clip overflow-hidden whitespace-nowrap">Texto cortado abruptamente sin
+                            puntos suspensivos. Este texto aplica solo si se agregan overflow y nowrap.</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">overflow-hidden</td>
+                    <td class="border px-4 py-2">overflow: hidden;</td>
+                    <td class="border px-4 py-2">
+                        <div class="w-64 h-10">Texto más grande que el contenedor en altura y anchura.</div>
+                    </td>
+                    <td class="border px-4 py-2">
+                        <div class="w-40 h-5 overflow-hidden border-black border">Texto más grande que el contenedor en
+                            altura y anchura.
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2 class="text-xl font-semibold mb-4 mt-10">📌 Cortar párrafos con <code>line-clamp</code></h2>
+        <p class="mb-4 text-gray-700">Estas clases permiten limitar el número de líneas visibles en un bloque de texto.
+            Para que funcione correctamente, asegúrate de que el elemento tenga <code>display: -webkit-box</code>,
+            <code>overflow-hidden</code>, y <code>-webkit-box-orient: vertical</code> mediante la utilidad
+            <code>line-clamp</code>.</p>
+        <table class="table-auto w-full border border-gray-300 bg-white text-left text-sm">
+            <thead class="bg-gray-200">
+                <tr>
+                    <th class="border px-4 py-2">Clase Tailwind</th>
+                    <th class="border px-4 py-2">CSS equivalente</th>
+                    <th class="border px-4 py-2">Resultado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="border px-4 py-2">line-clamp-1</td>
+                    <td class="border px-4 py-2">
+                        display: -webkit-box;<br>
+                        -webkit-line-clamp: 1;<br>
+                        -webkit-box-orient: vertical;<br>
+                        overflow: hidden;
+                    </td>
+                    <td class="border px-4 py-2">
+                        <p class="line-clamp-1 w-[300px] bg-gray-100 p-2">
+                            Este es un ejemplo de párrafo largo que debería ser truncado después de una sola línea. De
+                            lo contrario, mostraría todo su contenido completo.
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">line-clamp-3</td>
+                    <td class="border px-4 py-2">
+                        -webkit-line-clamp: 3;<br>... (mismo estilo base)
+                    </td>
+                    <td class="border px-4 py-2">
+                        <p class="line-clamp-3 w-[300px] bg-gray-100 p-2">
+                            Este es un ejemplo de párrafo largo que debería ser truncado después de tres líneas. Permite
+                            mostrar un poco más de contenido antes de cortar con puntos suspensivos.
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">line-clamp-none</td>
+                    <td class="border px-4 py-2">
+                        -webkit-line-clamp: unset;<br>overflow: visible;
+                    </td>
+                    <td class="border px-4 py-2">
+                        <p class="line-clamp-none w-[300px] bg-gray-100 p-2">
+                            Este párrafo no se trunca, se muestra completo, sin importar cuántas líneas ocupe. Útil
+                            cuando se desea mostrar todo el texto sin restricciones.
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">line-clamp-[7]</td>
+                    <td class="border px-4 py-2">-webkit-line-clamp: 7;</td>
+                    <td class="border px-4 py-2">
+                        <p class="line-clamp-[7] w-[300px] bg-gray-100 p-2">
+                            Este es un párrafo con un valor personalizado. Puedes usar esta clase para controlar de
+                            forma precisa cuántas líneas deseas mostrar, por ejemplo, 7 líneas en este caso. Recuerda
+                            que la clase debe estar acompañada por el resto de las propiedades requeridas por el
+                            comportamiento de clamping para que funcione correctamente.
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2 class="text-xl font-semibold mb-4 mt-10">🔠 Espaciado y saltos con <code>white-space</code></h2>
+        <table class="table-auto w-full border border-gray-300 bg-white text-left text-sm">
+            <thead class="bg-gray-200">
+                <tr>
+                    <th class="border px-4 py-2">Clase Tailwind</th>
+                    <th class="border px-4 py-2">CSS equivalente</th>
+                    <th class="border px-4 py-2">Texto ingresado</th>
+                    <th class="border px-4 py-2">Texto final</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="border px-4 py-2">whitespace-normal</td>
+                    <td class="border px-4 py-2">white-space: normal;</td>
+                    <td class="border px-4 py-2">
+                        <div class="w-[240px] border border-gray-400 p-1">Este texto tiene
+                            saltos de línea y espacios extra.</div>
+                    </td>
+                    <td class="border px-4 py-2">
+                        <div class="w-[240px] border border-gray-400 p-1 whitespace-normal">Este texto tiene
+                            saltos de línea y espacios extra.</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">whitespace-nowrap</td>
+                    <td class="border px-4 py-2">white-space: nowrap;</td>
+                    <td class="border px-4 py-2">
+                        <div class="w-[240px] border border-gray-400 p-1">Este texto tiene
+                            saltos de línea y espacios extra.</div>
+                    </td>
+                    <td class="border px-4 py-2">
+                        <div class="w-[240px] border border-gray-400 p-1 whitespace-nowrap">Este texto tiene
+                            saltos de línea y espacios extra.</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">whitespace-pre</td>
+                    <td class="border px-4 py-2">white-space: pre;</td>
+                    <td class="border px-4 py-2">
+                        <div class="w-[240px] border border-gray-400 p-1">Este texto tiene
+                            saltos de línea y espacios extra.</div>
+                    </td>
+                    <td class="border px-4 py-2">
+                        <div class="w-[240px] border border-gray-400 p-1 whitespace-pre">Este texto tiene
+                            saltos de línea y espacios extra.</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">whitespace-pre-wrap</td>
+                    <td class="border px-4 py-2">white-space: pre-wrap;</td>
+                    <td class="border px-4 py-2">
+                        <div class="w-[240px] border border-gray-400 p-1">Este texto tiene
+                            saltos de línea y espacios extra.</div>
+                    </td>
+                    <td class="border px-4 py-2">
+                        <div class="w-[240px] border border-gray-400 p-1 whitespace-pre-wrap">Este texto tiene
+                            saltos de línea y espacios extra.</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">whitespace-pre-line</td>
+                    <td class="border px-4 py-2">white-space: pre-line;</td>
+                    <td class="border px-4 py-2">
+                        <div class="w-[240px] border border-gray-400 p-1">Este texto tiene
+                            saltos de línea y espacios extra.</div>
+                    </td>
+                    <td class="border px-4 py-2">
+                        <div class="w-[240px] border border-gray-400 p-1 whitespace-pre-line">Este texto tiene
+                            saltos de línea y espacios extra.</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2 class="text-xl font-semibold mb-4 mt-10">🧩 Comportamiento de ruptura de palabras</h2>
+        <table class="table-auto w-full border border-gray-300 bg-white text-left text-sm">
+            <thead class="bg-gray-200">
+                <tr>
+                    <th class="border px-4 py-2">Clase Tailwind</th>
+                    <th class="border px-4 py-2">CSS equivalente</th>
+                    <th class="border px-4 py-2">Texto ingresado</th>
+                    <th class="border px-4 py-2">Texto final</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="border px-4 py-2">break-words</td>
+                    <td class="border px-4 py-2">overflow-wrap: break-word;</td>
+                    <td class="border px-4 py-2">
+                        <div class="w-[240px] border border-gray-400 p-1">
+                            TextoSinEspaciosExtremadamenteLargoQueNecesitaRomperse</div>
+                    </td>
+                    <td class="border px-4 py-2">
+                        <div class="w-[240px] border border-gray-400 p-1 break-words">
+                            TextoSinEspaciosExtremadamenteLargoQueNecesitaRomperse</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">break-all</td>
+                    <td class="border px-4 py-2">word-break: break-all;</td>
+                    <td class="border px-4 py-2">
+                        <div class="w-[240px] border border-gray-400 p-1">
+                            TextoSinEspaciosExtremadamenteLargoQueNecesitaRomperse</div>
+                    </td>
+                    <td class="border px-4 py-2">
+                        <div class="w-[240px] border border-gray-400 p-1 break-all">
+                            TextoSinEspaciosExtremadamenteLargoQueNecesitaRomperse</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">break-keep</td>
+                    <td class="border px-4 py-2">word-break: keep-all;</td>
+                    <td class="border px-4 py-2">
+                        <div class="w-[240px] border border-gray-400 p-1">
+                            Textosinespaciosquedeberíamantenersejuntoaunqueseamuylargo</div>
+                    </td>
+                    <td class="border px-4 py-2">
+                        <div class="w-[240px] border border-gray-400 p-1 break-keep">
+                            Textosinespaciosquedeberíamantenersejuntoaunqueseamuylargo</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">break-normal</td>
+                    <td class="border px-4 py-2">overflow-wrap: normal;<br>word-break: normal;</td>
+                    <td class="border px-4 py-2">
+                        <div class="w-[240px] border border-gray-400 p-1">
+                            TextoSinEspaciosExtremadamenteLargoQueNoDebeRomperse</div>
+                    </td>
+                    <td class="border px-4 py-2">
+                        <div class="w-[240px] border border-gray-400 p-1 break-normal">
+                            TextoSinEspaciosExtremadamenteLargoQueNoDebeRomperse</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </section>
+
+
+    <section>
+        <h2 class="text-xl font-semibold mb-4 mt-10">🔡 Espaciado entre letras con <code>tracking</code></h2>
+        <table class="table-auto w-full border border-gray-300 bg-white text-left text-sm">
+            <thead class="bg-gray-200">
+                <tr>
+                    <th class="border px-4 py-2">Clase Tailwind</th>
+                    <th class="border px-4 py-2">CSS equivalente</th>
+                    <th class="border px-4 py-2">Texto de ejemplo</th>
+                    <th class="border px-4 py-2">Resultado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="border px-4 py-2">tracking-tighter</td>
+                    <td class="border px-4 py-2">letter-spacing: -0.05em;</td>
+                    <td class="border px-4 py-2">Texto más junto</td>
+                    <td class="border px-4 py-2">
+                        <div class="w-[240px] border border-gray-400 p-1 tracking-tighter">Texto más junto</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">tracking-tight</td>
+                    <td class="border px-4 py-2">letter-spacing: -0.025em;</td>
+                    <td class="border px-4 py-2">Texto ligeramente junto</td>
+                    <td class="border px-4 py-2">
+                        <div class="w-[240px] border border-gray-400 p-1 tracking-tight">Texto ligeramente junto</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">tracking-normal</td>
+                    <td class="border px-4 py-2">letter-spacing: 0em;</td>
+                    <td class="border px-4 py-2">Texto con espaciado normal</td>
+                    <td class="border px-4 py-2">
+                        <div class="w-[240px] border border-gray-400 p-1 tracking-normal">Texto con espaciado normal
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">tracking-wide</td>
+                    <td class="border px-4 py-2">letter-spacing: 0.025em;</td>
+                    <td class="border px-4 py-2">Texto ligeramente separado</td>
+                    <td class="border px-4 py-2">
+                        <div class="w-[240px] border border-gray-400 p-1 tracking-wide">Texto ligeramente separado</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">tracking-wider</td>
+                    <td class="border px-4 py-2">letter-spacing: 0.05em;</td>
+                    <td class="border px-4 py-2">Texto más separado</td>
+                    <td class="border px-4 py-2">
+                        <div class="w-[240px] border border-gray-400 p-1 tracking-wider">Texto más separado</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">tracking-widest</td>
+                    <td class="border px-4 py-2">letter-spacing: 0.1em;</td>
+                    <td class="border px-4 py-2">Texto extremadamente separado</td>
+                    <td class="border px-4 py-2">
+                        <div class="w-[240px] border border-gray-400 p-1 tracking-widest">Texto extremadamente separado
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">tracking-[5px]</td>
+                    <td class="border px-4 py-2">letter-spacing: 5px;</td>
+                    <td class="border px-4 py-2">Espaciado personalizado</td>
+                    <td class="border px-4 py-2">
+                        <div class="w-[240px] border border-gray-400 p-1 tracking-[5px]">Espaciado personalizado</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2 class="text-xl font-semibold mb-4 mt-10">📏 Espaciado entre líneas con <code>leading</code></h2>
+        <table class="table-auto w-full border border-gray-300 bg-white text-left text-sm">
+            <thead class="bg-gray-200">
+                <tr>
+                    <th class="border px-4 py-2">Clase Tailwind</th>
+                    <th class="border px-4 py-2">CSS equivalente</th>
+                    <th class="border px-4 py-2">Texto de ejemplo</th>
+                    <th class="border px-4 py-2">Resultado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="border px-4 py-2">leading-none</td>
+                    <td class="border px-4 py-2">line-height: 1;</td>
+                    <td class="border px-4 py-2">Primera línea.<br>Segunda línea.<br>Tercera línea.</td>
+                    <td class="border px-4 py-2">
+                        <div class="w-[240px] border border-gray-400 p-1 whitespace-pre leading-none">Primera
+                            línea.<br>Segunda línea.<br>Tercera línea.</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">leading-tight</td>
+                    <td class="border px-4 py-2">line-height: 1.25;</td>
+                    <td class="border px-4 py-2">Primera línea.<br>Segunda línea.<br>Tercera línea.</td>
+                    <td class="border px-4 py-2">
+                        <div class="w-[240px] border border-gray-400 p-1 whitespace-pre leading-tight">Primera
+                            línea.<br>Segunda línea.<br>Tercera línea.</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">leading-snug</td>
+                    <td class="border px-4 py-2">line-height: 1.375;</td>
+                    <td class="border px-4 py-2">Primera línea.<br>Segunda línea.<br>Tercera línea.</td>
+                    <td class="border px-4 py-2">
+                        <div class="w-[240px] border border-gray-400 p-1 whitespace-pre leading-snug">Primera
+                            línea.<br>Segunda línea.<br>Tercera línea.</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">leading-normal</td>
+                    <td class="border px-4 py-2">line-height: 1.5;</td>
+                    <td class="border px-4 py-2">Primera línea.<br>Segunda línea.<br>Tercera línea.</td>
+                    <td class="border px-4 py-2">
+                        <div class="w-[240px] border border-gray-400 p-1 whitespace-pre leading-normal">Primera
+                            línea.<br>Segunda línea.<br>Tercera línea.</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">leading-relaxed</td>
+                    <td class="border px-4 py-2">line-height: 1.625;</td>
+                    <td class="border px-4 py-2">Primera línea.<br>Segunda línea.<br>Tercera línea.</td>
+                    <td class="border px-4 py-2">
+                        <div class="w-[240px] border border-gray-400 p-1 whitespace-pre leading-relaxed">Primera
+                            línea.<br>Segunda línea.<br>Tercera línea.</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">leading-loose</td>
+                    <td class="border px-4 py-2">line-height: 2;</td>
+                    <td class="border px-4 py-2">Primera línea.<br>Segunda línea.<br>Tercera línea.</td>
+                    <td class="border px-4 py-2">
+                        <div class="w-[240px] border border-gray-400 p-1 whitespace-pre leading-loose">Primera
+                            línea.<br>Segunda línea.<br>Tercera línea.</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">leading-10</td>
+                    <td class="border px-4 py-2">line-height: 2.5rem (40px);</td>
+                    <td class="border px-4 py-2">Primera línea.<br>Segunda línea.<br>Tercera línea.</td>
+                    <td class="border px-4 py-2">
+                        <div class="w-[240px] border border-gray-400 p-1 whitespace-pre leading-10">Primera
+                            línea.<br>Segunda línea.<br>Tercera línea.</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">leading-[50px]</td>
+                    <td class="border px-4 py-2">line-height: 50px;</td>
+                    <td class="border px-4 py-2">Primera línea.<br>Segunda línea.<br>Tercera línea.</td>
+                    <td class="border px-4 py-2">
+                        <div class="w-[240px] border border-gray-400 p-1 whitespace-pre leading-[50px]">Primera
+                            línea.<br>Segunda línea.<br>Tercera línea.</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2 class="text-xl font-semibold mb-4 mt-10">🔠 Transformaciones de texto con <code>text-transform</code></h2>
+        <table class="table-auto w-full border border-gray-300 bg-white text-left text-sm">
+            <thead class="bg-gray-200">
+                <tr>
+                    <th class="border px-4 py-2">Clase Tailwind</th>
+                    <th class="border px-4 py-2">CSS equivalente</th>
+                    <th class="border px-4 py-2">Texto original</th>
+                    <th class="border px-4 py-2">Resultado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="border px-4 py-2">normal-case</td>
+                    <td class="border px-4 py-2">text-transform: none;</td>
+                    <td class="border px-4 py-2">Texto Sin Cambios</td>
+                    <td class="border px-4 py-2">
+                        <div class="w-[240px] border border-gray-400 p-1 normal-case">Texto Sin Cambios</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">capitalize</td>
+                    <td class="border px-4 py-2">text-transform: capitalize;</td>
+                    <td class="border px-4 py-2">texto transformado</td>
+                    <td class="border px-4 py-2">
+                        <div class="w-[240px] border border-gray-400 p-1 capitalize">texto transformado</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">uppercase</td>
+                    <td class="border px-4 py-2">text-transform: uppercase;</td>
+                    <td class="border px-4 py-2">texto transformado</td>
+                    <td class="border px-4 py-2">
+                        <div class="w-[240px] border border-gray-400 p-1 uppercase">texto transformado</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">lowercase</td>
+                    <td class="border px-4 py-2">text-transform: lowercase;</td>
+                    <td class="border px-4 py-2">TEXTO TRANSFORMADO</td>
+                    <td class="border px-4 py-2">
+                        <div class="w-[240px] border border-gray-400 p-1 lowercase">TEXTO TRANSFORMADO</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+
+    <section>
+        <h2 class="text-xl font-semibold mb-4 mt-10">🖋️ Decoración del texto con <code>text-decoration</code></h2>
+        <table class="table-auto w-full border border-gray-300 bg-white text-left text-sm">
+            <thead class="bg-gray-200">
+                <tr>
+                    <th class="border px-4 py-2">Clase Tailwind</th>
+                    <th class="border px-4 py-2">CSS equivalente</th>
+                    <th class="border px-4 py-2">Resultado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="3" class="font-bold text-center">Line</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">no-underline</td>
+                    <td class="border px-4 py-2">text-decoration: none;</td>
+                    <td class="border px-4 py-2">
+                        <div class="test-box no-underline">Texto sin decoración</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">underline</td>
+                    <td class="border px-4 py-2">text-decoration: underline;</td>
+                    <td class="border px-4 py-2">
+                        <div class="test-box underline">Texto subrayado</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">line-through</td>
+                    <td class="border px-4 py-2">text-decoration: line-through;</td>
+                    <td class="border px-4 py-2">
+                        <div class="test-box line-through">Texto tachado</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">overline</td>
+                    <td class="border px-4 py-2">text-decoration: overline;</td>
+                    <td class="border px-4 py-2">
+                        <div class="test-box overline">Texto con línea arriba</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="font-bold text-center">Style</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">underline decoration-solid</td>
+                    <td class="border px-4 py-2">text-decoration: underline; text-decoration-style: solid;</td>
+                    <td class="border px-4 py-2">
+                        <div class="test-box underline decoration-solid">Subrayado sólido</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">underline decoration-dashed</td>
+                    <td class="border px-4 py-2">text-decoration-style: dashed;</td>
+                    <td class="border px-4 py-2">
+                        <div class="test-box underline decoration-dashed">Subrayado dashed</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">underline decoration-dotted</td>
+                    <td class="border px-4 py-2">text-decoration-style: dotted;</td>
+                    <td class="border px-4 py-2">
+                        <div class="test-box underline decoration-dotted">Subrayado dotted</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">underline decoration-double</td>
+                    <td class="border px-4 py-2">text-decoration-style: double;</td>
+                    <td class="border px-4 py-2">
+                        <div class="test-box underline decoration-double">Subrayado doble</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">underline decoration-wavy</td>
+                    <td class="border px-4 py-2">text-decoration-style: wavy;</td>
+                    <td class="border px-4 py-2">
+                        <div class="test-box underline decoration-wavy">Subrayado ondulado</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="font-bold text-center">Thickness</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">underline decoration-1</td>
+                    <td class="border px-4 py-2">text-decoration-thickness: 1px;</td>
+                    <td class="border px-4 py-2">
+                        <div class="test-box underline decoration-1">Grosor 1</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">underline decoration-2</td>
+                    <td class="border px-4 py-2">text-decoration-thickness: 2px;</td>
+                    <td class="border px-4 py-2">
+                        <div class="test-box underline decoration-2">Grosor 2</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">underline decoration-4</td>
+                    <td class="border px-4 py-2">text-decoration-thickness: 4px;</td>
+                    <td class="border px-4 py-2">
+                        <div class="test-box underline decoration-4">Grosor 4</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">underline decoration-[6px]</td>
+                    <td class="border px-4 py-2">text-decoration-thickness: 6px;</td>
+                    <td class="border px-4 py-2">
+                        <div class="test-box underline decoration-[6px]">Grosor personalizado</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="font-bold text-center">Color</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">underline decoration-red-500</td>
+                    <td class="border px-4 py-2">text-decoration-color: #ef4444;</td>
+                    <td class="border px-4 py-2">
+                        <div class="test-box underline decoration-4 decoration-red-500">Rojo</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">underline decoration-blue-600</td>
+                    <td class="border px-4 py-2">text-decoration-color: #2563eb;</td>
+                    <td class="border px-4 py-2">
+                        <div class="test-box underline decoration-4 decoration-blue-600">Azul</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">underline decoration-yellow-400</td>
+                    <td class="border px-4 py-2">text-decoration-color: #facc15;</td>
+                    <td class="border px-4 py-2">
+                        <div class="test-box underline decoration-4 decoration-yellow-400">Amarillo</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">underline decoration-[#00ffcc]</td>
+                    <td class="border px-4 py-2">text-decoration-color: #00ffcc;</td>
+                    <td class="border px-4 py-2">
+                        <div class="test-box underline decoration-4 decoration-[#00ffcc]">Color personalizado</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="font-bold text-center">Opacity</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">underline decoration-green-500/30</td>
+                    <td class="border px-4 py-2">text-decoration-color: rgba(34, 197, 94, 0.3);</td>
+                    <td class="border px-4 py-2">
+                        <div class="test-box underline decoration-4 decoration-green-500/30">Verde 30%</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">underline decoration-purple-600/60</td>
+                    <td class="border px-4 py-2">text-decoration-color: rgba(147, 51, 234, 0.6);</td>
+                    <td class="border px-4 py-2">
+                        <div class="test-box underline decoration-4 decoration-purple-600/60">Morado 60%</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">underline decoration-[#ff9900]/40</td>
+                    <td class="border px-4 py-2">text-decoration-color: rgba(255, 153, 0, 0.4);</td>
+                    <td class="border px-4 py-2">
+                        <div class="test-box underline decoration-4 decoration-[#ff9900]/40">Custom 40%</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2 class="text-xl font-semibold mb-4 mt-10">📐 Sección: <code>text-align</code></h2>
+        <table class="table-auto w-full border border-gray-300 bg-white text-left text-sm">
+            <thead class="bg-gray-200">
+                <tr>
+                    <th class="border px-4 py-2">Valor</th>
+                    <th class="border px-4 py-2">Texto normal</th>
+                    <th class="border px-4 py-2">Texto con la propiedad</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="border px-4 py-2">left (por defecto)<br><code>text-left</code></td>
+                    <td class="border px-4 py-2">
+                        <div class="test-box">Texto alineado a la izquierda</div>
+                    </td>
+                    <td class="border px-4 py-2">
+                        <div class="test-box text-left">Texto alineado a la izquierda</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">center<br><code>text-center</code></td>
+                    <td class="border px-4 py-2">
+                        <div class="test-box">Texto centrado</div>
+                    </td>
+                    <td class="border px-4 py-2">
+                        <div class="test-box text-center">Texto centrado</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">right<br><code>text-right</code></td>
+                    <td class="border px-4 py-2">
+                        <div class="test-box">Texto alineado a la derecha</div>
+                    </td>
+                    <td class="border px-4 py-2">
+                        <div class="test-box text-right">Texto alineado a la derecha</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">justify<br><code>text-justify</code></td>
+                    <td class="border px-4 py-2">
+                        <div class="test-box">Texto justificado en ambos extremos, Lorem ipsum dolor sit amet
+                            consectetur adipisicing elit. Pariatur eaque necessitatibus minima. Adipisci vitae numquam
+                            corrupti harum suscipit exercitationem velit earum laudantium dolor officia, provident
+                            voluptatem. Et distinctio nam ex!</div>
+                    </td>
+                    <td class="border px-4 py-2">
+                        <div class="test-box text-justify">Texto justificado en ambos extremos, Lorem ipsum dolor sit
+                            amet consectetur adipisicing elit. Pariatur eaque necessitatibus minima. Adipisci vitae
+                            numquam corrupti harum suscipit exercitationem velit earum laudantium dolor officia,
+                            provident voluptatem. Et distinctio nam ex!</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">start<br><code>text-start</code></td>
+                    <td class="border px-4 py-2">
+                        <div class="test-box">Texto alineado al inicio del flujo</div>
+                    </td>
+                    <td class="border px-4 py-2">
+                        <div class="test-box text-start">Texto alineado al inicio del flujo</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">end<br><code>text-end</code></td>
+                    <td class="border px-4 py-2">
+                        <div class="test-box">Texto alineado al final del flujo</div>
+                    </td>
+                    <td class="border px-4 py-2">
+                        <div class="test-box text-end">Texto alineado al final del flujo</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">start<br><code>text-start</code><br><small>(idioma RTL)</small></td>
+                    <td class="border px-4 py-2">
+                        <div class="test-box" dir="rtl" lang="ar">هذا النص محاذى إلى بداية الاتجاه</div>
+                    </td>
+                    <td class="border px-4 py-2">
+                        <div class="test-box text-start" dir="rtl" lang="ar">هذا النص محاذى إلى بداية الاتجاه</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">end<br><code>text-end</code><br><small>(idioma RTL)</small></td>
+                    <td class="border px-4 py-2">
+                        <div class="test-box" dir="rtl" lang="ar">هذا النص محاذى إلى نهاية الاتجاه</div>
+                    </td>
+                    <td class="border px-4 py-2">
+                        <div class="test-box text-end" dir="rtl" lang="ar">هذا النص محاذى إلى نهاية الاتجاه</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2 class="text-xl font-semibold mb-4 mt-10">✂️ Clases de Corte de Palabras con <code>hyphens</code></h2>
+        <table class="table-auto w-full border border-gray-300 bg-white text-left text-sm">
+            <thead class="bg-gray-200">
+                <tr>
+                    <th class="border px-4 py-2">Clase Tailwind</th>
+                    <th class="border px-4 py-2">CSS equivalente</th>
+                    <th class="border px-4 py-2">Texto ingresado</th>
+                    <th class="border px-4 py-2">Texto final</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="border px-4 py-2">hyphens-none</td>
+                    <td class="border px-4 py-2">hyphens: none;</td>
+                    <td class="border px-4 py-2">
+                        <div class="test-box">Anti&#173;constitu&#173;cional&#173;mente es una palabra extremadamente
+                            larga sin cortes.
+                        </div>
+                    </td>
+                    <td class="border px-4 py-2">
+                        <div class="test-box hyphens-none w-[120px] border-gray-500 border-2">
+                            Anti&#173;constitu&#173;cional&#173;mente es una palabra extremadamente larga
+                            sin cortes.</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">hyphens-auto</td>
+                    <td class="border px-4 py-2">hyphens: auto;</td>
+                    <td class="border px-4 py-2">
+                        <div class="test-box">Anti&#173;constitu&#173;cional&#173;mente es una palabra extremadamente
+                            larga sin cortes.
+                        </div>
+                    </td>
+                    <td class="border px-4 py-2">
+                        <div class="test-box hyphens-auto w-[120px] border-gray-500 border-2">
+                            Anti&#173;constitu&#173;cional&#173;mente es una palabra extremadamente larga
+                            sin cortes.</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">hyphens-manual</td>
+                    <td class="border px-4 py-2">hyphens: manual;</td>
+                    <td class="border px-4 py-2">
+                        <div class="test-box">Anti&#173;constitu&#173;cional&#173;mente es una palabra extremadamente
+                            larga con guiones manuales.</div>
+                    </td>
+                    <td class="border px-4 py-2">
+                        <div class="test-box hyphens-manual w-[120px] border-gray-500 border-2">
+                            Anti&#173;constitu&#173;cional&#173;mente es una palabra
+                            extremadamente larga con guiones manuales.</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <p class="p-4 whitespace-pre-line"><b>Nota:</b> Se debe hacer uso de guines blandos para dividir
+                            palabras largas en sílabas especificas.
+                            Por ejemplo, "Anticonstitucionalmente", puede dividirse en:
+
+                            Anti-
+                            constitu-
+                            cional-
+                            mente
+
+                            Siendo los guiones blandos representados con <code>"<b>&amp;#173;</b>"</code>
+
+                            La palabra se escribiría:
+                            <span
+                                class="my-3 flex py-2 px-4 bg-gray-200 font-mono">Anti<code><b>&amp;#173;</b></code>constitu<code><b>&amp;#173;</b></code>cional<code><b>&amp;#173;</b></code>mente</span>
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+</body>
+
+</html>

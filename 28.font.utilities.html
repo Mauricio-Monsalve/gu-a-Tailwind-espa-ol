@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Utilidades de Fuente - Tailwind CSS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+
+    .demo {
+      padding: 0.5rem 1rem;
+      margin: 0.25rem;
+      background-color: #f3f4f6;
+      border-radius: 0.25rem;
+      display: inline-block;
+    }
+
+    .group {
+      margin-bottom: 2rem;
+    }
+  </style>
+</head>
+
+<body class="bg-neutral-100 text-neutral-800 p-8 space-y-10">
+
+  <h1 class="text-2xl font-bold">✍️ Utilidades de Fuente en Tailwind CSS</h1>
+
+  <!-- Sección 1: Pesos de fuente -->
+  <section class="group">
+    <h2 class="text-xl font-semibold mb-2">🔩 Pesos de Fuente</h2>
+    <div>
+      <span class="demo font-thin">font-thin</span>
+      <span class="demo font-extralight">font-extralight</span>
+      <span class="demo font-light">font-light</span>
+      <span class="demo font-normal">font-normal</span>
+      <span class="demo font-medium">font-medium</span>
+      <span class="demo font-semibold">font-semibold</span>
+      <span class="demo font-bold">font-bold</span>
+      <span class="demo font-extrabold">font-extrabold</span>
+      <span class="demo font-black">font-black</span>
+    </div>
+  </section>
+
+  <!-- Sección 2: Estilo de fuente -->
+  <section class="group">
+    <h2 class="text-xl font-semibold mb-2">🅰️ Estilo de Fuente</h2>
+    <div>
+      <span class="demo italic">italic</span>
+      <span class="demo not-italic">not-italic</span>
+    </div>
+  </section>
+
+  <!-- Sección 3: Familia de fuentes -->
+  <section class="group">
+    <h2 class="text-xl font-semibold mb-2">🔗 Familia de Fuentes</h2>
+    <div>
+      <span class="demo font-sans">font-sans</span>
+      <span class="demo font-serif">font-serif</span>
+      <span class="demo font-mono">font-mono</span>
+    </div>
+  </section>
+
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            custom1: ["Impact", "sans-serif"],
+            custom2: ["Impact", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+
+
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold">🎨 Extender fuentes personalizadas en Tailwind CSS v3</h2>
+    <p>Para agregar una fuente personalizada en Tailwind v3, debes extender la configuración en el archivo
+      <code>tailwind.config.js</code>.
+    </p>
+
+    <pre class="bg-neutral-800 text-white p-4 rounded overflow-auto"><code>// tailwind.config.js
+module.exports = {
+  content: ["./*.html"],
+  theme: {
+    extend: {
+      fontFamily: {
+        custom1: ['"MiFuente"', 'sans-serif'],
+      },
+    },
+  },
+  plugins: [],
+}</code></pre>
+
+    <p>Luego, puedes usarla en tu HTML con la clase <code>font-custom1</code>:</p>
+
+    <pre class="bg-neutral-800 text-white p-4 rounded overflow-auto"><code>&lt;div class="font-custom1"&gt;
+  Este texto usa la fuente personalizada definida en tailwind.config.js
+&lt;/div&gt;</code></pre>
+
+    <p class="text-sm text-neutral-600">
+      Asegúrate de importar la fuente desde Google Fonts o definirla mediante <code>@font-face</code> en tu CSS.
+    </p>
+
+    <span class="demo font-custom1">font-custom1</span>
+  </section>
+
+
+
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold">🎨 Extender fuentes personalizadas en Tailwind CSS v4</h2>
+    <p>En Tailwind v4, puedes definir nuevas fuentes directamente usando la regla <code>@theme</code> dentro de tu
+      <code>index.css</code>.
+    </p>
+
+    <pre class="bg-neutral-800 text-white p-4 rounded overflow-auto"><code>@import "tailwindcss";
+
+@theme {
+  --font-custom2: "MiFuente", sans-serif;
+}</code></pre>
+
+    <p>Después, puedes aplicar la fuente con la clase <code>font-custom2</code> en tu HTML:</p>
+
+    <pre class="bg-neutral-800 text-white p-4 rounded overflow-auto"><code>&lt;div class="font-custom2"&gt;
+  Este texto usa la fuente personalizada definida en @theme
+&lt;/div&gt;</code></pre>
+
+    <p class="text-sm text-neutral-600">
+      Al igual que en versiones anteriores, asegúrate de importar la fuente en tu HTML o CSS, por ejemplo, desde Google
+      Fonts o mediante <code>@font-face</code>.
+    </p>
+
+
+    <span class="demo font-custom2">font-custom2</span>
+  </section>
+
+
+</body>
+
+</html>

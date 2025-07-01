@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Utilidades de Posicionamiento - Tailwind CSS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .caja {
+      background-color: dodgerblue;
+      color: white;
+      text-align: center;
+      padding: 0.5rem;
+      border-radius: 0.25rem;
+      width: 100px;
+      height: 40px;
+    }
+
+    .caja-bg {
+      background-color: rgba(30, 144, 255, 0.1);
+      border: 1px dashed #ccc;
+      padding: 2rem;
+      position: relative;
+      height: 200px;
+    }
+  </style>
+</head>
+
+<body class="p-8 bg-gray-100 text-sm space-y-10">
+
+  <h1 class="text-3xl font-bold mb-6">🧭 Posicionamiento en Tailwind CSS</h1>
+
+  <section>
+    <h2 class="text-xl font-semibold mb-2">🔹 position</h2>
+    <table class="table-auto w-full border border-gray-300 bg-white mb-4">
+      <thead class="bg-gray-200">
+        <tr>
+          <th class="border px-4 py-2">Clase</th>
+          <th class="border px-4 py-2">CSS</th>
+          <th class="border px-4 py-2">Ejemplo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border px-4 py-2">static</td>
+          <td class="border px-4 py-2">position: static</td>
+          <td class="border px-4 py-2">
+            <div class="caja static">static</div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">relative</td>
+          <td class="border px-4 py-2">position: relative</td>
+          <td class="border px-4 py-2">
+            <div class="caja relative left-4">relative</div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">absolute</td>
+          <td class="border px-4 py-2">position: absolute</td>
+          <td class="border px-4 py-2">
+            <div class="caja-bg">
+              <div class="caja absolute top-0 left-0 bg-red-500">absolute</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">fixed</td>
+          <td class="border px-4 py-2">position: fixed</td>
+          <td class="border px-4 py-2">
+            <div class="caja fixed bottom-4 right-4 bg-green-500">fixed</div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">sticky</td>
+          <td class="border px-4 py-2">position: sticky</td>
+          <td class="border px-4 py-2">
+            <div class="h-40 overflow-y-scroll bg-white p-2 border">
+              <div class="caja sticky top-0 bg-yellow-500">sticky</div>
+              <div class="h-96">Scroll aquí</div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2 class="text-xl font-semibold mb-2">🔹 top / right / bottom / left</h2>
+    <table class="table-auto w-full border border-gray-300 bg-white mb-4">
+      <thead class="bg-gray-200">
+        <tr>
+          <th class="border px-4 py-2">Clase</th>
+          <th class="border px-4 py-2">CSS</th>
+          <th class="border px-4 py-2">Ejemplo Visual</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border px-4 py-2">top-0</td>
+          <td class="border px-4 py-2">top: 0</td>
+          <td class="border px-4 py-2">
+            <div class="relative h-20 bg-white border">
+              <div class="caja absolute top-0 bg-red-400">top-0</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">top-4</td>
+          <td class="border px-4 py-2">top: 1rem</td>
+          <td class="border px-4 py-2">
+            <div class="relative h-20 bg-white border">
+              <div class="caja absolute top-4 bg-green-400">top-4</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">-top-4</td>
+          <td class="border px-4 py-2">top: -1rem</td>
+          <td class="border px-4 py-2">
+            <div class="relative h-20 bg-white border">
+              <div class="caja absolute -top-4 bg-orange-400">-top-4</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">top-1/2</td>
+          <td class="border px-4 py-2">top: 50%</td>
+          <td class="border px-4 py-2">
+            <div class="relative h-20 bg-white border">
+              <div class="caja absolute top-1/2 bg-blue-400">top-1/2</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">top-full</td>
+          <td class="border px-4 py-2">top: 100%</td>
+          <td class="border px-4 py-2">
+            <div class="relative h-20 bg-white border">
+              <div class="caja absolute top-full bg-yellow-400">top-full</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">top-[20px]</td>
+          <td class="border px-4 py-2">top: 20px</td>
+          <td class="border px-4 py-2">
+            <div class="relative h-20 bg-white border">
+              <div class="caja absolute top-[20px] bg-purple-400">top-[20px]</div>
+            </div>
+          </td>
+        </tr>
+
+
+
+
+
+
+
+        <tr>
+          <td class="border px-4 py-2">left-0</td>
+          <td class="border px-4 py-2">left: 0</td>
+          <td class="border px-4 py-2">
+            <div class="relative h-20 bg-white border">
+              <div class="caja absolute left-0 bg-red-400">left-0</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">left-4</td>
+          <td class="border px-4 py-2">left: 1rem</td>
+          <td class="border px-4 py-2">
+            <div class="relative h-20 bg-white border">
+              <div class="caja absolute left-4 bg-green-400">left-4</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">-left-4</td>
+          <td class="border px-4 py-2">left: -1rem</td>
+          <td class="border px-4 py-2">
+            <div class="relative h-20 bg-white border">
+              <div class="caja absolute -left-4 bg-orange-400">-left-4</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">left-1/2</td>
+          <td class="border px-4 py-2">left: 50%</td>
+          <td class="border px-4 py-2">
+            <div class="relative h-20 bg-white border">
+              <div class="caja absolute left-1/2 bg-blue-400">left-1/2</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">left-full</td>
+          <td class="border px-4 py-2">left: 100%</td>
+          <td class="border px-4 py-2">
+            <div class="relative h-20 bg-white border">
+              <div class="caja absolute left-full bg-yellow-400">left-full</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">left-[20px]</td>
+          <td class="border px-4 py-2">left: 20px</td>
+          <td class="border px-4 py-2">
+            <div class="relative h-20 bg-white border">
+              <div class="caja absolute left-[20px] bg-purple-400">left-[20px]</div>
+            </div>
+          </td>
+        </tr>
+
+
+
+
+
+
+
+        <tr>
+          <td class="border px-4 py-2">bottom-0</td>
+          <td class="border px-4 py-2">bottom: 0</td>
+          <td class="border px-4 py-2">
+            <div class="relative h-20 bg-white border">
+              <div class="caja absolute bottom-0 bg-red-400">bottom-0</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">bottom-4</td>
+          <td class="border px-4 py-2">bottom: 1rem</td>
+          <td class="border px-4 py-2">
+            <div class="relative h-20 bg-white border">
+              <div class="caja absolute bottom-4 bg-green-400">bottom-4</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">-bottom-4</td>
+          <td class="border px-4 py-2">bottom: -1rem</td>
+          <td class="border px-4 py-2">
+            <div class="relative h-20 bg-white border">
+              <div class="caja absolute -bottom-4 bg-orange-400">-bottom-4</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">bottom-1/2</td>
+          <td class="border px-4 py-2">bottom: 50%</td>
+          <td class="border px-4 py-2">
+            <div class="relative h-20 bg-white border">
+              <div class="caja absolute bottom-1/2 bg-blue-400">bottom-1/2</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">bottom-full</td>
+          <td class="border px-4 py-2">bottom: 100%</td>
+          <td class="border px-4 py-2">
+            <div class="relative h-20 bg-white border">
+              <div class="caja absolute bottom-full bg-yellow-400">bottom-full</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">bottom-[20px]</td>
+          <td class="border px-4 py-2">bottom: 20px</td>
+          <td class="border px-4 py-2">
+            <div class="relative h-20 bg-white border">
+              <div class="caja absolute bottom-[20px] bg-purple-400">bottom-[20px]</div>
+            </div>
+          </td>
+        </tr>
+
+
+
+
+
+
+
+        <tr>
+          <td class="border px-4 py-2">right-0</td>
+          <td class="border px-4 py-2">right: 0</td>
+          <td class="border px-4 py-2">
+            <div class="relative h-20 bg-white border">
+              <div class="caja absolute right-0 bg-red-400">right-0</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">right-4</td>
+          <td class="border px-4 py-2">right: 1rem</td>
+          <td class="border px-4 py-2">
+            <div class="relative h-20 bg-white border">
+              <div class="caja absolute right-4 bg-green-400">right-4</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">-right-4</td>
+          <td class="border px-4 py-2">right: -1rem</td>
+          <td class="border px-4 py-2">
+            <div class="relative h-20 bg-white border">
+              <div class="caja absolute -right-4 bg-orange-400">-right-4</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">right-1/2</td>
+          <td class="border px-4 py-2">right: 50%</td>
+          <td class="border px-4 py-2">
+            <div class="relative h-20 bg-white border">
+              <div class="caja absolute right-1/2 bg-blue-400">right-1/2</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">right-full</td>
+          <td class="border px-4 py-2">right: 100%</td>
+          <td class="border px-4 py-2">
+            <div class="relative h-20 bg-white border">
+              <div class="caja absolute right-full bg-yellow-400">right-full</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">right-[20px]</td>
+          <td class="border px-4 py-2">right: 20px</td>
+          <td class="border px-4 py-2">
+            <div class="relative h-20 bg-white border">
+              <div class="caja absolute right-[20px] bg-purple-400">right-[20px]</div>
+            </div>
+          </td>
+        </tr>
+
+
+
+
+        <tr>
+          <td colspan="3" class="border px-4 py-2">
+            <p class="text-center">
+              <b>Nota: </b> Tanto el <code>width</code> como el <code>height</code> deben ser <code>auto</code> para que el contenedor se adapte con <code>inset</code>.
+            </p>
+          </td>
+        </tr>
+
+
+
+
+        <tr>
+          <td class="border px-4 py-2">inset-0</td>
+          <td class="border px-4 py-2">inset: 0</td>
+          <td class="border px-4 py-2">
+            <div class="relative h-20 bg-white border">
+              <div class="caja absolute size-auto inset-0 bg-red-400">inset-0</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">inset-4</td>
+          <td class="border px-4 py-2">inset: 1rem</td>
+          <td class="border px-4 py-2">
+            <div class="relative h-20 bg-white border">
+              <div class="caja absolute size-auto inset-4 bg-green-400">inset-4</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">-inset-4</td>
+          <td class="border px-4 py-2">inset: -1rem</td>
+          <td class="border px-4 py-2">
+            <div class="relative h-20 bg-white border">
+              <div class="caja absolute size-auto -inset-4 bg-orange-400">-inset-4</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">inset-1/2</td>
+          <td class="border px-4 py-2">inset: 50%</td>
+          <td class="border px-4 py-2">
+            <div class="relative h-20 bg-white border">
+              <div class="caja absolute size-auto inset-1/2 bg-blue-400">inset-1/2</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">inset-full</td>
+          <td class="border px-4 py-2">inset: 100%</td>
+          <td class="border px-4 py-2">
+            <div class="relative h-20 bg-white border">
+              <div class="caja absolute size-auto inset-full bg-yellow-400">inset-full</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">inset-[20px]</td>
+          <td class="border px-4 py-2">inset: 20px</td>
+          <td class="border px-4 py-2">
+            <div class="relative h-20 bg-white border">
+              <div class="caja absolute size-auto inset-[20px] bg-purple-400">inset-[20px]</div>
+            </div>
+          </td>
+        </tr>
+
+
+
+
+      </tbody>
+    </table>
+  </section>
+</body>
+
+</html>

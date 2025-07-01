@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Filtros y Efectos - Tailwind CSS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+
+    .img-original {
+      width: 200px;
+      aspect-ratio: 4/3;
+    }
+
+    .img-new {
+      width: 200px;
+      aspect-ratio: 4/3;
+    }
+
+    .img-mid {
+      width: 100px;
+      aspect-ratio: 2/3;
+    }
+  </style>
+</head>
+
+<body class="bg-neutral-100 text-neutral-800 p-8 space-y-8">
+
+  <h1 class="text-3xl font-bold">🎨 Utilidades de Filtros y Efectos en Tailwind CSS</h1>
+  <p class="text-sm text-neutral-600">Tailwind proporciona clases utilitarias para aplicar efectos visuales como
+    desenfoques, mezcla de colores y transformaciones visuales tanto en los elementos como en sus fondos.</p>
+
+  <!-- SECTION: filter-* -->
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold">🧪 Filtros (<code>filter-*</code>)</h2>
+    <p>Estas utilidades aplican efectos directamente sobre un elemento. Incluyen desenfoques, brillo, saturación, escala
+      de grises y más. Para activarlos se usa la clase <code>filter</code> junto con las utilidades específicas.</p>
+
+    <table class="table-auto border-collapse border border-gray-300 w-full text-sm text-left">
+      <thead>
+        <tr class="bg-gray-200">
+          <th class="border px-4 py-2">Clase Tailwind</th>
+          <th class="border px-4 py-2">Equivalente CSS</th>
+          <th class="border px-4 py-2">Imagen Original</th>
+          <th class="border px-4 py-2">Imagen con Filtro</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <!-- FILTER ACTIVADO -->
+        <tr>
+          <td class="border px-4 py-2">filter</td>
+          <td class="border px-4 py-2">filter: var(--tw-filter);</td>
+          <td class="border px-4 py-2"><img class="img-original"
+              src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+          </td>
+          <td class="border px-4 py-2"><img class="img-original filter"
+              src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+          </td>
+        </tr>
+
+        <tr>
+          <td class="border px-4 py-2">filter-none</td>
+          <td class="border px-4 py-2">filter: none;</td>
+          <td class="border px-4 py-2"><img class="img-original"
+              src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+          </td>
+          <td class="border px-4 py-2"><img class="img-original filter-none"
+              src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+          </td>
+        </tr>
+
+        <!-- BLUR -->
+        <tr>
+          <td class="border px-4 py-2">blur-sm</td>
+          <td class="border px-4 py-2">blur(4px)</td>
+          <td class="border px-4 py-2"><img class="img-original"
+              src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+          </td>
+          <td class="border px-4 py-2"><img class="img-original blur-sm"
+              src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">blur-lg</td>
+          <td class="border px-4 py-2">blur(16px)</td>
+          <td class="border px-4 py-2"><img class="img-original"
+              src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+          </td>
+          <td class="border px-4 py-2"><img class="img-original blur-lg"
+              src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">blur-3xl</td>
+          <td class="border px-4 py-2">blur(64px)</td>
+          <td class="border px-4 py-2"><img class="img-original"
+              src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+          </td>
+          <td class="border px-4 py-2"><img class="img-original blur-3xl"
+              src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">blur-[2px]</td>
+          <td class="border px-4 py-2">blur(2px)</td>
+          <td class="border px-4 py-2"><img class="img-original"
+              src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+          </td>
+          <td class="border px-4 py-2"><img class="img-original blur-[2px]"
+              src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">blur-[10px]</td>
+          <td class="border px-4 py-2">blur(10px)</td>
+          <td class="border px-4 py-2"><img class="img-original"
+              src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+          </td>
+          <td class="border px-4 py-2"><img class="img-original blur-[10px]"
+              src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+          </td>
+        </tr>
+
+        <tr>
+          <td class="border px-4 py-2">brightness-50</td>
+          <td class="border px-4 py-2">filter: brightness(0.5);</td>
+          <td class="border px-4 py-2"><img class="img-original"
+              src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+          </td>
+          <td class="border px-4 py-2"><img class="img-original brightness-50"
+              src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">brightness-100</td>
+          <td class="border px-4 py-2">filter: brightness(1);</td>
+          <td class="border px-4 py-2"><img class="img-original"
+              src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+          </td>
+          <td class="border px-4 py-2"><img class="img-original brightness-100"
+              src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">brightness-150</td>
+          <td class="border px-4 py-2">filter: brightness(1.5);</td>
+          <td class="border px-4 py-2"><img class="img-original"
+              src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+          </td>
+          <td class="border px-4 py-2"><img class="img-original brightness-150"
+              src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">brightness-[0.8]</td>
+          <td class="border px-4 py-2">filter: brightness(0.8);</td>
+          <td class="border px-4 py-2"><img class="img-original"
+              src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+          </td>
+          <td class="border px-4 py-2"><img class="img-original brightness-[0.8]"
+              src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">brightness-[1.25]</td>
+          <td class="border px-4 py-2">filter: brightness(1.25);</td>
+          <td class="border px-4 py-2"><img class="img-original"
+              src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+          </td>
+          <td class="border px-4 py-2"><img class="img-original brightness-[1.25]"
+              src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+          </td>
+        </tr>
+
+        <tr>
+          <td class="border px-4 py-2">contrast-50</td>
+          <td class="border px-4 py-2">filter: contrast(0.5);</td>
+          <td class="border px-4 py-2"><img class="img-original"
+              src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+          </td>
+          <td class="border px-4 py-2"><img class="img-original contrast-50"
+              src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">contrast-100</td>
+          <td class="border px-4 py-2">filter: contrast(1);</td>
+          <td class="border px-4 py-2"><img class="img-original"
+              src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+          </td>
+          <td class="border px-4 py-2"><img class="img-original contrast-100"
+              src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">contrast-200</td>
+          <td class="border px-4 py-2">filter: contrast(2);</td>
+          <td class="border px-4 py-2"><img class="img-original"
+              src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+          </td>
+          <td class="border px-4 py-2"><img class="img-original contrast-200"
+              src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">contrast-[1.25]</td>
+          <td class="border px-4 py-2">filter: contrast(1.25);</td>
+          <td class="border px-4 py-2"><img class="img-original"
+              src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+          </td>
+          <td class="border px-4 py-2"><img class="img-original contrast-[1.25]"
+              src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">contrast-[0.75]</td>
+          <td class="border px-4 py-2">filter: contrast(0.75);</td>
+          <td class="border px-4 py-2"><img class="img-original"
+              src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+          </td>
+          <td class="border px-4 py-2"><img class="img-original contrast-[0.75]"
+              src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+          </td>
+        </tr>
+
+
+        <tr>
+          <td class="border px-4 py-2">grayscale</td>
+          <td class="border px-4 py-2">filter: grayscale(1);</td>
+          <td class="border px-4 py-2"><img class="img-original"
+              src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+          </td>
+          <td class="border px-4 py-2"><img class="img-original grayscale"
+              src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">grayscale-0</td>
+          <td class="border px-4 py-2">filter: grayscale(0);</td>
+          <td class="border px-4 py-2"><img class="img-original"
+              src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+          </td>
+          <td class="border px-4 py-2"><img class="img-original grayscale-0"
+              src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+          </td>
+        </tr>
+
+        <tr>
+          <td class="border px-4 py-2">invert</td>
+          <td class="border px-4 py-2">filter: invert(1);</td>
+          <td class="border px-4 py-2"><img class="img-original"
+              src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+          </td>
+          <td class="border px-4 py-2"><img class="img-original invert"
+              src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">invert-0</td>
+          <td class="border px-4 py-2">filter: invert(0);</td>
+          <td class="border px-4 py-2"><img class="img-original"
+              src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+          </td>
+          <td class="border px-4 py-2"><img class="img-original invert-0"
+              src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+          </td>
+        </tr>
+
+        <tr>
+          <td class="border px-4 py-2">sepia</td>
+          <td class="border px-4 py-2">filter: sepia(1);</td>
+          <td class="border px-4 py-2"><img class="img-original"
+              src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+          </td>
+          <td class="border px-4 py-2"><img class="img-original sepia"
+              src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">sepia-0</td>
+          <td class="border px-4 py-2">filter: sepia(0);</td>
+          <td class="border px-4 py-2"><img class="img-original"
+              src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+          </td>
+          <td class="border px-4 py-2"><img class="img-original sepia-0"
+              src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+          </td>
+        </tr>
+
+
+        <tr>
+          <td class="border px-4 py-2">hue-rotate-15</td>
+          <td class="border px-4 py-2">filter: hue-rotate(15deg);</td>
+          <td class="border px-4 py-2"><img class="img-original"
+              src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+          </td>
+          <td class="border px-4 py-2"><img class="img-original hue-rotate-15"
+              src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">hue-rotate-60</td>
+          <td class="border px-4 py-2">filter: hue-rotate(60deg);</td>
+          <td class="border px-4 py-2"><img class="img-original"
+              src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+          </td>
+          <td class="border px-4 py-2"><img class="img-original hue-rotate-60"
+              src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">hue-rotate-180</td>
+          <td class="border px-4 py-2">filter: hue-rotate(180deg);</td>
+          <td class="border px-4 py-2"><img class="img-original"
+              src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+          </td>
+          <td class="border px-4 py-2"><img class="img-original hue-rotate-180"
+              src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">hue-rotate-[30deg]</td>
+          <td class="border px-4 py-2">filter: hue-rotate(30deg);</td>
+          <td class="border px-4 py-2"><img class="img-original"
+              src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+          </td>
+          <td class="border px-4 py-2"><img class="img-original hue-rotate-[30deg]"
+              src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">hue-rotate-[90deg]</td>
+          <td class="border px-4 py-2">filter: hue-rotate(90deg);</td>
+          <td class="border px-4 py-2"><img class="img-original"
+              src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+          </td>
+          <td class="border px-4 py-2"><img class="img-original hue-rotate-[90deg]"
+              src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+
+  </section>
+
+  <!-- SECTION: backdrop-* -->
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold">🌫️ Filtros de Fondo (<code>backdrop-*</code>)</h2>
+    <p>Estas clases aplican efectos visuales sobre el fondo de un elemento, como desenfoque, brillo o contraste. Se usan
+      comúnmente junto a fondos semitransparentes para lograr efectos de vidrio o cristal.</p>
+
+
+    <table class="table-auto border-collapse border border-gray-300 w-full text-sm text-left">
+      <thead>
+        <tr class="bg-gray-200">
+          <th class="border px-4 py-2">Clase Tailwind</th>
+          <th class="border px-4 py-2">Equivalente CSS</th>
+          <th class="border px-4 py-2">Imagen con Filtro</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border px-4 py-2">backdrop-filter</td>
+          <td class="border px-4 py-2">filter: var(--tw-backdrop-filter);</td>
+          <td class="border px-4 py-2">
+            <div class="img-new relative">
+              <img class="img-new"
+                src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+              <div class="img-mid backdrop-filter border-l-2 absolute top-0 right-0"></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">backdrop-filter-none</td>
+          <td class="border px-4 py-2">backdrop-filter: none;</td>
+          <td class="border px-4 py-2">
+            <div class="img-new relative">
+              <img class="img-new"
+                src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+              <div class="img-mid backdrop-filter-none border-l-2 absolute top-0 right-0"></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">backdrop-blur-sm</td>
+          <td class="border px-4 py-2">backdrop-filter: blur(4px);</td>
+          <td class="border px-4 py-2">
+            <div class="img-new relative">
+              <img class="img-new"
+                src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+              <div class="img-mid backdrop-blur-sm border-l-2 absolute top-0 right-0"></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">backdrop-blur-lg</td>
+          <td class="border px-4 py-2">backdrop-filter: blur(16px);</td>
+          <td class="border px-4 py-2">
+            <div class="img-new relative">
+              <img class="img-new"
+                src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+              <div class="img-mid backdrop-blur-lg border-l-2 absolute top-0 right-0"></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">backdrop-blur-3xl</td>
+          <td class="border px-4 py-2">backdrop-filter: blur(64px);</td>
+          <td class="border px-4 py-2">
+            <div class="img-new relative">
+              <img class="img-new"
+                src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+              <div class="img-mid backdrop-blur-3xl border-l-2 absolute top-0 right-0"></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">backdrop-blur-[2px]</td>
+          <td class="border px-4 py-2">backdrop-filter: blur(2px);</td>
+          <td class="border px-4 py-2">
+            <div class="img-new relative">
+              <img class="img-new"
+                src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+              <div class="img-mid backdrop-blur-[2px] border-l-2 absolute top-0 right-0"></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">backdrop-blur-[10px]</td>
+          <td class="border px-4 py-2">backdrop-filter: blur(10px);</td>
+          <td class="border px-4 py-2">
+            <div class="img-new relative">
+              <img class="img-new"
+                src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+              <div class="img-mid backdrop-blur-[10px] border-l-2 absolute top-0 right-0"></div>
+            </div>
+          </td>
+        </tr>
+
+
+
+        <tr>
+          <td class="border px-4 py-2">backdrop-brightness-50</td>
+          <td class="border px-4 py-2">backdrop-filter: brightness(0.5);</td>
+          <td class="border px-4 py-2">
+            <div class="img-new relative">
+              <img class="img-new"
+                src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+              <div class="img-mid backdrop-brightness-50 border-l-2 absolute top-0 right-0"></div>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="border px-4 py-2">backdrop-brightness-100</td>
+          <td class="border px-4 py-2">backdrop-filter: brightness(1);</td>
+          <td class="border px-4 py-2">
+            <div class="img-new relative">
+              <img class="img-new"
+                src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+              <div class="img-mid backdrop-brightness-100 border-l-2 absolute top-0 right-0"></div>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="border px-4 py-2">backdrop-brightness-150</td>
+          <td class="border px-4 py-2">backdrop-filter: brightness(1.5);</td>
+          <td class="border px-4 py-2">
+            <div class="img-new relative">
+              <img class="img-new"
+                src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+              <div class="img-mid backdrop-brightness-150 border-l-2 absolute top-0 right-0"></div>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="border px-4 py-2">backdrop-brightness-[0.8]</td>
+          <td class="border px-4 py-2">backdrop-filter: brightness(0.8);</td>
+          <td class="border px-4 py-2">
+            <div class="img-new relative">
+              <img class="img-new"
+                src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+              <div class="img-mid backdrop-brightness-[0.8] border-l-2 absolute top-0 right-0"></div>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="border px-4 py-2">backdrop-brightness-[1.25]</td>
+          <td class="border px-4 py-2">backdrop-filter: brightness(1.25);</td>
+          <td class="border px-4 py-2">
+            <div class="img-new relative">
+              <img class="img-new"
+                src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+              <div class="img-mid backdrop-brightness-[1.25] border-l-2 absolute top-0 right-0"></div>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="border px-4 py-2">backdrop-contrast-50</td>
+          <td class="border px-4 py-2">backdrop-filter: contrast(0.5);</td>
+          <td class="border px-4 py-2">
+            <div class="img-new relative">
+              <img class="img-new"
+                src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+              <div class="img-mid backdrop-contrast-50 border-l-2 absolute top-0 right-0"></div>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="border px-4 py-2">backdrop-contrast-100</td>
+          <td class="border px-4 py-2">backdrop-filter: contrast(1);</td>
+          <td class="border px-4 py-2">
+            <div class="img-new relative">
+              <img class="img-new"
+                src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+              <div class="img-mid backdrop-contrast-100 border-l-2 absolute top-0 right-0"></div>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="border px-4 py-2">backdrop-contrast-200</td>
+          <td class="border px-4 py-2">backdrop-filter: contrast(2);</td>
+          <td class="border px-4 py-2">
+            <div class="img-new relative">
+              <img class="img-new"
+                src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+              <div class="img-mid backdrop-contrast-200 border-l-2 absolute top-0 right-0"></div>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="border px-4 py-2">backdrop-contrast-[1.25]</td>
+          <td class="border px-4 py-2">backdrop-filter: contrast(1.25);</td>
+          <td class="border px-4 py-2">
+            <div class="img-new relative">
+              <img class="img-new"
+                src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+              <div class="img-mid backdrop-contrast-[1.25] border-l-2 absolute top-0 right-0"></div>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="border px-4 py-2">backdrop-contrast-[0.75]</td>
+          <td class="border px-4 py-2">backdrop-filter: contrast(0.75);</td>
+          <td class="border px-4 py-2">
+            <div class="img-new relative">
+              <img class="img-new"
+                src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+              <div class="img-mid backdrop-contrast-[0.75] border-l-2 absolute top-0 right-0"></div>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="border px-4 py-2">backdrop-grayscale</td>
+          <td class="border px-4 py-2">backdrop-filter: grayscale(1);</td>
+          <td class="border px-4 py-2">
+            <div class="img-new relative">
+              <img class="img-new"
+                src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+              <div class="img-mid backdrop-grayscale border-l-2 absolute top-0 right-0"></div>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="border px-4 py-2">backdrop-grayscale-0</td>
+          <td class="border px-4 py-2">backdrop-filter: grayscale(0);</td>
+          <td class="border px-4 py-2">
+            <div class="img-new relative">
+              <img class="img-new"
+                src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+              <div class="img-mid backdrop-grayscale-0 border-l-2 absolute top-0 right-0"></div>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="border px-4 py-2">backdrop-invert</td>
+          <td class="border px-4 py-2">backdrop-filter: invert(1);</td>
+          <td class="border px-4 py-2">
+            <div class="img-new relative">
+              <img class="img-new"
+                src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+              <div class="img-mid backdrop-invert border-l-2 absolute top-0 right-0"></div>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="border px-4 py-2">backdrop-invert-0</td>
+          <td class="border px-4 py-2">backdrop-filter: invert(0);</td>
+          <td class="border px-4 py-2">
+            <div class="img-new relative">
+              <img class="img-new"
+                src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+              <div class="img-mid backdrop-invert-0 border-l-2 absolute top-0 right-0"></div>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="border px-4 py-2">backdrop-sepia</td>
+          <td class="border px-4 py-2">backdrop-filter: sepia(1);</td>
+          <td class="border px-4 py-2">
+            <div class="img-new relative">
+              <img class="img-new"
+                src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+              <div class="img-mid backdrop-sepia border-l-2 absolute top-0 right-0"></div>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="border px-4 py-2">backdrop-sepia-0</td>
+          <td class="border px-4 py-2">backdrop-filter: sepia(0);</td>
+          <td class="border px-4 py-2">
+            <div class="img-new relative">
+              <img class="img-new"
+                src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+              <div class="img-mid backdrop-sepia-0 border-l-2 absolute top-0 right-0"></div>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="border px-4 py-2">backdrop-hue-rotate-15</td>
+          <td class="border px-4 py-2">backdrop-filter: hue-rotate(15deg);</td>
+          <td class="border px-4 py-2">
+            <div class="img-new relative">
+              <img class="img-new"
+                src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+              <div class="img-mid backdrop-hue-rotate-15 border-l-2 absolute top-0 right-0"></div>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="border px-4 py-2">backdrop-hue-rotate-60</td>
+          <td class="border px-4 py-2">backdrop-filter: hue-rotate(60deg);</td>
+          <td class="border px-4 py-2">
+            <div class="img-new relative">
+              <img class="img-new"
+                src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+              <div class="img-mid backdrop-hue-rotate-60 border-l-2 absolute top-0 right-0"></div>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="border px-4 py-2">backdrop-hue-rotate-180</td>
+          <td class="border px-4 py-2">backdrop-filter: hue-rotate(180deg);</td>
+          <td class="border px-4 py-2">
+            <div class="img-new relative">
+              <img class="img-new"
+                src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+              <div class="img-mid backdrop-hue-rotate-180 border-l-2 absolute top-0 right-0"></div>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="border px-4 py-2">backdrop-hue-rotate-[30deg]</td>
+          <td class="border px-4 py-2">backdrop-filter: hue-rotate(30deg);</td>
+          <td class="border px-4 py-2">
+            <div class="img-new relative">
+              <img class="img-new"
+                src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+              <div class="img-mid backdrop-hue-rotate-[30deg] border-l-2 absolute top-0 right-0"></div>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="border px-4 py-2">backdrop-hue-rotate-[90deg]</td>
+          <td class="border px-4 py-2">backdrop-filter: hue-rotate(90deg);</td>
+          <td class="border px-4 py-2">
+            <div class="img-new relative">
+              <img class="img-new"
+                src="https://s3-iconicjob-jp.imgix.net/prod/system/blog_articles/31045-thumbnail-image-618b2e92d4eb3.jpg" />
+              <div class="img-mid backdrop-hue-rotate-[90deg] border-l-2 absolute top-0 right-0"></div>
+            </div>
+          </td>
+        </tr>
+
+
+
+
+      </tbody>
+    </table>
+
+
+
+
+
+
+  </section>
+
+  <!-- SECTION: mix-blend-* -->
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold">🎭 Mezcla de Colores (<code>mix-blend-*</code>)</h2>
+    <p>Estas utilidades definen cómo se mezcla un elemento con el fondo, usando modos como <code>multiply</code>,
+      <code>overlay</code>, <code>screen</code> y más. Son útiles para crear efectos visuales complejos entre capas.
+    </p>
+
+    <table class="table-auto border-collapse border border-gray-300 w-full text-sm text-left my-8">
+      <thead class="bg-gray-200">
+        <tr>
+          <th class="border px-4 py-2">Clase Tailwind</th>
+          <th class="border px-4 py-2">Equivalente CSS</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border px-4 py-2">mix-blend-normal</td>
+          <td class="border px-4 py-2">mix-blend-mode: normal;</td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">mix-blend-multiply</td>
+          <td class="border px-4 py-2">mix-blend-mode: multiply;</td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">mix-blend-screen</td>
+          <td class="border px-4 py-2">mix-blend-mode: screen;</td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">mix-blend-overlay</td>
+          <td class="border px-4 py-2">mix-blend-mode: overlay;</td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">mix-blend-darken</td>
+          <td class="border px-4 py-2">mix-blend-mode: darken;</td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">mix-blend-lighten</td>
+          <td class="border px-4 py-2">mix-blend-mode: lighten;</td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">mix-blend-color-dodge</td>
+          <td class="border px-4 py-2">mix-blend-mode: color-dodge;</td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">mix-blend-color-burn</td>
+          <td class="border px-4 py-2">mix-blend-mode: color-burn;</td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">mix-blend-hard-light</td>
+          <td class="border px-4 py-2">mix-blend-mode: hard-light;</td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">mix-blend-soft-light</td>
+          <td class="border px-4 py-2">mix-blend-mode: soft-light;</td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">mix-blend-difference</td>
+          <td class="border px-4 py-2">mix-blend-mode: difference;</td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">mix-blend-exclusion</td>
+          <td class="border px-4 py-2">mix-blend-mode: exclusion;</td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">mix-blend-hue</td>
+          <td class="border px-4 py-2">mix-blend-mode: hue;</td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">mix-blend-saturation</td>
+          <td class="border px-4 py-2">mix-blend-mode: saturation;</td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">mix-blend-color</td>
+          <td class="border px-4 py-2">mix-blend-mode: color;</td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">mix-blend-luminosity</td>
+          <td class="border px-4 py-2">mix-blend-mode: luminosity;</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+  </section>
+
+  <!-- SECTION: bg-blend-* -->
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold">🖌️ Mezcla de Fondos (<code>bg-blend-*</code>)</h2>
+    <p>Permite controlar cómo se mezclan múltiples capas de fondo dentro del mismo elemento. Ideal para superponer
+      imágenes y colores con distintos modos de fusión.</p>
+
+    <table class="table-auto border-collapse border border-gray-300 w-full text-sm text-left my-8">
+      <thead class="bg-gray-200">
+        <tr>
+          <th class="border px-4 py-2">Clase Tailwind</th>
+          <th class="border px-4 py-2">Equivalente CSS</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border px-4 py-2">bg-blend-normal</td>
+          <td class="border px-4 py-2">background-blend-mode: normal;</td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">bg-blend-multiply</td>
+          <td class="border px-4 py-2">background-blend-mode: multiply;</td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">bg-blend-screen</td>
+          <td class="border px-4 py-2">background-blend-mode: screen;</td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">bg-blend-overlay</td>
+          <td class="border px-4 py-2">background-blend-mode: overlay;</td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">bg-blend-darken</td>
+          <td class="border px-4 py-2">background-blend-mode: darken;</td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">bg-blend-lighten</td>
+          <td class="border px-4 py-2">background-blend-mode: lighten;</td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">bg-blend-color-dodge</td>
+          <td class="border px-4 py-2">background-blend-mode: color-dodge;</td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">bg-blend-color-burn</td>
+          <td class="border px-4 py-2">background-blend-mode: color-burn;</td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">bg-blend-hard-light</td>
+          <td class="border px-4 py-2">background-blend-mode: hard-light;</td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">bg-blend-soft-light</td>
+          <td class="border px-4 py-2">background-blend-mode: soft-light;</td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">bg-blend-difference</td>
+          <td class="border px-4 py-2">background-blend-mode: difference;</td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">bg-blend-exclusion</td>
+          <td class="border px-4 py-2">background-blend-mode: exclusion;</td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">bg-blend-hue</td>
+          <td class="border px-4 py-2">background-blend-mode: hue;</td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">bg-blend-saturation</td>
+          <td class="border px-4 py-2">background-blend-mode: saturation;</td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">bg-blend-color</td>
+          <td class="border px-4 py-2">background-blend-mode: color;</td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">bg-blend-luminosity</td>
+          <td class="border px-4 py-2">background-blend-mode: luminosity;</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+
+
+
+
+  </section>
+
+</body>
+
+</html>

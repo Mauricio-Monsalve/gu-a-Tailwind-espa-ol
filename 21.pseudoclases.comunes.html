@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pseudo-clases Comunes en Tailwind CSS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .test-box {
+      width: 240px;
+      border: 1px solid #999;
+      padding: 4px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body class="p-8 bg-gray-100 text-sm space-y-10">
+  <h1 class="text-3xl font-bold mb-6">🎯 Pseudo-clases Comunes en Tailwind CSS</h1>
+
+  <p class="mb-6">Tailwind permite aplicar estilos en estados como <code>:hover</code>, <code>:focus</code>, <code>:active</code>, entre otros, utilizando prefijos antes de las clases. Aquí tienes una tabla comparativa con los equivalentes en CSS tradicional.</p>
+
+  <table class="table-auto w-full border border-gray-300 bg-white text-left">
+    <thead>
+      <tr class="bg-gray-200">
+        <th class="border px-4 py-2">Pseudo-clase</th>
+        <th class="border px-4 py-2">Clase Tailwind</th>
+        <th class="border px-4 py-2">CSS Tradicional</th>
+        <th class="border px-4 py-2">Ejemplo</th>
+      </tr>
+    </thead>
+    <tbody class="align-top">
+      <tr>
+        <td class="border px-4 py-2">:hover</td>
+        <td class="border px-4 py-2">hover:bg-blue-500</td>
+        <td class="border px-4 py-2">element:hover { background-color: #3b82f6; }</td>
+        <td class="border px-4 py-2">
+          <button class="test-box bg-blue-300 hover:bg-blue-500 text-white rounded">Hover aquí</button>
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">:focus</td>
+        <td class="border px-4 py-2">focus:outline-none</td>
+        <td class="border px-4 py-2">input:focus { outline: none; }</td>
+        <td class="border px-4 py-2">
+          <input type="text" placeholder="Enfócate aquí" class="test-box border focus:outline-none focus:ring-2 focus:ring-blue-400">
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">:active</td>
+        <td class="border px-4 py-2">active:bg-red-500</td>
+        <td class="border px-4 py-2">button:active { background-color: #ef4444; }</td>
+        <td class="border px-4 py-2">
+          <button class="test-box bg-red-300 active:bg-red-500 text-white rounded">Haz clic</button>
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">:visited</td>
+        <td class="border px-4 py-2">visited:text-red-500</td>
+        <td class="border px-4 py-2">a:visited { color: #ef4444 ; }</td>
+        <td class="border px-4 py-2">
+          <a href="https://example.com" class="test-box text-blue-600 visited:text-red-500 underline">Enlace visitado</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">:disabled</td>
+        <td class="border px-4 py-2">disabled:opacity-50</td>
+        <td class="border px-4 py-2">button:disabled { opacity: 0.5; }</td>
+        <td class="border px-4 py-2">
+          <button class="test-box bg-gray-400 text-white rounded disabled:opacity-50">Habilitado</button>
+          <button class="test-box bg-gray-400 text-white rounded disabled:opacity-50" disabled>Deshabilitado</button>
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">:checked</td>
+        <td class="border px-4 py-2">checked:ring-green-500</td>
+        <td class="border px-4 py-2">input:checked{--tw-ring-color: #22c55e ;}</td>
+        <td class="border px-4 py-2">
+          <input type="checkbox" class="checked:ring-green-500 ring-4" checked />
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">:focus-visible</td>
+        <td class="border px-4 py-2">focus-visible:ring-2</td>
+        <td class="border px-4 py-2">input:focus-visible { box-shadow: 0 0 0 2px #60a5fa; }</td>
+        <td class="border px-4 py-2">
+          <input type="text" class="test-box border focus-visible:ring-2 ring-blue-400" placeholder="Focus visible" />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+
+</html>

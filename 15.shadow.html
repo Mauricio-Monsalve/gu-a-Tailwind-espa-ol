@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shadow - Tailwind CSS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    div.shadow-demo {
+      width: 8rem;
+      height: 3rem;
+    }
+  </style>
+</head>
+
+<body class="p-8 bg-gray-100 text-sm space-y-10">
+  <h1 class="text-2xl font-bold mb-4">Clases de Sombra (Shadow) en Tailwind CSS</h1>
+
+  <table class="table-auto w-full border border-gray-300 bg-white text-left text-sm">
+    <thead class="bg-gray-200">
+      <tr>
+        <th class="border px-4 py-2">Clase Tailwind</th>
+        <th class="border px-4 py-2">CSS equivalente</th>
+        <th class="border px-4 py-2">Ejemplo</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <!-- shadow -->
+      <tr>
+        <td class="border px-4 py-2">shadow</td>
+        <td class="border px-4 py-2">box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);</td>
+        <td class="border px-4 py-2">
+          <div class="shadow bg-white shadow-demo"></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">shadow-sm</td>
+        <td class="border px-4 py-2">box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);</td>
+        <td class="border px-4 py-2">
+          <div class="shadow-sm bg-white shadow-demo"></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">shadow-md</td>
+        <td class="border px-4 py-2">box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);</td>
+        <td class="border px-4 py-2">
+          <div class="shadow-md bg-white shadow-demo"></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">shadow-lg</td>
+        <td class="border px-4 py-2">box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);</td>
+        <td class="border px-4 py-2">
+          <div class="shadow-lg bg-white shadow-demo"></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">shadow-xl</td>
+        <td class="border px-4 py-2">box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1);</td>
+        <td class="border px-4 py-2">
+          <div class="shadow-xl bg-white shadow-demo"></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">shadow-2xl</td>
+        <td class="border px-4 py-2">box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);</td>
+        <td class="border px-4 py-2">
+          <div class="shadow-2xl bg-white shadow-demo"></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">shadow-inner</td>
+        <td class="border px-4 py-2">box-shadow: inset 0 2px 4px 0 rgba(0,0,0,0.06);</td>
+        <td class="border px-4 py-2">
+          <div class="shadow-inner bg-white shadow-demo"></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">shadow-none</td>
+        <td class="border px-4 py-2">box-shadow: none;</td>
+        <td class="border px-4 py-2">
+          <div class="shadow-none bg-white shadow-demo border border-gray-300"></div>
+        </td>
+      </tr>
+
+      <!-- shadow metric personalizada -->
+      <tr>
+        <td class="border px-4 py-2">shadow-[8px_8px_0_0]</td>
+        <td class="border px-4 py-2">box-shadow: 8px 8px 0 0;</td>
+        <td class="border px-4 py-2">
+          <div class="shadow-[8px_8px_0_0] bg-white shadow-demo"></div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="border px-4 py-2">shadow-[8px_8px_0_0_#f0f]</td>
+        <td class="border px-4 py-2">box-shadow: 8px 8px 0 0 #f0f;</td>
+        <td class="border px-4 py-2">
+          <div class="shadow-[8px_8px_0_0_#f0f] bg-white shadow-demo"></div>
+        </td>
+      </tr>
+
+      <!-- shadow color -->
+      <tr>
+        <td class="border px-4 py-2">shadow-red-500</td>
+        <td class="border px-4 py-2">box-shadow-color: #ef4444;</td>
+        <td class="border px-4 py-2">
+          <div class="shadow-lg shadow-red-500 bg-white shadow-demo"></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">shadow-[#00ff00]</td>
+        <td class="border px-4 py-2">box-shadow-color: #00ff00;</td>
+        <td class="border px-4 py-2">
+          <div class="shadow-lg shadow-[#00ff00] bg-white shadow-demo"></div>
+        </td>
+      </tr>
+
+      <!-- shadow color / opacity -->
+      <tr>
+        <td class="border px-4 py-2">shadow-red-500/50</td>
+        <td class="border px-4 py-2">box-shadow-color: rgba(239, 68, 68, 0.5);</td>
+        <td class="border px-4 py-2">
+          <div class="shadow-lg shadow-red-500/50 bg-white shadow-demo"></div>
+        </td>
+      </tr>
+
+      <!-- drop-shadow -->
+      <tr>
+        <td class="border px-4 py-2">drop-shadow-sm</td>
+        <td class="border px-4 py-2">filter: drop-shadow(0 1px 1px rgba(0,0,0,0.05));</td>
+        <td class="border px-4 py-2">
+          <div class="drop-shadow-sm bg-white shadow-demo"></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">drop-shadow</td>
+        <td class="border px-4 py-2">filter: drop-shadow(0 1px 2px rgba(0,0,0,0.1));</td>
+        <td class="border px-4 py-2">
+          <div class="drop-shadow bg-white shadow-demo"></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">drop-shadow-md</td>
+        <td class="border px-4 py-2">filter: drop-shadow(0 4px 3px rgba(0,0,0,0.07));</td>
+        <td class="border px-4 py-2">
+          <div class="drop-shadow-md bg-white shadow-demo"></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">drop-shadow-lg</td>
+        <td class="border px-4 py-2">filter: drop-shadow(0 10px 8px rgba(0,0,0,0.04));</td>
+        <td class="border px-4 py-2">
+          <div class="drop-shadow-lg bg-white shadow-demo"></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">drop-shadow-xl</td>
+        <td class="border px-4 py-2">filter: drop-shadow(0 20px 13px rgba(0,0,0,0.03));</td>
+        <td class="border px-4 py-2">
+          <div class="drop-shadow-xl bg-white shadow-demo"></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">drop-shadow-2xl</td>
+        <td class="border px-4 py-2">filter: drop-shadow(0 25px 25px rgba(0,0,0,0.15));</td>
+        <td class="border px-4 py-2">
+          <div class="drop-shadow-2xl bg-white shadow-demo"></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">drop-shadow-none</td>
+        <td class="border px-4 py-2">filter: none;</td>
+        <td class="border px-4 py-2">
+          <div class="drop-shadow-none bg-white shadow-demo border border-gray-300"></div>
+        </td>
+      </tr>
+
+
+      <!-- Definición del símbolo SVG al inicio del body (debe ir solo una vez) -->
+      <svg style="display: none;">
+        <symbol id="icon-blob" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M12 6.036c-2.667 0-4.333 1.325-5 3.976 1-1.325 2.167-1.822 3.5-1.491.761.189 1.305.738 1.906 1.345C13.387 10.855 14.522 12 17 12c2.667 0 4.333-1.325 5-3.976-1 1.325-2.166 1.822-3.5 1.491-.761-.189-1.305-.738-1.907-1.345-.98-.99-2.114-2.134-4.593-2.134zM7 12c-2.667 0-4.333 1.325-5 3.976 1-1.326 2.167-1.822 3.5-1.491.761.189 1.305.738 1.907 1.345.98.989 2.115 2.134 4.594 2.134 2.667 0 4.333-1.325 5-3.976-1 1.325-2.167 1.822-3.5 1.491-.761-.189-1.305-.738-1.906-1.345C10.613 13.145 9.478 12 7 12z">
+          </path>
+        </symbol>
+      </svg>
+
+      <!-- Tabla de ejemplos drop-shadow -->
+      <tr>
+        <td class="border px-4 py-2">drop-shadow-sm</td>
+        <td class="border px-4 py-2">filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.05));</td>
+        <td class="border px-4 py-2 flex space-x-2">
+          <img src="https://www.freeiconspng.com/thumbs/cartoon-characters-png/finn-the-human-adventure-time-cartoon-characters-png-10.png" class="w-16">
+          <img src="https://www.freeiconspng.com/thumbs/cartoon-characters-png/finn-the-human-adventure-time-cartoon-characters-png-10.png" class="w-16 drop-shadow-sm">
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">drop-shadow</td>
+        <td class="border px-4 py-2">filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1)) drop-shadow(0 1px 1px rgba(0, 0,
+          0, 0.06));</td>
+        <td class="border px-4 py-2 flex space-x-2">
+          <img src="https://www.freeiconspng.com/thumbs/cartoon-characters-png/finn-the-human-adventure-time-cartoon-characters-png-10.png" class="w-16">
+          <img src="https://www.freeiconspng.com/thumbs/cartoon-characters-png/finn-the-human-adventure-time-cartoon-characters-png-10.png" class="w-16 drop-shadow">
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">drop-shadow-md</td>
+        <td class="border px-4 py-2">filter: drop-shadow(0 4px 3px rgba(0, 0, 0, 0.07)) drop-shadow(0 2px 2px rgba(0, 0,
+          0, 0.06));</td>
+        <td class="border px-4 py-2 flex space-x-2">
+          <img src="https://www.freeiconspng.com/thumbs/cartoon-characters-png/finn-the-human-adventure-time-cartoon-characters-png-10.png" class="w-16">
+          <img src="https://www.freeiconspng.com/thumbs/cartoon-characters-png/finn-the-human-adventure-time-cartoon-characters-png-10.png" class="w-16 drop-shadow-md">
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">drop-shadow-lg</td>
+        <td class="border px-4 py-2">filter: drop-shadow(0 10px 8px rgba(0, 0, 0, 0.04)) drop-shadow(0 4px 3px rgba(0,
+          0, 0, 0.1));</td>
+        <td class="border px-4 py-2 flex space-x-2">
+          <img src="https://www.freeiconspng.com/thumbs/cartoon-characters-png/finn-the-human-adventure-time-cartoon-characters-png-10.png" class="w-16">
+          <img src="https://www.freeiconspng.com/thumbs/cartoon-characters-png/finn-the-human-adventure-time-cartoon-characters-png-10.png" class="w-16 drop-shadow-lg">
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">drop-shadow-xl</td>
+        <td class="border px-4 py-2">filter: drop-shadow(0 20px 13px rgba(0, 0, 0, 0.03)) drop-shadow(0 8px 5px rgba(0,
+          0, 0, 0.08));</td>
+        <td class="border px-4 py-2 flex space-x-2">
+          <img src="https://www.freeiconspng.com/thumbs/cartoon-characters-png/finn-the-human-adventure-time-cartoon-characters-png-10.png" class="w-16">
+          <img src="https://www.freeiconspng.com/thumbs/cartoon-characters-png/finn-the-human-adventure-time-cartoon-characters-png-10.png" class="w-16 drop-shadow-xl">
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">drop-shadow-2xl</td>
+        <td class="border px-4 py-2">filter: drop-shadow(0 25px 25px rgba(0, 0, 0, 0.15));</td>
+        <td class="border px-4 py-2 flex space-x-2">
+          <img src="https://www.freeiconspng.com/thumbs/cartoon-characters-png/finn-the-human-adventure-time-cartoon-characters-png-10.png" class="w-16">
+          <img src="https://www.freeiconspng.com/thumbs/cartoon-characters-png/finn-the-human-adventure-time-cartoon-characters-png-10.png" class="w-16 drop-shadow-2xl">
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">drop-shadow-none</td>
+        <td class="border px-4 py-2">filter: none;</td>
+        <td class="border px-4 py-2 flex space-x-2">
+          <img src="https://www.freeiconspng.com/thumbs/cartoon-characters-png/finn-the-human-adventure-time-cartoon-characters-png-10.png" class="w-16">
+          <img src="https://www.freeiconspng.com/thumbs/cartoon-characters-png/finn-the-human-adventure-time-cartoon-characters-png-10.png" class="w-16 drop-shadow-none">
+        </td>
+      </tr>
+
+
+    </tbody>
+  </table>
+</body>
+
+</html>
